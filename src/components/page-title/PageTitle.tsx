@@ -9,7 +9,7 @@ export default function PageTitle(props: PageTitleProps) {
   const { pageName, description } = props;
 
   return (
-    <Helmet>
+    <Helmet prioritizeSeoTags>
       <title>{pageName}</title>
 
       {description && <meta name="description" content={description} />}
