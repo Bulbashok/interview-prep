@@ -9,12 +9,13 @@ import { useState } from 'react';
 const notFoundPageClasses = {
   page: 'not-found',
   textContainer: 'not-found__text-container',
+  contentContainer: 'not-found__content-container',
   title: 'not-found__title',
   subtitle: 'not-found__subtitle',
   video: 'not-found__video',
   buttonsContainer: 'not-found__buttons-container',
   button: 'not-found__button',
-};
+} as const;
 
 const notFoundPageTexts = {
   title: '404',
@@ -22,12 +23,12 @@ const notFoundPageTexts = {
   alt: '404 image',
   backButton: 'Go Back',
   homePageButton: 'Go Homepage',
-};
+} as const;
 
 const notFoundPageConfig = {
   title: 'Page not found | asyncmind',
   description: 'Page not found',
-};
+} as const;
 
 const videos = [video1, video2, video3];
 
@@ -39,13 +40,17 @@ export default function NotFoundPage() {
       <PageTitle pageName={notFoundPageConfig.title} description={notFoundPageConfig.description} />
       <div className={notFoundPageClasses.page}>
         <video src={video} className={notFoundPageClasses.video} autoPlay loop muted />
-        <div className={notFoundPageClasses.textContainer}>
-          <h1 className={notFoundPageClasses.title}>{notFoundPageTexts.title}</h1>
-          <h2 className={notFoundPageClasses.subtitle}>{notFoundPageTexts.subtitle}</h2>
-        </div>
-        <div className={notFoundPageClasses.buttonsContainer}>
-          <button className={notFoundPageClasses.button}>{notFoundPageTexts.backButton}</button>
-          <button className={notFoundPageClasses.button}>{notFoundPageTexts.homePageButton}</button>
+        <div className={notFoundPageClasses.contentContainer}>
+          <div className={notFoundPageClasses.textContainer}>
+            <h1 className={notFoundPageClasses.title}>{notFoundPageTexts.title}</h1>
+            <h2 className={notFoundPageClasses.subtitle}>{notFoundPageTexts.subtitle}</h2>
+          </div>
+          <div className={notFoundPageClasses.buttonsContainer}>
+            <button className={notFoundPageClasses.button}>{notFoundPageTexts.backButton}</button>
+            <button className={notFoundPageClasses.button}>
+              {notFoundPageTexts.homePageButton}
+            </button>
+          </div>
         </div>
       </div>
     </>
