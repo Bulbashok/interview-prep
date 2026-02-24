@@ -5,6 +5,9 @@ import video2 from '../../assets/video/error-video_2.mp4';
 import video3 from '../../assets/video/error-video_3.mp4';
 import PageTitle from '../../components/page-title/PageTitle';
 import { useState } from 'react';
+import Button from '../../components/button/button';
+import { useNavigate } from 'react-router';
+import { appRoutes } from '../../router/routes';
 
 const notFoundPageClasses = {
   page: 'not-found',
@@ -34,6 +37,7 @@ const videos = [video1, video2, video3];
 
 export default function NotFoundPage() {
   const [video] = useState(() => videos[Math.floor(Math.random() * videos.length)]);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -46,10 +50,11 @@ export default function NotFoundPage() {
             <h2 className={notFoundPageClasses.subtitle}>{notFoundPageTexts.subtitle}</h2>
           </div>
           <div className={notFoundPageClasses.buttonsContainer}>
-            <button className={notFoundPageClasses.button}>{notFoundPageTexts.backButton}</button>
-            <button className={notFoundPageClasses.button}>
-              {notFoundPageTexts.homePageButton}
-            </button>
+            <Button content={notFoundPageTexts.backButton} onClick={() => navigate(-1)} />
+            <Button
+              content={notFoundPageTexts.homePageButton}
+              onClick={() => navigate(appRoutes.home)}
+            />
           </div>
         </div>
       </div>
