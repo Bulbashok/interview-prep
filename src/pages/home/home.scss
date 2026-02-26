@@ -1,0 +1,12 @@
+@import '../../styles/variables.css';
+
+.home {
+  width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}

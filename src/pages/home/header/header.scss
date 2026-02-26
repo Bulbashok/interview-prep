@@ -1,0 +1,20 @@
+@import '/src/styles/variables.css';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &__img {
+      width: 40px;
+      height: 40px;
+    }
+    &__title {
+      color: var(--heading-color);
+    }
+  }
+}
