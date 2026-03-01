@@ -4,7 +4,11 @@ import logo from '../../../assets/svg/logo.jpg';
 
 import Button from '../../../components/button/button';
 
+import { authRoutes } from '../../../router/routes';
+import { useNavigate } from 'react-router';
+
 export default function MainHome() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="main">
@@ -13,7 +17,12 @@ export default function MainHome() {
           <p className="main__descript__text">
             Проект для подготовки к собеседованиям на frontend-разработчика.
           </p>
-          <Button content="Registr" />
+          <Button
+            content="Registration"
+            backgroundColor="var(--btn-cta)"
+            backgroundColorHover="var(--btn-cta-hover)"
+            onClick={() => navigate(authRoutes.register)}
+          />
         </div>
         <div className="main__slider">
           <img className="main__slider__jpg" src={logo} alt="primer" />
