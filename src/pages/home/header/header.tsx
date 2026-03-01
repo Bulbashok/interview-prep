@@ -1,6 +1,6 @@
 import './header.scss';
 
-import logo from '../../../assets/svg/logo.jpg';
+import logo from '../../../assets/svg/logo.svg';
 
 import Button from '../../../components/button/button';
 

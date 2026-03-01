@@ -5,9 +5,14 @@
   flex-direction: column;
   border: 1px solid var(--btn-primary-bg);
   border-radius: 0.5em;
-  background-color: var(--bg-primary-08-opacity);
+  background-color: var(--btn-primary-bg);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   padding: 6em;
   gap: 20px;
+  transition:
+    scale 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   &__avatar {
     width: 9em;
@@ -17,7 +22,12 @@
 
   &__title {
     font-size: 1.5em;
-    color: var(--heading-color);
+    color: var(--btn-primary-text);
     text-decoration: none;
+  }
+  &:hover {
+    scale: 1.05;
+    background-color: var(--btn-primary-bg-hover);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   }
 }

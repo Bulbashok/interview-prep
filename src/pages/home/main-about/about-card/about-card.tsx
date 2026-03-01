@@ -11,12 +11,10 @@ export default function AboutCard(props: CardConfig) {
 
   return (
     <>
-      <div className="about-card">
+      <a className="about-card" href={href} target="_blank">
         <img className="about-card__avatar" src={avatar} alt="avatar" />
-        <a className="about-card__title" href={href}>
-          {name}
-        </a>
-      </div>
+        <span className="about-card__title">{name}</span>
+      </a>
     </>
   );
 }

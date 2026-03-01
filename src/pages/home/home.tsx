@@ -12,7 +12,7 @@ import MainAboutHome from './main-about/main-about';
 import FooterHome from './footer/footer';
 
 const homePageConfig = {
-  title: 'Interview Prep',
+  title: 'Interview Prep | asyncmind',
   description: 'Home',
 } as const;
 

@@ -15,10 +15,13 @@ export default function MainHome() {
         <div className="main__descript">
           <h1 className="main__descript__title">Interview Prep</h1>
           <p className="main__descript__text">
-            Проект для подготовки к собеседованиям на frontend-разработчика.
+            An interactive platform to sharpen your skills and ace frontend technical interviews.
+            We’ve curated a comprehensive database of current questions, coding challenges, and
+            architecture cases to help you structure your knowledge and land your dream offer.
           </p>
           <Button
             content="Registration"
+            width="12em"
             backgroundColor="var(--btn-cta)"
             backgroundColorHover="var(--btn-cta-hover)"
             onClick={() => navigate(authRoutes.register)}

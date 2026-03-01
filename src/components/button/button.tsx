@@ -3,6 +3,7 @@ import MIUButton from '@mui/material/Button';
 interface ButtonProps {
   content: React.ReactNode;
   onClick?: () => void;
+  width?: string;
   backgroundColor?: string;
   backgroundColorHover?: string;
 }
@@ -15,12 +16,13 @@ const buttonColors = {
 } as const;
 
 export default function Button(props: ButtonProps) {
-  const { content, onClick, backgroundColor, backgroundColorHover } = props;
+  const { content, onClick, width, backgroundColor, backgroundColorHover } = props;
 
   return (
     <MIUButton
       variant="contained"
       sx={{
+        width: width,
         backgroundColor: backgroundColor || `var(${buttonColors.bgPrimary})`,
         color: `var(${buttonColors.textPrimary})`,
         '&:hover': {

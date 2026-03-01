@@ -8,17 +8,24 @@
     flex-direction: column;
     gap: 20px;
     &__title {
-      font-size: 2em;
+      font-size: 3em;
       color: var(--heading-color);
     }
     &__text {
-      font-size: 1em;
+      max-width: 36em;
+      font-size: 1.2em;
       color: var(--primary-text-color);
     }
   }
 
   &__slider {
     &__jpg {
+      max-width: 35em;
+      max-height: 25em;
+
+      width: 100%;
+      height: auto;
+
       border-radius: 0.5em;
     }
   }
