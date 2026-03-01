@@ -1,0 +1,25 @@
+@import '/src/styles/variables.css';
+
+.about-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid var(--btn-primary-bg);
+  border-radius: 0.5em;
+  background-color: var(--bg-primary-08-opacity);
+  padding: 6em;
+  gap: 20px;
+
+  &__avatar {
+    width: 9em;
+    height: 9em;
+    border-radius: 10em;
+  }
+
+  &__title {
+    font-size: 1.5em;
+    color: var(--heading-color);
+    text-decoration: none;
+  }
+}
