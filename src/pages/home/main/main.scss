@@ -1,0 +1,27 @@
+@import '/src/styles/variables.css';
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__descript {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__title {
+      font-size: 2em;
+      color: var(--heading-color);
+    }
+    &__text {
+      font-size: 1em;
+      color: var(--primary-text-color);
+    }
+  }
+
+  &__slider {
+    &__jpg {
+      border-radius: 0.5em;
+    }
+  }
+}

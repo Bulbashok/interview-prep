@@ -1,0 +1,11 @@
+@import '/src/styles/variables.css';
+
+.main-about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__title {
+    font-size: 1.5em;
+    color: var(--heading-color);
+  }
+}

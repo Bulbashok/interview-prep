@@ -8,6 +8,7 @@ import PageTitle from '../../components/page-title/PageTitle';
 
 import HeaderHome from './header/header';
 import MainHome from './main/main';
+import MainAboutHome from './main-about/main-about';
 import FooterHome from './footer/footer';
 
 const homePageConfig = {
@@ -22,6 +23,7 @@ export default function HomePageLanding() {
       <div className="home">
         <HeaderHome />
         <MainHome />
+        <MainAboutHome />
         <FooterHome />
       </div>
     </>
