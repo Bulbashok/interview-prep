@@ -8,6 +8,8 @@ import { useState } from 'react';
 import Button from '../../components/button/button';
 import { useNavigate } from 'react-router';
 import { appRoutes } from '../../router/routes';
+import { useTranslation } from 'react-i18next';
+import { i18nKeys } from '../../i18n/i18n-keys';
 
 const notFoundPageClasses = {
   page: 'not-found',
@@ -20,14 +22,6 @@ const notFoundPageClasses = {
   button: 'not-found__button',
 } as const;
 
-const notFoundPageTexts = {
-  title: '404',
-  subtitle: 'Ooops! Page not found :(',
-  alt: '404 image',
-  backButton: 'Go Back',
-  homePageButton: 'Go Homepage',
-} as const;
-
 const notFoundPageConfig = {
   title: 'Page not found | asyncmind',
   description: 'Page not found',
@@ -38,6 +32,7 @@ const videos = [video1, video2, video3];
 export default function NotFoundPage() {
   const [video] = useState(() => videos[Math.floor(Math.random() * videos.length)]);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -46,13 +41,13 @@ export default function NotFoundPage() {
         <video src={video} className={notFoundPageClasses.video} autoPlay loop muted />
         <div className={notFoundPageClasses.contentContainer}>
           <div className={notFoundPageClasses.textContainer}>
-            <h1 className={notFoundPageClasses.title}>{notFoundPageTexts.title}</h1>
-            <h2 className={notFoundPageClasses.subtitle}>{notFoundPageTexts.subtitle}</h2>
+            <h1 className={notFoundPageClasses.title}>{t(i18nKeys[404].title)}</h1>
+            <h2 className={notFoundPageClasses.subtitle}>{t(i18nKeys[404].subtitle)}</h2>
           </div>
           <div className={notFoundPageClasses.buttonsContainer}>
-            <Button content={notFoundPageTexts.backButton} onClick={() => navigate(-1)} />
+            <Button content={t(i18nKeys[404].backButton)} onClick={() => navigate(-1)} />
             <Button
-              content={notFoundPageTexts.homePageButton}
+              content={t(i18nKeys[404].homePageButton)}
               onClick={() => navigate(appRoutes.home)}
             />
           </div>
