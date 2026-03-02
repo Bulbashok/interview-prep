@@ -7,3 +7,7 @@
 - [Коля](https://github.com/NickKool)
 - [Лёша](https://github.com/JesterAV)
 - [Миша](https://github.com/Bulbashok)
+
+## deploy
+
+https://interview-prep01.vercel.app/
