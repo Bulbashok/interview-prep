@@ -1,5 +1,7 @@
 import './header.scss';
 
+import ChangeLanguage from '../header/changeLanguage/changeLanguage';
+
 import logo from '../../../assets/svg/logo.svg';
 
 import Button from '../../../components/button/button';
@@ -17,7 +19,10 @@ export default function HeaderHome() {
           <img className="header__logo__img" src={logo} alt="logo" />
           <h2 className="header__logo__title">asyncmind</h2>
         </div>
-        <Button content="login" onClick={() => navigate(authRoutes.login)} />
+        <div className="header__button">
+          <Button content="login" onClick={() => navigate(authRoutes.login)} />
+          <ChangeLanguage />
+        </div>
       </div>
     </>
   );

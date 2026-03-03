@@ -18,4 +18,8 @@
       color: var(--heading-color);
     }
   }
+  &__button {
+    display: flex;
+    gap: 0.5em;
+  }
 }
