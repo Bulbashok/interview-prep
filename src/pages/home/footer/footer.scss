@@ -16,6 +16,9 @@
       font-size: 1.2em;
       color: var(--primary-text-color);
     }
+    &:hover &__title {
+      color: var(--btn-cta-hover);
+    }
   }
 
   &__year {
@@ -34,6 +37,9 @@
     &__title {
       font-size: 1.2em;
       color: var(--primary-text-color);
+    }
+    &:hover &__title {
+      color: var(--btn-cta-hover);
     }
   }
 }
