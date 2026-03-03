@@ -1,10 +1,6 @@
 import './home.scss';
 
 import PageTitle from '../../components/page-title/PageTitle';
-// import { useState } from 'react';
-
-// import { useNavigate } from 'react-router';
-// import { appRoutes } from '../../router/routes';
 
 import HeaderHome from './header/header';
 import MainHome from './main/main';

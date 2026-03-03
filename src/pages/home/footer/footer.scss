@@ -1,0 +1,39 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__shoolLogo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    &__img {
+      width: 2.5em;
+      height: 2.5em;
+    }
+    &__title {
+      font-size: 1.2em;
+      color: var(--primary-text-color);
+    }
+  }
+
+  &__year {
+    font-size: 1.2em;
+    color: var(--primary-text-color);
+  }
+
+  &__gitLogo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    &__img {
+      width: 2.5em;
+      height: 2.5em;
+    }
+    &__title {
+      font-size: 1.2em;
+      color: var(--primary-text-color);
+    }
+  }
+}

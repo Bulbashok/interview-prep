@@ -6,7 +6,7 @@ import a3 from '../../../assets/avatars/a3.jpg';
 
 import AboutCard from './about-card/about-card';
 
-const avatarHref = [
+const avatarHref: string[] = [
   'https://github.com/NickKool',
   'https://github.com/Bulbashok',
   'https://github.com/JesterAV',

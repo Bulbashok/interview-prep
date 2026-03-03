@@ -1,3 +1,24 @@
+import './footer.scss';
+
+import rssLogo from '../../../assets/svg/rssLogo.svg';
+import github from '../../../assets/svg/Github.svg';
+
+const footerHref: string[] = ['https://rs.school/', 'https://github.com/Bulbashok/interview-prep'];
+
 export default function FooterHome() {
-  return <></>;
+  return (
+    <>
+      <div className="footer">
+        <a className="footer__shoolLogo" href={footerHref[0]} target="_blank">
+          <img className="footer__shoolLogo__img" src={rssLogo} alt="rss-logo" />
+          <span className="footer__shoolLogo__title">RS School</span>
+        </a>
+        <span className="footer__year">2026</span>
+        <a className="footer__gitLogo" href={footerHref[1]} target="_blank">
+          <img className="footer__gitLogo__img" src={github} alt="rss-logo" />
+          <span className="footer__gitLogo__title">asyncmind</span>
+        </a>
+      </div>
+    </>
+  );
 }
