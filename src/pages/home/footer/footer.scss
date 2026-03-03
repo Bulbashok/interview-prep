@@ -15,6 +15,13 @@
     &__title {
       font-size: 1.2em;
       color: var(--primary-text-color);
+      @media (max-width: 768px) {
+        font-size: 1.2em;
+      }
+
+      @media (max-width: 480px) {
+        display: none;
+      }
     }
     &:hover &__title {
       color: var(--btn-cta-hover);
@@ -37,6 +44,13 @@
     &__title {
       font-size: 1.2em;
       color: var(--primary-text-color);
+      @media (max-width: 768px) {
+        font-size: 1.2em;
+      }
+
+      @media (max-width: 480px) {
+        display: none;
+      }
     }
     &:hover &__title {
       color: var(--btn-cta-hover);

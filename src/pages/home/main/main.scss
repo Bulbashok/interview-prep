@@ -27,6 +27,10 @@
       height: auto;
 
       border-radius: 0.5em;
+
+      @media (max-width: 660px) {
+        display: none;
+      }
     }
   }
 }

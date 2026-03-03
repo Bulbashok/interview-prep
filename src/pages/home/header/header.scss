@@ -16,6 +16,13 @@
     &__title {
       font-size: 1.5em;
       color: var(--heading-color);
+      @media (max-width: 768px) {
+        font-size: 1.2em;
+      }
+
+      @media (max-width: 480px) {
+        display: none;
+      }
     }
   }
   &__button {

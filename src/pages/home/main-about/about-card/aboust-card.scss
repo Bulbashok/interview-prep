@@ -3,31 +3,41 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   border: 1px solid var(--btn-primary-bg);
   border-radius: 0.5em;
   background-color: var(--btn-primary-bg);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  padding: 6em;
+
+  padding: 2em;
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+
   gap: 20px;
+  text-decoration: none;
+
   transition:
-    scale 0.3s ease,
+    transform 0.3s ease,
     background-color 0.3s ease,
     box-shadow 0.3s ease;
 
   &__avatar {
-    width: 9em;
-    height: 9em;
-    border-radius: 10em;
+    width: 100%;
+    max-width: 9em;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   &__title {
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: var(--btn-primary-text);
-    text-decoration: none;
+    text-align: center;
   }
+
   &:hover {
-    scale: 1.05;
+    transform: scale(1.05);
     background-color: var(--btn-primary-bg-hover);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
 }
