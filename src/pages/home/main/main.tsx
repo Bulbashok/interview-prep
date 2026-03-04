@@ -1,8 +1,8 @@
 import './main.scss';
 
-import logo from '../../../assets/svg/logo.jpg';
-
 import Button from '../../../components/button/button';
+
+import Slider from './slider/slider';
 
 import { authRoutes } from '../../../router/routes';
 import { useNavigate } from 'react-router';
@@ -27,9 +27,7 @@ export default function MainHome() {
             onClick={() => navigate(authRoutes.register)}
           />
         </div>
-        <div className="main__slider">
-          <img className="main__slider__jpg" src={logo} alt="primer" />
-        </div>
+        <Slider />
       </div>
     </>
   );

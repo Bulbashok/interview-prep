@@ -7,30 +7,28 @@
     display: flex;
     flex-direction: column;
     gap: 1.25em;
+
+    padding-left: 2em;
+    border-left: 3px solid var(--btn-cta);
     &__title {
       font-size: 3em;
       color: var(--heading-color);
+
+      @media (max-width: 600px) {
+        font-size: 2em;
+      }
     }
     &__text {
-      max-width: 36em;
+      max-width: 32em;
+      line-height: 1.6;
       font-size: 1.2em;
       color: var(--primary-text-color);
     }
   }
-
-  &__slider {
-    &__jpg {
-      max-width: 35em;
-      max-height: 25em;
-
-      width: 100%;
-      height: auto;
-
-      border-radius: 0.5em;
-
-      @media (max-width: 660px) {
-        display: none;
-      }
-    }
+  @media (max-width: 757px) {
+    flex-direction: column;
+    gap: 1.25em;
+    align-items: flex-start;
+    text-align: left;
   }
 }
