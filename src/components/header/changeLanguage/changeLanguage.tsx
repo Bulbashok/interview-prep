@@ -3,7 +3,7 @@ import './changeLanguage.scss';
 import { useState } from 'react';
 
 import LanguageIcon from '@mui/icons-material/Language';
-import Button from '../../../../components/button/button';
+import Button from '../../button/button';
 
 export default function ChangeLanguage() {
   const [isOpen, setIsOpen] = useState(false);

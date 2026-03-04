@@ -1,7 +1,7 @@
 import './footer.scss';
 
-import rssLogo from '../../../assets/svg/rssLogo.svg';
-import github from '../../../assets/svg/Github.svg';
+import rssLogo from '../../assets/svg/rssLogo.svg';
+import github from '../../assets/svg/Github.svg';
 
 const footerHref: string[] = ['https://rs.school/', 'https://github.com/Bulbashok/interview-prep'];
 

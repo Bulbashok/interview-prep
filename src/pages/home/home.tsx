@@ -2,10 +2,10 @@ import './home.scss';
 
 import PageTitle from '../../components/page-title/PageTitle';
 
-import HeaderHome from './header/header';
+import HeaderHome from '../../components/header/header';
 import MainHome from './main/main';
 import MainAboutHome from './main-about/main-about';
-import FooterHome from './footer/footer';
+import FooterHome from '../../components/footer/footer';
 
 const homePageConfig = {
   title: 'Interview Prep | asyncmind',

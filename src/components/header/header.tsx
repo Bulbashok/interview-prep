@@ -1,12 +1,12 @@
 import './header.scss';
 
-import ChangeLanguage from '../header/changeLanguage/changeLanguage';
+import ChangeLanguage from './changeLanguage/changeLanguage';
 
-import logo from '../../../assets/svg/logo.svg';
+import logo from '../../assets/svg/logo.svg';
 
-import Button from '../../../components/button/button';
+import Button from '../button/button';
 
-import { authRoutes } from '../../../router/routes';
+import { authRoutes } from '../../router/routes';
 import { useNavigate } from 'react-router';
 
 export default function HeaderHome() {
