@@ -2,6 +2,7 @@ import './changeLanguage.scss';
 
 import { useState } from 'react';
 
+import { ClickAwayListener } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
 import Button from '../../button/button';
 
@@ -12,21 +13,26 @@ export default function ChangeLanguage() {
     setIsOpen(!isOpen);
   };
 
-  const handleLanguageChange = (lang: string) => {
-    console.log(`Selected language: ${lang}`);
+  const handleLanguageChange = () => {
+    setIsOpen(false);
+  };
+
+  const handleClose = () => {
     setIsOpen(false);
   };
 
   return (
-    <div className="language-manager">
-      <Button content={<LanguageIcon />} height="40px" onClick={toggleDropdown} />
+    <ClickAwayListener onClickAway={handleClose}>
+      <div className="language-manager">
+        <Button content={<LanguageIcon />} height="40px" onClick={toggleDropdown} />
 
-      {isOpen && (
-        <div className="language-manager__dropdown">
-          <Button height="2em" content="RU" onClick={() => handleLanguageChange('RU')} />
-          <Button height="2em" content="EN" onClick={() => handleLanguageChange('EN')} />
-        </div>
-      )}
-    </div>
+        {isOpen && (
+          <div className="language-manager__dropdown">
+            <Button height="2em" content="RU" onClick={() => handleLanguageChange()} />
+            <Button height="2em" content="EN" onClick={() => handleLanguageChange()} />
+          </div>
+        )}
+      </div>
+    </ClickAwayListener>
   );
 }
