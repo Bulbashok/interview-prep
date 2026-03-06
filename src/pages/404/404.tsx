@@ -22,11 +22,6 @@ const notFoundPageClasses = {
   button: 'not-found__button',
 } as const;
 
-const notFoundPageConfig = {
-  title: 'Page not found | asyncmind',
-  description: 'Page not found',
-} as const;
-
 const videos = [video1, video2, video3];
 
 export default function NotFoundPage() {
@@ -36,7 +31,10 @@ export default function NotFoundPage() {
 
   return (
     <>
-      <PageTitle pageName={notFoundPageConfig.title} description={notFoundPageConfig.description} />
+      <PageTitle
+        pageName={t(i18nKeys[404].pageTitle)}
+        description={t(i18nKeys[404].pageDescription)}
+      />
       <div className={notFoundPageClasses.page}>
         <video src={video} className={notFoundPageClasses.video} autoPlay loop muted />
         <div className={notFoundPageClasses.contentContainer}>
