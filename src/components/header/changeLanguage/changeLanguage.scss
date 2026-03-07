@@ -1,0 +1,17 @@
+.language-manager {
+  position: relative;
+  display: inline-block;
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 60px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    z-index: 10;
+    overflow: hidden;
+  }
+}
