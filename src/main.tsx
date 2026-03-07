@@ -4,12 +4,15 @@ import './styles/variables.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
+import { AuthProvider } from '@/contexts/AuthContext';
 import AppRouter from './router/router';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelmetProvider>
-      <AppRouter />
+      <AuthProvider>
+        <AppRouter />
+      </AuthProvider>
     </HelmetProvider>
   </StrictMode>,
 );
