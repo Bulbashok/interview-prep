@@ -2,7 +2,7 @@ import './widgetsMenu.scss';
 
 import WidgetCard from './WidgetCard';
 
-export const menuClasses = {
+const menuClasses = {
   menu: 'widgets-menu',
 } as const;
 
