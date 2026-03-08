@@ -7,6 +7,8 @@ import MainHome from './main/main';
 import MainAboutHome from './main-about/main-about';
 import FooterHome from '../../components/footer/footer';
 
+import { authRoutes } from '../../router/routes';
+
 const homePageConfig = {
   title: 'Interview Prep | asyncmind',
   description: 'Home',
@@ -17,7 +19,7 @@ export default function HomePageLanding() {
     <>
       <PageTitle pageName={homePageConfig.title} description={homePageConfig.description} />
       <div className="home">
-        <HeaderHome />
+        <HeaderHome log="login" click={authRoutes.login} />
         <MainHome />
         <MainAboutHome />
         <FooterHome />
