@@ -5,3 +5,6 @@ dist
 .vscode
 .idea
 .vite
+.env
+.env.local
+.env.*.local
