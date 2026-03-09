@@ -1,4 +1,7 @@
 :root {
+  --container-width: 1280px;
+  --container-padding: 20px;
+
   --bg-primary: #ffffff;
   --bg-primary-08-opacity: rgba(255, 255, 255, 0.8);
 
@@ -9,4 +12,7 @@
   --btn-primary-text: #ffffff;
   --btn-primary-bg-hover: #1c7eb3;
   --btn-primary-bg-active: #153e75;
+
+  --btn-cta: #ff8c00;
+  --btn-cta-hover: #e67e22;
 }

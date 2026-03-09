@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    &__img {
+      width: 2.5em;
+      height: 2.5em;
+      filter: brightness(0) saturate(100%) invert(16%) sepia(10%) saturate(6142%) hue-rotate(184deg)
+        brightness(98%) contrast(90%);
+    }
+    &__title {
+      font-size: 1.5em;
+      color: var(--heading-color);
+      @media (max-width: 768px) {
+        font-size: 1.2em;
+      }
+
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+  &__button {
+    display: flex;
+    gap: 0.5em;
+  }
+}
