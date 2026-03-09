@@ -1,0 +1,18 @@
+{
+  "404": {
+    "title": "404",
+    "subtitle": "Ooops! Page not found :(",
+    "backButton": "Go Back",
+    "homePageButton": "Go Homepage",
+    "pageTitle": "Page not found | asyncmind",
+    "pageDescription": "Page not found"
+  },
+
+  "homePage": {
+    "loginBtn": "Log in",
+    "title": "An interactive platform to sharpen your skills and ace frontend technical interviews.",
+    "description": "We’ve curated a comprehensive database of current questions, coding challenges, and architecture cases to help you structure your knowledge and land your dream offer.",
+    "registrationBtn": "Register",
+    "aboutUs": "About us"
+  }
+}
