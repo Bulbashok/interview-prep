@@ -1,6 +1,8 @@
 {
+  "langBtn": "ru",
+
   "404": {
-    "title": 404,
+    "title": "404",
     "subtitle": "Ууупс! Страница не найдена :(",
     "backButton": "Назад",
     "homePageButton": "На главную",

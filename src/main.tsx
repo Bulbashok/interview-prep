@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/contexts/AuthContext';
 import AppRouter from './router/router';
+import './i18n/i18n';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
