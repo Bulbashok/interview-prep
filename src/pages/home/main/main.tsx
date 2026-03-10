@@ -6,21 +6,20 @@ import Slider from './slider/slider';
 
 import { authRoutes } from '../../../router/routes';
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
+import { i18nKeys } from '@/i18n/i18n-keys';
 
 export default function MainHome() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <>
       <div className="main">
         <div className="main__descript">
           <h1 className="main__descript__title">Interview Prep</h1>
-          <p className="main__descript__text">
-            An interactive platform to sharpen your skills and ace frontend technical interviews.
-            We’ve curated a comprehensive database of current questions, coding challenges, and
-            architecture cases to help you structure your knowledge and land your dream offer.
-          </p>
+          <p className="main__descript__text">{t(i18nKeys.homePage.description)}</p>
           <Button
-            content="Registration"
+            content={t(i18nKeys.homePage.registrationBtn)}
             width="12em"
             backgroundColor="var(--btn-cta)"
             backgroundColorHover="var(--btn-cta-hover)"
