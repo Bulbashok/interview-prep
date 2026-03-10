@@ -12,7 +12,6 @@ export const i18nKeys = {
 
   homePage: {
     loginBtn: 'homePage.loginBtn',
-    title: 'homePage.title',
     description: 'homePage.description',
     registrationBtn: 'homePage.registrationBtn',
     aboutUs: 'homePage.aboutUs',
