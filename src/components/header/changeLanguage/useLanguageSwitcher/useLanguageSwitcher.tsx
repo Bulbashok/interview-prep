@@ -24,7 +24,7 @@ export const useLanguageSwitcher = () => {
         setIsOpen(false);
         notify.success(lang === 'ru' ? 'Язык изменен на русский' : 'Language changed to English');
       } catch {
-        notify.error('Error when changing language');
+        notify.error(lang === 'ru' ? 'Ошибка при смене языка' : 'Error when changing language');
       }
     },
     [i18n],
