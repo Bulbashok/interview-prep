@@ -1,0 +1,33 @@
+.progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+
+  &__progressBar {
+    width: 320px;
+    height: 20px;
+
+    position: relative;
+
+    background-color: rgba(36, 160, 237, 0.3);
+
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  &__completeBar {
+    height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: var(--progress-primary-bg);
+  }
+
+  &__progressNum {
+    font-size: 1.25rem;
+  }
+}
