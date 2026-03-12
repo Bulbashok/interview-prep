@@ -1,1 +1,10 @@
-export type WidgetsType = 'widget1' | 'widget2' | 'widget3';
+export type WidgetsType = 'quiz' | 'true/false' | 'async-sorter';
+
+export interface WidgetProps {
+  data: WidgetData;
+  sendAnswer: () => void;
+}
+
+export interface WidgetData {
+  null: null;
+}
