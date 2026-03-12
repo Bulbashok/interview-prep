@@ -1,7 +1,7 @@
 import { WidgetsType, WidgetData } from '../types/widgets';
-import WidgetStub1 from './Stub1/Stub1';
-import WidgetStub2 from './Stub2/Stub2';
-import WidgetStub3 from './Stub3/Stub3';
+import WidgetStub1 from './Quiz/Stub1';
+import WidgetStub2 from './TrueFalse/Stub2';
+import WidgetStub3 from './Async-sorter/Stub3';
 
 const widgetNames = {
   widget1: 'quiz',
