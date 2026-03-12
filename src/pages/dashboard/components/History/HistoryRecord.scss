@@ -1,0 +1,26 @@
+.historyRecord {
+  display: grid;
+  grid-template-columns: 1fr 20px 0.7fr 3px 1fr;
+
+  padding: 10px 0;
+
+  &__text {
+    font-size: 1.25rem;
+
+    &_name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 590px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__text, &__dividingLine {
+    text-align: center;
+    &_name {
+      text-align: left;
+    }
+  }
+}
