@@ -1,0 +1,11 @@
+.dashboard {
+  max-width: var(--container-width);
+  width: 100%;
+  height: 100vh;
+
+  padding: var(--container-padding);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
