@@ -16,4 +16,19 @@ export const i18nKeys = {
     registrationBtn: 'homePage.registrationBtn',
     aboutUs: 'homePage.aboutUs',
   },
+
+  dashboard: {
+    logoutBtn: 'dashboard.logoutBtn',
+    titles: {
+      progress: 'dashboard.titles.progressTitle',
+      streak: 'dashboard.titles.streakTitle',
+      history: 'dashboard.titles.historyTitile',
+      xp: 'dashboard.titles.xp',
+    },
+    experience: 'dashboard.experience',
+    streak: {
+      current: 'dashboard.streak.current',
+      best: 'dashboard.streak.best',
+    },
+  },
 } as const;

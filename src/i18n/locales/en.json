@@ -15,5 +15,20 @@
     "description": "An interactive platform to sharpen your skills and ace frontend technical interviews. We’ve curated a comprehensive database of current questions, coding challenges, and architecture cases to help you structure your knowledge and land your dream offer.",
     "registrationBtn": "Register",
     "aboutUs": "About us"
+  },
+
+  "dashboard": {
+    "logoutBtn": "Logout",
+    "titles": {
+      "progressTitle": "Progress",
+      "streakTitle": "Streak",
+      "historyTitile": "Sessions history",
+      "xp": "XP"
+    },
+    "experience": "Current experience:",
+    "streak": {
+      "current": "Current streak:",
+      "best": "Best streak:"
+    }
   }
 }
