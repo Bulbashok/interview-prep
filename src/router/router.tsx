@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 import { appRoutes, authRoutes, protectedRoutes } from './routes';
 import NotFoundPage from '../pages/404/404';
 import HomePageLanding from '../pages/home/home';
-import Dashboard from '@/pages/dashboard/dashboard';
+import Dashboard from '@/pages/dashboard/Dashboard';
 
 const Login = () => <div> Login Page </div>;
 const Register = () => <div> Register Page </div>;
