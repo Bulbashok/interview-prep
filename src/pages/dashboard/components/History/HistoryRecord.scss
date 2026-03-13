@@ -1,8 +1,10 @@
-.historyRecord {
+.history-record {
   display: grid;
   grid-template-columns: 1fr 20px 0.7fr 3px 1fr;
 
   padding: 10px 0;
+
+  color: var(--primary-text-color);
 
   &__text {
     font-size: 1.25rem;
@@ -17,7 +19,7 @@
     }
   }
 
-  &__text, &__dividingLine {
+  &__text, &__dividing-line {
     text-align: center;
     &_name {
       text-align: left;

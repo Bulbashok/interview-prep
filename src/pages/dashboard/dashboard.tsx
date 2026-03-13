@@ -12,8 +12,8 @@ import DashboardEmptyState from './components/EmptyState/EmptyState';
 import DashboardCards from './components/DashboardCards/DashboardCards';
 
 const dataStumb = {
-  name: '',
-  progress: 0,
+  name: 'Aleksei',
+  progress: 10,
   xp: 0,
   maxExp: 0,
   streak: {

@@ -6,14 +6,14 @@ export default function HistoryRecord(props: HistoryRecordData) {
   const { subsject, doneQuestions, allQuestions, date } = props;
 
   return (
-    <div className="historyRecord">
-      <p className="historyRecord__text historyRecord__text_name">{subsject}</p>
-      <span className="historyRecord__dividingLine">|</span>
-      <p className="historyRecord__text">
+    <div className="history-record">
+      <p className="history-record__text history-record__text_name">{subsject}</p>
+      <span className="history-record__dividing-line">|</span>
+      <p className="history-record__text">
         {doneQuestions}/{allQuestions}
       </p>
-      <span className="historyRecord__dividingLine">|</span>
-      <p className="historyRecord__text">{date}</p>
+      <span className="history-record__dividing-line">|</span>
+      <p className="history-record__text">{date}</p>
     </div>
   );
 }
