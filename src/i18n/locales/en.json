@@ -34,6 +34,10 @@
     "buttons": {
       "library": "Library",
       "profile": "Profile"
+    },
+    "empty": {
+      "title": ", welcome!",
+      "message": "Go to the library and start training, good luck!"
     }
   }
 }

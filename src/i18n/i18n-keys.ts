@@ -35,5 +35,9 @@ export const i18nKeys = {
       library: 'dashboard.buttons.library',
       profile: 'dashboard.buttons.profile',
     },
+    empty: {
+      title: 'dashboard.empty.title',
+      message: 'dashboard.empty.message',
+    },
   },
 } as const;
