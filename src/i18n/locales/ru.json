@@ -23,12 +23,17 @@
       "progressTitle": "Прогресс",
       "streakTitle": "Серия",
       "historyTitile": "История сессий",
-      "xp": "Опыт"
+      "xp": "Опыт",
+      "navigation": "Навигация"
     },
     "experience": "Текущий опыт:",
     "streak": {
       "current": "Current streak:",
       "best": "Best streak:"
+    },
+    "buttons": {
+      "library": "Библиотека",
+      "profile": "Профиль"
     }
   }
 }

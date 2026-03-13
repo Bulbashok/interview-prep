@@ -23,12 +23,17 @@
       "progressTitle": "Progress",
       "streakTitle": "Streak",
       "historyTitile": "Sessions history",
-      "xp": "XP"
+      "xp": "XP",
+      "navigation": "Navigation"
     },
     "experience": "Current experience:",
     "streak": {
       "current": "Current streak:",
       "best": "Best streak:"
+    },
+    "buttons": {
+      "library": "Library",
+      "profile": "Profile"
     }
   }
 }

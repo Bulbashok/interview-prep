@@ -24,11 +24,16 @@ export const i18nKeys = {
       streak: 'dashboard.titles.streakTitle',
       history: 'dashboard.titles.historyTitile',
       xp: 'dashboard.titles.xp',
+      navigation: 'dashboard.titles.navigation',
     },
     experience: 'dashboard.experience',
     streak: {
       current: 'dashboard.streak.current',
       best: 'dashboard.streak.best',
+    },
+    buttons: {
+      library: 'dashboard.buttons.library',
+      profile: 'dashboard.buttons.profile',
     },
   },
 } as const;
