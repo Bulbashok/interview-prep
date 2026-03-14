@@ -3,11 +3,11 @@ import './HistoryRecord.scss';
 import { HistoryRecordData } from '@/types/dashboard';
 
 export default function HistoryRecord(props: HistoryRecordData) {
-  const { subsject, doneQuestions, allQuestions, date } = props;
+  const { subject, doneQuestions, allQuestions, date } = props;
 
   return (
     <div className="history-record">
-      <p className="history-record__text history-record__text_name">{subsject}</p>
+      <p className="history-record__text history-record__text_name">{subject}</p>
       <span className="history-record__dividing-line">|</span>
       <p className="history-record__text">
         {doneQuestions}/{allQuestions}

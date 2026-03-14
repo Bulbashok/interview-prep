@@ -10,7 +10,7 @@ export default function History(props: { historyData: HistoryRecordData[] }) {
     <div className="history">
       {historyData.map((entry) => (
         <HistoryRecord
-          subsject={entry.subsject}
+          subject={entry.subject}
           doneQuestions={entry.doneQuestions}
           allQuestions={entry.allQuestions}
           date={entry.date}

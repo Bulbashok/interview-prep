@@ -20,7 +20,7 @@ export default function DashboardCards(props: { data: DashboardUserData }) {
       />
       <DashboardCard
         title={t(i18nKeys.dashboard.titles.xp)}
-        content={<Experience currentExperince={data.xp} maxExperience={data.maxExp} />}
+        content={<Experience currentExperience={data.xp} maxExperience={data.maxExp} />}
       />
       <DashboardCard
         title={t(i18nKeys.dashboard.titles.streak)}

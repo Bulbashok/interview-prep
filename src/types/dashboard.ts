@@ -1,5 +1,5 @@
 export interface HistoryRecordData {
-  subsject: string;
+  subject: string;
   doneQuestions: number;
   allQuestions: number;
   date: string;
