@@ -4,12 +4,20 @@ import { notify } from '../../../utils/notify';
 
 type Language = (typeof LANGUAGES)[keyof typeof LANGUAGES];
 
+interface UseLanguageSwitcherReturn {
+  isOpen: boolean;
+  toggleDropdown: () => void;
+  closeDropdown: () => void;
+  changeLanguage: (lang: Language) => Promise<void>;
+  languages: typeof LANGUAGES;
+}
+
 const LANGUAGES = {
   RU: 'ru',
   EN: 'en',
 } as const;
 
-export const useLanguageSwitcher = () => {
+export const useLanguageSwitcher = (): UseLanguageSwitcherReturn => {
   const [isOpen, setIsOpen] = useState(false);
   const { i18n } = useTranslation();
 

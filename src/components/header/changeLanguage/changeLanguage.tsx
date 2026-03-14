@@ -3,7 +3,7 @@ import './changeLanguage.scss';
 import { ClickAwayListener } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
 import Button from '../../button/button';
-import { useLanguageSwitcher } from './useLanguageSwitcher/useLanguageSwitcher';
+import { useLanguageSwitcher } from './useLanguageSwitcher';
 
 export default function ChangeLanguage() {
   const { isOpen, toggleDropdown, closeDropdown, changeLanguage, languages } =
