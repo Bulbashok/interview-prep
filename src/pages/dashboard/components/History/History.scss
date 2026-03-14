@@ -1,0 +1,15 @@
+.history {
+  max-height: 120px;
+  overflow-y: auto;
+
+  color: var(--primary-text-color);
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($color: #999999, $alpha: 0.5);
+  }
+}
