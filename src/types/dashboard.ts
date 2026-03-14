@@ -1,8 +1,12 @@
-export interface HistoryRecordData {
+export interface HistoryRecordProps {
   subject: string;
   doneQuestions: number;
   allQuestions: number;
   date: string;
+}
+
+export interface HistoryRecordData extends HistoryRecordProps {
+  id: string;
 }
 
 export interface DashboardUserData {

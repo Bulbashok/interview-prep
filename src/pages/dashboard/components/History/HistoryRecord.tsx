@@ -1,8 +1,8 @@
 import './HistoryRecord.scss';
 
-import { HistoryRecordData } from '@/types/dashboard';
+import { HistoryRecordProps } from '@/types/dashboard';
 
-export default function HistoryRecord(props: HistoryRecordData) {
+export default function HistoryRecord(props: HistoryRecordProps) {
   const { subject, doneQuestions, allQuestions, date } = props;
 
   return (
