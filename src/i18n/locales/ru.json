@@ -1,6 +1,12 @@
 {
   "langBtn": "ru",
 
+  "header": {
+    "login": "Войти",
+    "logout": "Выйти",
+    "profile": "Профиль"
+  },
+
   "404": {
     "title": "404",
     "subtitle": "Ууупс! Страница не найдена :(",
@@ -17,27 +23,41 @@
     "aboutUs": "О нас"
   },
 
-  "dashboard": {
-    "logoutBtn": "Выход",
-    "titles": {
-      "progressTitle": "Прогресс",
-      "streakTitle": "Серия",
-      "historyTitile": "История сессий",
-      "xp": "Опыт",
-      "navigation": "Навигация"
-    },
-    "experience": "Текущий опыт:",
-    "streak": {
-      "current": "Current streak:",
-      "best": "Best streak:"
-    },
-    "buttons": {
-      "library": "Библиотека",
-      "profile": "Профиль"
-    },
-    "empty": {
-      "title": ", добро пожаловать!",
-      "message": "Перейдите в библиотеку и начните тренировку, успехов!"
-    }
+  "register": {
+    "title": "Регистрация",
+    "loginLink": "Уже есть аккаунт? ",
+    "loginButton": "Войти",
+    "displayNameLabel": "Имя (необязательно)",
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "confirmPasswordLabel": "Подтвердите пароль",
+    "submitButton": "Зарегистрироваться",
+    "submitButtonLoading": "Регистрация..."
+  },
+
+  "registerErrors": {
+    "passwordsMismatch": "Пароли не совпадают",
+    "passwordMinLength": "Пароль должен содержать минимум 6 символов",
+    "registrationError": "Ошибка регистрации",
+    "emailAlreadyInUse": "Этот email уже зарегистрирован",
+    "weakPassword": "Пароль слишком слабый",
+    "invalidEmail": "Некорректный email"
+  },
+
+  "login": {
+    "title": "Вход",
+    "registerLink": "Нет аккаунта? ",
+    "registerButton": "Зарегистрироваться",
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "submitButton": "Войти",
+    "submitButtonLoading": "Вход..."
+  },
+
+  "loginErrors": {
+    "invalidCredentials": "Неверный email или пароль",
+    "userNotFound": "Пользователь не найден",
+    "invalidEmail": "Некорректный email",
+    "loginError": "Ошибка входа"
   }
 }

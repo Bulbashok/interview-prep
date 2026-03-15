@@ -1,6 +1,12 @@
 {
   "langBtn": "en",
 
+  "header": {
+    "login": "Log In",
+    "logout": "Log Out",
+    "profile": "Profile"
+  },
+
   "404": {
     "title": "404",
     "subtitle": "Ooops! Page not found :(",
@@ -12,32 +18,46 @@
 
   "homePage": {
     "loginBtn": "Log in",
-    "description": "An interactive platform to sharpen your skills and ace frontend technical interviews. We’ve curated a comprehensive database of current questions, coding challenges, and architecture cases to help you structure your knowledge and land your dream offer.",
+    "description": "An interactive platform to sharpen your skills and ace frontend technical interviews. We've curated a comprehensive database of current questions, coding challenges, and architecture cases to help you structure your knowledge and land your dream offer.",
     "registrationBtn": "Register",
     "aboutUs": "About us"
   },
 
-  "dashboard": {
-    "logoutBtn": "Logout",
-    "titles": {
-      "progressTitle": "Progress",
-      "streakTitle": "Streak",
-      "historyTitile": "Sessions history",
-      "xp": "XP",
-      "navigation": "Navigation"
-    },
-    "experience": "Current experience:",
-    "streak": {
-      "current": "Current streak:",
-      "best": "Best streak:"
-    },
-    "buttons": {
-      "library": "Library",
-      "profile": "Profile"
-    },
-    "empty": {
-      "title": ", welcome!",
-      "message": "Go to the library and start training, good luck!"
-    }
+  "register": {
+    "title": "Register",
+    "loginLink": "Already have an account? ",
+    "loginButton": "Log in",
+    "displayNameLabel": "Display Name (optional)",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "submitButton": "Register",
+    "submitButtonLoading": "Registering..."
+  },
+
+  "registerErrors": {
+    "passwordsMismatch": "Passwords do not match",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "registrationError": "Registration error",
+    "emailAlreadyInUse": "This email is already registered",
+    "weakPassword": "Password is too weak",
+    "invalidEmail": "Invalid email"
+  },
+
+  "login": {
+    "title": "Log In",
+    "registerLink": "Don't have an account? ",
+    "registerButton": "Register",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submitButton": "Log In",
+    "submitButtonLoading": "Logging in..."
+  },
+
+  "loginErrors": {
+    "invalidCredentials": "Invalid email or password",
+    "userNotFound": "User not found",
+    "invalidEmail": "Invalid email",
+    "loginError": "Login error"
   }
 }
