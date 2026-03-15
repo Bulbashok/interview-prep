@@ -1,13 +1,16 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Typography, Box, Alert, Container } from '@mui/material';
 import { useAuth } from '@/hooks/useAuth';
-import { appRoutes, protectedRoutes } from '@/router/routes';
+import { protectedRoutes } from '@/router/routes';
 import { useRegisterForm } from './useRegisterForm';
 import { RegisterForm } from './RegisterForm';
+import { i18nKeys } from '@/i18n/i18n-keys';
+import { useTranslation } from 'react-i18next';
 import './register.scss';
 
 export default function RegisterPage() {
-  const { error, loading } = useRegisterForm();
+  const { t } = useTranslation();
+  const { formData, error, loading, handleChange, handleSubmit } = useRegisterForm();
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -20,7 +23,7 @@ export default function RegisterPage() {
     <Container className="register-page" maxWidth="sm">
       <Box className="register-page__content">
         <Typography className="register-page__title" variant="h4" component="h1">
-          Регистрация
+          {t(i18nKeys.register.title)}
         </Typography>
 
         {error && (
@@ -29,13 +32,15 @@ export default function RegisterPage() {
           </Alert>
         )}
 
-        <RegisterForm loading={loading} />
+        <RegisterForm
+          formData={formData}
+          loading={loading}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        />
 
         <Typography className="register-page__login-link" variant="body2">
-          Уже есть аккаунт?{' '}
-          <Link to={appRoutes.login} className="register-page__link">
-            Войти
-          </Link>
+          {t(i18nKeys.register.loginLink)}
         </Typography>
       </Box>
     </Container>

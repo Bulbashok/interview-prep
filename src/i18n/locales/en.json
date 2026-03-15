@@ -12,8 +12,29 @@
 
   "homePage": {
     "loginBtn": "Log in",
-    "description": "An interactive platform to sharpen your skills and ace frontend technical interviews. We’ve curated a comprehensive database of current questions, coding challenges, and architecture cases to help you structure your knowledge and land your dream offer.",
+    "description": "An interactive platform to sharpen your skills and ace frontend technical interviews. We've curated a comprehensive database of current questions, coding challenges, and architecture cases to help you structure your knowledge and land your dream offer.",
     "registrationBtn": "Register",
     "aboutUs": "About us"
+  },
+
+  "register": {
+    "title": "Register",
+    "loginLink": "Already have an account? Log in",
+    "loginButton": "Log in",
+    "displayNameLabel": "Display Name (optional)",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "submitButton": "Register",
+    "submitButtonLoading": "Registering..."
+  },
+
+  "registerErrors": {
+    "passwordsMismatch": "Passwords do not match",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "registrationError": "Registration error",
+    "emailAlreadyInUse": "This email is already registered",
+    "weakPassword": "Password is too weak",
+    "invalidEmail": "Invalid email"
   }
 }

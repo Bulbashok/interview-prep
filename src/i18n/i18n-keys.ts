@@ -16,4 +16,25 @@ export const i18nKeys = {
     registrationBtn: 'homePage.registrationBtn',
     aboutUs: 'homePage.aboutUs',
   },
+
+  register: {
+    title: 'register.title',
+    loginLink: 'register.loginLink',
+    loginButton: 'register.loginButton',
+    displayNameLabel: 'register.displayNameLabel',
+    emailLabel: 'register.emailLabel',
+    passwordLabel: 'register.passwordLabel',
+    confirmPasswordLabel: 'register.confirmPasswordLabel',
+    submitButton: 'register.submitButton',
+    submitButtonLoading: 'register.submitButtonLoading',
+  },
+
+  registerErrors: {
+    passwordsMismatch: 'registerErrors.passwordsMismatch',
+    passwordMinLength: 'registerErrors.passwordMinLength',
+    registrationError: 'registerErrors.registrationError',
+    emailAlreadyInUse: 'registerErrors.emailAlreadyInUse',
+    weakPassword: 'registerErrors.weakPassword',
+    invalidEmail: 'registerErrors.invalidEmail',
+  },
 } as const;

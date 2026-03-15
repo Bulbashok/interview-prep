@@ -2,6 +2,8 @@ import { useState, FormEvent, ChangeEvent, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { protectedRoutes } from '@/router/routes';
+import { i18nKeys } from '@/i18n/i18n-keys';
+import { useTranslation } from 'react-i18next';
 
 interface RegisterFormData {
   displayName: string;
@@ -25,13 +27,17 @@ const initialFormData: RegisterFormData = {
   confirmPassword: '',
 };
 
-const validatePassword = (password: string, confirmPassword: string): string | null => {
+const validatePassword = (
+  password: string,
+  confirmPassword: string,
+  t: ReturnType<typeof useTranslation>['t'],
+): string | null => {
   if (password !== confirmPassword) {
-    return 'Пароли не совпадают';
+    return t(i18nKeys.registerErrors.passwordsMismatch);
   }
 
   if (password.length < 6) {
-    return 'Пароль должен содержать минимум 6 символов';
+    return t(i18nKeys.registerErrors.passwordMinLength);
   }
 
   return null;
@@ -41,6 +47,7 @@ const useRegisterActions = (
   formData: RegisterFormData,
   setError: (error: string | null) => void,
   setLoading: (loading: boolean) => void,
+  t: ReturnType<typeof useTranslation>['t'],
 ) => {
   const { signUp } = useAuth();
   const navigate = useNavigate();
@@ -49,7 +56,7 @@ const useRegisterActions = (
     e.preventDefault();
     setError(null);
 
-    const validationError = validatePassword(formData.password, formData.confirmPassword);
+    const validationError = validatePassword(formData.password, formData.confirmPassword, t);
     if (validationError) {
       setError(validationError);
       return;
@@ -65,7 +72,25 @@ const useRegisterActions = (
       });
       navigate(protectedRoutes.profile);
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : 'Ошибка регистрации';
+      let errorMessage = t(i18nKeys.registerErrors.registrationError);
+
+      if (err instanceof Error) {
+        const message = err.message;
+        switch (message) {
+          case 'EMAIL_ALREADY_IN_USE':
+            errorMessage = t(i18nKeys.registerErrors.emailAlreadyInUse);
+            break;
+          case 'WEAK_PASSWORD':
+            errorMessage = t(i18nKeys.registerErrors.weakPassword);
+            break;
+          case 'INVALID_EMAIL':
+            errorMessage = t(i18nKeys.registerErrors.invalidEmail);
+            break;
+          default:
+            errorMessage = message;
+        }
+      }
+
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -76,6 +101,7 @@ const useRegisterActions = (
 };
 
 export const useRegisterForm = (): UseRegisterFormReturn => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<RegisterFormData>(initialFormData);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -89,7 +115,7 @@ export const useRegisterForm = (): UseRegisterFormReturn => {
     setError(null);
   }, []);
 
-  const { handleSubmit } = useRegisterActions(formData, setError, setLoading);
+  const { handleSubmit } = useRegisterActions(formData, setError, setLoading, t);
 
   return {
     formData,

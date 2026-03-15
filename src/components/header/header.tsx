@@ -7,16 +7,17 @@ import logo from '../../assets/svg/logo.svg';
 import Button from '../button/button';
 
 import { useNavigate } from 'react-router';
-import { authRoutes } from '../../router/routes';
+import { useAuth } from '@/hooks/useAuth';
+import { appRoutes, authRoutes, protectedRoutes } from '../../router/routes';
 
-interface HeaderProps {
-  log: string;
-  click: (typeof authRoutes)[keyof typeof authRoutes];
-}
-
-export default function HeaderHome(props: HeaderProps) {
-  const { log, click } = props;
+export default function HeaderHome() {
+  const { user, signOut } = useAuth();
   const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await signOut();
+    navigate(appRoutes.home);
+  };
 
   return (
     <>
@@ -26,7 +27,14 @@ export default function HeaderHome(props: HeaderProps) {
           <h2 className="header__logo__title">asyncmind</h2>
         </div>
         <div className="header__button">
-          <Button content={log} onClick={() => navigate(click)} />
+          {user ? (
+            <>
+              <Button content="Profile" onClick={() => navigate(protectedRoutes.profile)} />
+              <Button content="Log out" onClick={handleLogout} />
+            </>
+          ) : (
+            <Button content="Log in" onClick={() => navigate(authRoutes.login)} />
+          )}
           <ChangeLanguage />
         </div>
       </div>

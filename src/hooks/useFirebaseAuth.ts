@@ -64,14 +64,49 @@ const useAuthState = (
 
 const useAuthActions = (user: User | null, fetchUserData: (uid: string) => Promise<void>) => {
   const signUp = async ({ email, password, displayName }: SignUpData) => {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-    if (displayName) {
-      await updateProfile(userCredential.user, { displayName });
+      if (displayName) {
+        await updateProfile(userCredential.user, { displayName });
+      }
+
+      const userData = createUserData(userCredential.user, displayName || null);
+      await saveUserToFirestore(userCredential.user, userData);
+    } catch (error: unknown) {
+      let errorCode: string | undefined;
+      let errorMessage: string | undefined;
+
+      if (error && typeof error === 'object') {
+        const errObj = error as Record<string, unknown>;
+
+        if (typeof errObj.code === 'string') {
+          errorCode = errObj.code;
+        }
+
+        if (errObj.error && typeof errObj.error === 'object') {
+          const innerError = errObj.error as Record<string, unknown>;
+          if (typeof innerError.message === 'string') {
+            errorMessage = innerError.message;
+          }
+        }
+      }
+
+      if (errorCode === 'auth/email-already-in-use' || errorMessage === 'EMAIL_EXISTS') {
+        throw new Error('EMAIL_ALREADY_IN_USE');
+      }
+      if (errorCode === 'auth/weak-password' || errorMessage === 'WEAK_PASSWORD') {
+        throw new Error('WEAK_PASSWORD');
+      }
+      if (errorCode === 'auth/invalid-email' || errorMessage === 'INVALID_EMAIL') {
+        throw new Error('INVALID_EMAIL');
+      }
+
+      if (error instanceof Error) {
+        throw error;
+      }
+      throw new Error('REGISTRATION_ERROR');
     }
-
-    const userData = createUserData(userCredential.user, displayName || null);
-    await saveUserToFirestore(userCredential.user, userData);
   };
 
   const signIn = async ({ email, password }: SignInData) => {

@@ -1,51 +1,62 @@
 import { Button, Box } from '@mui/material';
-import { useRegisterForm } from './useRegisterForm';
 import { RegisterField } from './RegisterField';
+import { i18nKeys } from '@/i18n/i18n-keys';
+import { useTranslation } from 'react-i18next';
 
-interface RegisterFormProps {
-  loading: boolean;
+interface RegisterFormData {
+  displayName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 }
 
-export const RegisterForm = ({ loading }: RegisterFormProps) => {
-  const { formData, handleChange, handleSubmit } = useRegisterForm();
+interface RegisterFormProps {
+  formData: RegisterFormData;
+  loading: boolean;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (e: React.FormEvent) => Promise<void>;
+}
+
+export const RegisterForm = ({ formData, loading, onChange, onSubmit }: RegisterFormProps) => {
+  const { t } = useTranslation();
 
   return (
-    <Box component="form" onSubmit={handleSubmit} className="register-page__form">
+    <Box component="form" onSubmit={onSubmit} className="register-page__form">
       <RegisterField
         name="displayName"
-        label="Имя (необязательно)"
+        label={t(i18nKeys.register.displayNameLabel)}
         value={formData.displayName}
-        onChange={handleChange}
+        onChange={onChange}
         disabled={loading}
       />
 
       <RegisterField
         name="email"
-        label="Email"
+        label={t(i18nKeys.register.emailLabel)}
         type="email"
         required
         value={formData.email}
-        onChange={handleChange}
+        onChange={onChange}
         disabled={loading}
       />
 
       <RegisterField
         name="password"
-        label="Пароль"
+        label={t(i18nKeys.register.passwordLabel)}
         type="password"
         required
         value={formData.password}
-        onChange={handleChange}
+        onChange={onChange}
         disabled={loading}
       />
 
       <RegisterField
         name="confirmPassword"
-        label="Подтвердите пароль"
+        label={t(i18nKeys.register.confirmPasswordLabel)}
         type="password"
         required
         value={formData.confirmPassword}
-        onChange={handleChange}
+        onChange={onChange}
         disabled={loading}
       />
 
@@ -56,7 +67,7 @@ export const RegisterForm = ({ loading }: RegisterFormProps) => {
         variant="contained"
         disabled={loading}
       >
-        {loading ? 'Регистрация...' : 'Зарегистрироваться'}
+        {loading ? t(i18nKeys.register.submitButtonLoading) : t(i18nKeys.register.submitButton)}
       </Button>
     </Box>
   );

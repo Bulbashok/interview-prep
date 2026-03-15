@@ -15,5 +15,26 @@
     "description": "Интерактивная платформа для оттачивания навыков и уверенного прохождения технических интервью на позицию Frontend-разработчика. Мы собрали актуальную базу вопросов, практических задач и архитектурных кейсов, которые помогут вам структурировать знания и получить заветный оффер.",
     "registrationBtn": "Регистрация",
     "aboutUs": "О нас"
+  },
+
+  "register": {
+    "title": "Регистрация",
+    "loginLink": "Уже есть аккаунт? Войти",
+    "loginButton": "Войти",
+    "displayNameLabel": "Имя (необязательно)",
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "confirmPasswordLabel": "Подтвердите пароль",
+    "submitButton": "Зарегистрироваться",
+    "submitButtonLoading": "Регистрация..."
+  },
+
+  "registerErrors": {
+    "passwordsMismatch": "Пароли не совпадают",
+    "passwordMinLength": "Пароль должен содержать минимум 6 символов",
+    "registrationError": "Ошибка регистрации",
+    "emailAlreadyInUse": "Этот email уже зарегистрирован",
+    "weakPassword": "Пароль слишком слабый",
+    "invalidEmail": "Некорректный email"
   }
 }
