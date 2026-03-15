@@ -1,6 +1,12 @@
 export const i18nKeys = {
   langBtn: 'langBtn',
 
+  header: {
+    login: 'header.login',
+    logout: 'header.logout',
+    profile: 'header.profile',
+  },
+
   404: {
     title: '404.title',
     subtitle: '404.subtitle',
@@ -36,5 +42,22 @@ export const i18nKeys = {
     emailAlreadyInUse: 'registerErrors.emailAlreadyInUse',
     weakPassword: 'registerErrors.weakPassword',
     invalidEmail: 'registerErrors.invalidEmail',
+  },
+
+  login: {
+    title: 'login.title',
+    registerLink: 'login.registerLink',
+    registerButton: 'login.registerButton',
+    emailLabel: 'login.emailLabel',
+    passwordLabel: 'login.passwordLabel',
+    submitButton: 'login.submitButton',
+    submitButtonLoading: 'login.submitButtonLoading',
+  },
+
+  loginErrors: {
+    invalidCredentials: 'loginErrors.invalidCredentials',
+    userNotFound: 'loginErrors.userNotFound',
+    invalidEmail: 'loginErrors.invalidEmail',
+    loginError: 'loginErrors.loginError',
   },
 } as const;

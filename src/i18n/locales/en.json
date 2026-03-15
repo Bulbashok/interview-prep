@@ -1,6 +1,12 @@
 {
   "langBtn": "en",
 
+  "header": {
+    "login": "Log In",
+    "logout": "Log Out",
+    "profile": "Profile"
+  },
+
   "404": {
     "title": "404",
     "subtitle": "Ooops! Page not found :(",
@@ -19,7 +25,7 @@
 
   "register": {
     "title": "Register",
-    "loginLink": "Already have an account? Log in",
+    "loginLink": "Already have an account? ",
     "loginButton": "Log in",
     "displayNameLabel": "Display Name (optional)",
     "emailLabel": "Email",
@@ -36,5 +42,22 @@
     "emailAlreadyInUse": "This email is already registered",
     "weakPassword": "Password is too weak",
     "invalidEmail": "Invalid email"
+  },
+
+  "login": {
+    "title": "Log In",
+    "registerLink": "Don't have an account? ",
+    "registerButton": "Register",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submitButton": "Log In",
+    "submitButtonLoading": "Logging in..."
+  },
+
+  "loginErrors": {
+    "invalidCredentials": "Invalid email or password",
+    "userNotFound": "User not found",
+    "invalidEmail": "Invalid email",
+    "loginError": "Login error"
   }
 }

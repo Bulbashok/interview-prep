@@ -9,8 +9,11 @@ import Button from '../button/button';
 import { useNavigate } from 'react-router';
 import { useAuth } from '@/hooks/useAuth';
 import { appRoutes, authRoutes, protectedRoutes } from '../../router/routes';
+import { i18nKeys } from '@/i18n/i18n-keys';
+import { useTranslation } from 'react-i18next';
 
 export default function HeaderHome() {
+  const { t } = useTranslation();
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
 
@@ -30,10 +33,10 @@ export default function HeaderHome() {
           {user ? (
             <>
               <Button content="Profile" onClick={() => navigate(protectedRoutes.profile)} />
-              <Button content="Log out" onClick={handleLogout} />
+              <Button content={t(i18nKeys.header.logout)} onClick={handleLogout} />
             </>
           ) : (
-            <Button content="Log in" onClick={() => navigate(authRoutes.login)} />
+            <Button content={t(i18nKeys.header.login)} onClick={() => navigate(authRoutes.login)} />
           )}
           <ChangeLanguage />
         </div>

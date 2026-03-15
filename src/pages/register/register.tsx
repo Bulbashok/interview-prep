@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Typography, Box, Alert, Container } from '@mui/material';
 import { useAuth } from '@/hooks/useAuth';
-import { protectedRoutes } from '@/router/routes';
+import { protectedRoutes, authRoutes } from '@/router/routes';
 import { useRegisterForm } from './useRegisterForm';
 import { RegisterForm } from './RegisterForm';
 import { i18nKeys } from '@/i18n/i18n-keys';
@@ -41,6 +41,13 @@ export default function RegisterPage() {
 
         <Typography className="register-page__login-link" variant="body2">
           {t(i18nKeys.register.loginLink)}
+          <span
+            className="register-page__link"
+            onClick={() => navigate(authRoutes.login)}
+            style={{ cursor: 'pointer' }}
+          >
+            {t(i18nKeys.register.loginButton)}
+          </span>
         </Typography>
       </Box>
     </Container>
