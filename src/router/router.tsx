@@ -3,11 +3,11 @@ import { appRoutes, authRoutes, protectedRoutes } from './routes';
 import NotFoundPage from '../pages/404/404';
 import HomePageLanding from '../pages/home/home';
 import Dashboard from '@/pages/dashboard/dashboard';
+import LibraryPage from '@/pages/library/library';
 
 const Login = () => <div> Login Page </div>;
 const Register = () => <div> Register Page </div>;
 const Profile = () => <div> Profile Page </div>;
-const Library = () => <div> Library Page </div>;
 
 export default function AppRouter() {
   return (
@@ -18,7 +18,7 @@ export default function AppRouter() {
         <Route path={authRoutes.register} element={<Register />} />
         <Route path={protectedRoutes.profile} element={<Profile />} />
         <Route path={protectedRoutes.dashboard} element={<Dashboard />} />
-        <Route path={protectedRoutes.library} element={<Library />} />
+        <Route path={protectedRoutes.library} element={<LibraryPage />} />
         <Route path={appRoutes.notFound} element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
