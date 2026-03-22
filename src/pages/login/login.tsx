@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Typography, Box, Alert, Container } from '@mui/material';
+import { Typography, Box, Alert, Container, Button } from '@mui/material';
 import { useAuth } from '@/hooks/useAuth';
 import { protectedRoutes } from '@/router/routes';
 import { useLoginForm } from './useLoginForm';
@@ -15,9 +16,29 @@ export default function LoginPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (user) {
+      navigate(protectedRoutes.profile);
+    }
+  }, [user, navigate]);
+
   if (user) {
-    navigate(protectedRoutes.profile);
-    return null;
+    return (
+      <Container className="login-page__redirect" maxWidth="sm">
+        <Box className="login-page__redirect-content">
+          <Typography variant="body1" className="login-page__redirect-text">
+            {t(i18nKeys.login.redirecting)}
+          </Typography>
+          <Button
+            variant="outlined"
+            onClick={() => navigate(-1)}
+            className="login-page__back-button"
+          >
+            {t(i18nKeys.login.backButton)}
+          </Button>
+        </Box>
+      </Container>
+    );
   }
 
   return (

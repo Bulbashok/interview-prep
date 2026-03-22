@@ -32,7 +32,9 @@
     "passwordLabel": "Пароль",
     "confirmPasswordLabel": "Подтвердите пароль",
     "submitButton": "Зарегистрироваться",
-    "submitButtonLoading": "Регистрация..."
+    "submitButtonLoading": "Регистрация...",
+    "redirecting": "Перенаправление...",
+    "backButton": "Назад"
   },
 
   "registerErrors": {
@@ -51,7 +53,9 @@
     "emailLabel": "Email",
     "passwordLabel": "Пароль",
     "submitButton": "Войти",
-    "submitButtonLoading": "Вход..."
+    "submitButtonLoading": "Вход...",
+    "redirecting": "Перенаправление...",
+    "backButton": "Назад"
   },
 
   "loginErrors": {
@@ -83,5 +87,13 @@
       "current": "Текущая серия:",
       "best": "Лучшая серия:"
     }
+  },
+
+  "profile": {
+    "title": "Профиль в разработке",
+    "subtitle": "Страница скоро будет доступна",
+    "description": "Мы работаем над этим разделом. Загляните позже!",
+    "loading": "Загрузка профиля...",
+    "homeButton": "На главную"
   }
 }

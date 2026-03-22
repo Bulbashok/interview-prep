@@ -32,7 +32,9 @@
     "passwordLabel": "Password",
     "confirmPasswordLabel": "Confirm Password",
     "submitButton": "Register",
-    "submitButtonLoading": "Registering..."
+    "submitButtonLoading": "Registering...",
+    "redirecting": "Redirecting...",
+    "backButton": "Go Back"
   },
 
   "registerErrors": {
@@ -51,7 +53,9 @@
     "emailLabel": "Email",
     "passwordLabel": "Password",
     "submitButton": "Log In",
-    "submitButtonLoading": "Logging in..."
+    "submitButtonLoading": "Logging in...",
+    "redirecting": "Redirecting...",
+    "backButton": "Go Back"
   },
 
   "loginErrors": {
@@ -83,5 +87,13 @@
       "current": "Current streak:",
       "best": "Best streak:"
     }
+  },
+
+  "profile": {
+    "title": "Profile Page Coming Soon",
+    "subtitle": "This page will be available soon",
+    "description": "We're working on this section. Check back later!",
+    "loading": "Loading profile...",
+    "homeButton": "Go to Home"
   }
 }

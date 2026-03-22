@@ -49,11 +49,16 @@ const useAuthState = (
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      setUser(currentUser);
-      if (currentUser) {
-        await fetchUserData(currentUser.uid);
+      try {
+        setUser(currentUser);
+        if (currentUser) {
+          await fetchUserData(currentUser.uid);
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     });
 
     return unsubscribe;
