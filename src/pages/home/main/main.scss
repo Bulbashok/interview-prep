@@ -12,6 +12,7 @@
     border-left: 3px solid var(--btn-cta);
     &__title {
       font-size: 3em;
+      font-weight: 600;
       color: var(--heading-color);
 
       @media (max-width: 600px) {

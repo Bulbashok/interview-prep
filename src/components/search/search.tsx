@@ -50,7 +50,7 @@ export default function SearchElement() {
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
-      <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
+      <StyledInputBase placeholder="Async/Await…" inputProps={{ 'aria-label': 'search' }} />
     </Search>
   );
 }

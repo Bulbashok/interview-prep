@@ -2,6 +2,7 @@ import './toolbarLibrary.scss';
 
 import SearchElement from '@/components/search/search';
 import Levels from '../components/levels/levels';
+import Select from '../components/select/select';
 
 export default function ToolbarLibrary() {
   return (
@@ -13,6 +14,7 @@ export default function ToolbarLibrary() {
         </div>
         <div className="toolBar__level-filter">
           <Levels />
+          <Select />
         </div>
       </div>
     </>
