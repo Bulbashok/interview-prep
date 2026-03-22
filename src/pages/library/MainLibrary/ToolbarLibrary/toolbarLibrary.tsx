@@ -1,6 +1,7 @@
 import './toolbarLibrary.scss';
 
 import SearchElement from '@/components/search/search';
+import Levels from '../components/levels/levels';
 
 export default function ToolbarLibrary() {
   return (
@@ -9,6 +10,9 @@ export default function ToolbarLibrary() {
         <div className="toolBar__title-search">
           <h2 className="toolBar__title-search__title">Topics for practice</h2>
           <SearchElement />
+        </div>
+        <div className="toolBar__level-filter">
+          <Levels />
         </div>
       </div>
     </>
