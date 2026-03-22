@@ -18,8 +18,8 @@ export default function HeaderHome() {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await signOut();
     navigate(appRoutes.home);
+    await signOut();
   };
 
   return (

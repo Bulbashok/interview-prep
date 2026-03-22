@@ -1,28 +1,16 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router';
 import { useAuth } from '@/hooks/useAuth';
 
-interface ProtectedRouteProps {
-  children: React.ReactNode;
-  loadingComponent?: React.ReactNode;
-}
-
-export const ProtectedRoute = ({ children, loadingComponent }: ProtectedRouteProps) => {
+export const ProtectedRoute = () => {
   const { user, loading } = useAuth();
 
   if (loading) {
-    if (loadingComponent) {
-      return <>{loadingComponent}</>;
-    }
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner">Loading...</div>
-      </div>
-    );
+    return null;
   }
 
   if (!user) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
-  return <>{children}</>;
+  return <Outlet />;
 };
