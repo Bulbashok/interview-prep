@@ -1,0 +1,25 @@
+.toolBar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+
+  &__title-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 0.5em;
+    border-left: 3px solid var(--btn-cta);
+
+    &__title {
+      font-size: 1.5em;
+      font-weight: 600;
+
+      color: var(--heading-color);
+
+      @media (max-width: 768px) {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
