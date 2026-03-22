@@ -5,8 +5,8 @@ import NotFoundPage from '../pages/404/404';
 import HomePageLanding from '../pages/home/home';
 import RegisterPage from '../pages/register/register';
 import LoginPage from '../pages/login/login';
+import ProfilePage, { ProfileLoading } from '../pages/profile/profile';
 
-const Profile = () => <div> Profile Page </div>;
 const Dashboard = () => <div> Dashboard Page </div>;
 const Library = () => <div> Library Page </div>;
 
@@ -20,8 +20,8 @@ export default function AppRouter() {
         <Route
           path={protectedRoutes.profile}
           element={
-            <ProtectedRoute>
-              <Profile />
+            <ProtectedRoute loadingComponent={<ProfileLoading />}>
+              <ProfilePage />
             </ProtectedRoute>
           }
         />

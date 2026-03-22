@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Typography, Box, Alert, Container } from '@mui/material';
+import { Typography, Box, Alert, Container, Button } from '@mui/material';
 import { useAuth } from '@/hooks/useAuth';
 import { protectedRoutes, authRoutes } from '@/router/routes';
 import { useRegisterForm } from './useRegisterForm';
@@ -14,9 +15,29 @@ export default function RegisterPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (user) {
+      navigate(protectedRoutes.profile);
+    }
+  }, [user, navigate]);
+
   if (user) {
-    navigate(protectedRoutes.profile);
-    return null;
+    return (
+      <Container className="register-page__redirect" maxWidth="sm">
+        <Box className="register-page__redirect-content">
+          <Typography variant="body1" className="register-page__redirect-text">
+            {t(i18nKeys.register.redirecting)}
+          </Typography>
+          <Button
+            variant="outlined"
+            onClick={() => navigate(-1)}
+            className="register-page__back-button"
+          >
+            {t(i18nKeys.register.backButton)}
+          </Button>
+        </Box>
+      </Container>
+    );
   }
 
   return (

@@ -33,6 +33,8 @@ export const i18nKeys = {
     confirmPasswordLabel: 'register.confirmPasswordLabel',
     submitButton: 'register.submitButton',
     submitButtonLoading: 'register.submitButtonLoading',
+    redirecting: 'register.redirecting',
+    backButton: 'register.backButton',
   },
 
   registerErrors: {
@@ -52,6 +54,8 @@ export const i18nKeys = {
     passwordLabel: 'login.passwordLabel',
     submitButton: 'login.submitButton',
     submitButtonLoading: 'login.submitButtonLoading',
+    redirecting: 'login.redirecting',
+    backButton: 'login.backButton',
   },
 
   loginErrors: {
@@ -83,5 +87,13 @@ export const i18nKeys = {
       current: 'dashboard.streak.current',
       best: 'dashboard.streak.best',
     },
+  },
+
+  profile: {
+    title: 'profile.title',
+    subtitle: 'profile.subtitle',
+    description: 'profile.description',
+    loading: 'profile.loading',
+    homeButton: 'profile.homeButton',
   },
 } as const;
