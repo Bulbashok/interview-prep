@@ -5,7 +5,6 @@ import FooterHome from '@/components/footer/footer';
 import HeaderHome from '@/components/header/header';
 import PageTitle from '@/components/page-title/PageTitle';
 import { i18nKeys } from '@/i18n/i18n-keys';
-import { authRoutes } from '@/router/routes';
 import { useTranslation } from 'react-i18next';
 import Navigation from './components/Navigation/Navigation';
 import DashboardEmptyState from './components/EmptyState/EmptyState';
@@ -31,7 +30,7 @@ export default function Dashboard() {
   if (!hasProgress) {
     return (
       <div className="dashboard-page">
-        <HeaderHome log={t(i18nKeys.dashboard.logoutBtn)} click={authRoutes.login} />
+        <HeaderHome />
         <div className="dashboard-page__empty">
           <DashboardEmptyState name={dataStumb.name} />
           <DashboardCard title={t(i18nKeys.dashboard.titles.navigation)} content={<Navigation />} />
@@ -49,7 +48,7 @@ export default function Dashboard() {
       />
 
       <div className="dashboard-page">
-        <HeaderHome log={t(i18nKeys.dashboard.logoutBtn)} click={authRoutes.login} />
+        <HeaderHome />
 
         <div className="dashboard">
           <DashboardCards data={dataStumb} />
