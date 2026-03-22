@@ -60,4 +60,28 @@ export const i18nKeys = {
     invalidEmail: 'loginErrors.invalidEmail',
     loginError: 'loginErrors.loginError',
   },
+
+  dashboard: {
+    logoutBtn: 'dashboard.logoutBtn',
+    empty: {
+      title: 'dashboard.empty.title',
+      message: 'dashboard.empty.message',
+    },
+    titles: {
+      progress: 'dashboard.titles.progress',
+      xp: 'dashboard.titles.xp',
+      streak: 'dashboard.titles.streak',
+      history: 'dashboard.titles.history',
+      navigation: 'dashboard.titles.navigation',
+    },
+    experience: 'dashboard.experience',
+    buttons: {
+      library: 'dashboard.buttons.library',
+      profile: 'dashboard.buttons.profile',
+    },
+    streak: {
+      current: 'dashboard.streak.current',
+      best: 'dashboard.streak.best',
+    },
+  },
 } as const;

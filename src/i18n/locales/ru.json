@@ -59,5 +59,29 @@
     "userNotFound": "Пользователь не найден",
     "invalidEmail": "Некорректный email",
     "loginError": "Ошибка входа"
+  },
+
+  "dashboard": {
+    "logoutBtn": "Выйти",
+    "empty": {
+      "title": ", добро пожаловать!",
+      "message": "Начните своё путешествие по frontend-разработке, чтобы увидеть прогресс здесь."
+    },
+    "titles": {
+      "progress": "Прогресс",
+      "xp": "Опыт",
+      "streak": "Серия",
+      "history": "История",
+      "navigation": "Навигация"
+    },
+    "experience": "Опыт:",
+    "buttons": {
+      "library": "Библиотека",
+      "profile": "Профиль"
+    },
+    "streak": {
+      "current": "Текущая серия:",
+      "best": "Лучшая серия:"
+    }
   }
 }

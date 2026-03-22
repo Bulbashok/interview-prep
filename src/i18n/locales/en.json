@@ -59,5 +59,29 @@
     "userNotFound": "User not found",
     "invalidEmail": "Invalid email",
     "loginError": "Login error"
+  },
+
+  "dashboard": {
+    "logoutBtn": "Log Out",
+    "empty": {
+      "title": ", welcome!",
+      "message": "Start your frontend development journey to see your progress here."
+    },
+    "titles": {
+      "progress": "Progress",
+      "xp": "Experience",
+      "streak": "Streak",
+      "history": "History",
+      "navigation": "Navigation"
+    },
+    "experience": "Experience:",
+    "buttons": {
+      "library": "Library",
+      "profile": "Profile"
+    },
+    "streak": {
+      "current": "Current streak:",
+      "best": "Best streak:"
+    }
   }
 }
