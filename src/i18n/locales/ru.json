@@ -1,6 +1,12 @@
 {
   "langBtn": "ru",
 
+  "header": {
+    "login": "Войти",
+    "logout": "Выйти",
+    "profile": "Профиль"
+  },
+
   "404": {
     "title": "404",
     "subtitle": "Ууупс! Страница не найдена :(",
@@ -17,27 +23,77 @@
     "aboutUs": "О нас"
   },
 
+  "register": {
+    "title": "Регистрация",
+    "loginLink": "Уже есть аккаунт? ",
+    "loginButton": "Войти",
+    "displayNameLabel": "Имя (необязательно)",
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "confirmPasswordLabel": "Подтвердите пароль",
+    "submitButton": "Зарегистрироваться",
+    "submitButtonLoading": "Регистрация...",
+    "redirecting": "Перенаправление...",
+    "backButton": "Назад"
+  },
+
+  "registerErrors": {
+    "passwordsMismatch": "Пароли не совпадают",
+    "passwordMinLength": "Пароль должен содержать минимум 6 символов",
+    "registrationError": "Ошибка регистрации",
+    "emailAlreadyInUse": "Этот email уже зарегистрирован",
+    "weakPassword": "Пароль слишком слабый",
+    "invalidEmail": "Некорректный email"
+  },
+
+  "login": {
+    "title": "Вход",
+    "registerLink": "Нет аккаунта? ",
+    "registerButton": "Зарегистрироваться",
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "submitButton": "Войти",
+    "submitButtonLoading": "Вход...",
+    "redirecting": "Перенаправление...",
+    "backButton": "Назад"
+  },
+
+  "loginErrors": {
+    "invalidCredentials": "Неверный email или пароль",
+    "userNotFound": "Пользователь не найден",
+    "invalidEmail": "Некорректный email",
+    "loginError": "Ошибка входа"
+  },
+
   "dashboard": {
-    "logoutBtn": "Выход",
+    "logoutBtn": "Выйти",
+    "empty": {
+      "title": ", добро пожаловать!",
+      "message": "Начните своё путешествие по frontend-разработке, чтобы увидеть прогресс здесь."
+    },
     "titles": {
-      "progressTitle": "Прогресс",
-      "streakTitle": "Серия",
-      "historyTitile": "История сессий",
+      "progress": "Прогресс",
       "xp": "Опыт",
+      "streak": "Серия",
+      "history": "История",
       "navigation": "Навигация"
     },
-    "experience": "Текущий опыт:",
-    "streak": {
-      "current": "Current streak:",
-      "best": "Best streak:"
-    },
+    "experience": "Опыт:",
     "buttons": {
       "library": "Библиотека",
       "profile": "Профиль"
     },
-    "empty": {
-      "title": ", добро пожаловать!",
-      "message": "Перейдите в библиотеку и начните тренировку, успехов!"
+    "streak": {
+      "current": "Текущая серия:",
+      "best": "Лучшая серия:"
     }
+  },
+
+  "profile": {
+    "title": "Профиль в разработке",
+    "subtitle": "Страница скоро будет доступна",
+    "description": "Мы работаем над этим разделом. Загляните позже!",
+    "loading": "Загрузка профиля...",
+    "homeButton": "На главную"
   }
 }
