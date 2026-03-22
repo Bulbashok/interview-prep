@@ -1,34 +1,79 @@
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import { appRoutes, authRoutes, protectedRoutes } from './routes';
-import { ProtectedRoute } from '../components/ProtectedRoute';
 import NotFoundPage from '../pages/404/404';
 import HomePageLanding from '../pages/home/home';
-import RegisterPage from '../pages/register/register';
-import LoginPage from '../pages/login/login';
-import ProfilePage, { ProfileLoading } from '../pages/profile/profile';
+import LoginPage from '@/pages/login/login';
+import RegisterPage from '@/pages/register/register';
+import ProfilePage from '@/pages/profile/profile';
+import Dashboard from '@/pages/dashboard/dashboard';
+import { ProtectedRoute } from '../components/ProtectedRoute';
+import { RootLayout } from '../components/skeleton/RootLayout';
 
-const Dashboard = () => <div> Dashboard Page </div>;
-const Library = () => <div> Library Page </div>;
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        path: appRoutes.home,
+        element: <HomePageLanding />,
+        loader: async () => {
+          await new Promise((r) => setTimeout(r, 800));
+          return { status: 'ok' };
+        },
+      },
+      {
+        path: authRoutes.login,
+        element: <LoginPage />,
+        loader: async () => {
+          await new Promise((r) => setTimeout(r, 500));
+          return null;
+        },
+      },
+      {
+        path: authRoutes.register,
+        element: <RegisterPage />,
+        loader: async () => {
+          await new Promise((r) => setTimeout(r, 500));
+          return null;
+        },
+      },
+
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: protectedRoutes.dashboard,
+            element: <Dashboard />,
+            loader: async () => {
+              await new Promise((r) => setTimeout(r, 1000));
+              return null;
+            },
+          },
+          {
+            path: protectedRoutes.profile,
+            element: <ProfilePage />,
+            loader: async () => {
+              await new Promise((r) => setTimeout(r, 400));
+              return null;
+            },
+          },
+          {
+            path: protectedRoutes.library,
+            element: <div>LibraryPage</div>,
+            loader: async () => {
+              await new Promise((r) => setTimeout(r, 600));
+              return null;
+            },
+          },
+        ],
+      },
+
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+]);
 
 export default function AppRouter() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={appRoutes.home} element={<HomePageLanding />} />
-        <Route path={authRoutes.login} element={<LoginPage />} />
-        <Route path={authRoutes.register} element={<RegisterPage />} />
-        <Route
-          path={protectedRoutes.profile}
-          element={
-            <ProtectedRoute loadingComponent={<ProfileLoading />}>
-              <ProfilePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route path={protectedRoutes.dashboard} element={<Dashboard />} />
-        <Route path={protectedRoutes.library} element={<Library />} />
-        <Route path={appRoutes.notFound} element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
