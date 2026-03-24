@@ -1,6 +1,7 @@
 import { InputLabel, FormControl, NativeSelect } from '@mui/material';
 
 const TOPICS = [
+  'All',
   'Async/Await & Promises',
   'Algorithm Basics',
   'Arrays & Objects',
