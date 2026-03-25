@@ -32,7 +32,10 @@ export default function HeaderHome() {
         <div className="header__button">
           {user ? (
             <>
-              <Button content="Profile" onClick={() => navigate(protectedRoutes.profile)} />
+              <Button
+                content={t(i18nKeys.header.profile)}
+                onClick={() => navigate(protectedRoutes.profile)}
+              />
               <Button content={t(i18nKeys.header.logout)} onClick={handleLogout} />
             </>
           ) : (

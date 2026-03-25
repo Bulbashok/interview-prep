@@ -1,16 +1,15 @@
 import { InputLabel, FormControl, NativeSelect } from '@mui/material';
+import { ChangeEvent } from 'react';
+import { TOPICS } from '../../Topics/topics';
 
-const TOPICS = [
-  'All',
-  'Async/Await & Promises',
-  'Algorithm Basics',
-  'Arrays & Objects',
-  'Prototypes',
-  'Closures',
-  'Event Loop',
-];
+interface SelectProps {
+  value: string;
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+}
 
-export default function Select() {
+export default function Select({ value, onChange }: SelectProps) {
+  const dynamicTopics = ['All', ...Array.from(new Set(TOPICS.map((topic) => topic.title.en)))];
+
   return (
     <FormControl fullWidth sx={{ m: 1, maxWidth: 200, margin: 0 }}>
       <InputLabel
@@ -26,7 +25,8 @@ export default function Select() {
         Topics
       </InputLabel>
       <NativeSelect
-        defaultValue={TOPICS[0]}
+        value={value}
+        onChange={onChange}
         inputProps={{
           name: 'category',
           id: 'category-native',
@@ -41,9 +41,9 @@ export default function Select() {
           '&:after': { borderColor: '#ff8c00' },
         }}
       >
-        {TOPICS.map((topic) => (
-          <option key={topic} value={topic}>
-            {topic}
+        {dynamicTopics.map((topicName) => (
+          <option key={topicName} value={topicName}>
+            {topicName}
           </option>
         ))}
       </NativeSelect>
