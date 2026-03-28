@@ -6,6 +6,7 @@ import LoginPage from '@/pages/login/login';
 import RegisterPage from '@/pages/register/register';
 import ProfilePage from '@/pages/profile/profile';
 import Dashboard from '@/pages/dashboard/dashboard';
+import LibraryPage from '@/pages/library/library';
 import { ProtectedRoute } from '../components/ProtectedRoute';
 import { RootLayout } from '../components/skeleton/RootLayout';
 
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
           },
           {
             path: protectedRoutes.library,
-            element: <div>LibraryPage</div>,
+            element: <LibraryPage />,
             loader: async () => {
               await new Promise((r) => setTimeout(r, 600));
               return null;

@@ -6,5 +6,11 @@ export interface WidgetProps {
 }
 
 export interface WidgetData {
-  null: null;
+  id?: string;
+  question?: string;
+  options?: string[]; // Варианты ответов для Quiz
+  statement?: string; // Утверждение для True/False
+  isTrue?: boolean; // Правильный ответ для True/False
+  blocks?: string[]; // Массив блоков для Sorter
+  correctAnswer?: string | number;
 }

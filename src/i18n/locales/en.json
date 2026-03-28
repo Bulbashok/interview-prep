@@ -95,5 +95,24 @@
     "description": "We're working on this section. Check back later!",
     "loading": "Loading profile...",
     "homeButton": "Go to Home"
+  },
+  "widgetRender": {
+    "button": "Back to Topics"
+  },
+  "library": {
+    "title": {
+      "title": "Topics for practice"
+    },
+    "search": {
+      "placeholder": "Search topics..."
+    },
+    "levels": {
+      "title": "Levels",
+      "all": "All"
+    },
+    "select": {
+      "title": "Topics",
+      "all": "All"
+    }
   }
 }

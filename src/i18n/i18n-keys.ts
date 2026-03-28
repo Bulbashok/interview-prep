@@ -96,4 +96,23 @@ export const i18nKeys = {
     loading: 'profile.loading',
     homeButton: 'profile.homeButton',
   },
+  widgetRender: {
+    button: 'widgetRender.button',
+  },
+  library: {
+    title: {
+      title: 'library.title.title',
+    },
+    search: {
+      placeholder: 'library.search.placeholder',
+    },
+    levels: {
+      title: 'library.levels.title',
+      all: 'library.levels.all',
+    },
+    select: {
+      title: 'library.select.title',
+      all: 'library.select.all',
+    },
+  },
 } as const;
