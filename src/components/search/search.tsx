@@ -3,6 +3,9 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { ChangeEvent } from 'react';
 
+import { i18nKeys } from '@/i18n/i18n-keys';
+import { useTranslation } from 'react-i18next';
+
 interface SearchElementProps {
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -55,13 +58,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchElement({ value, onChange }: SearchElementProps) {
+  const { t } = useTranslation();
+
   return (
     <Search>
       <SearchIconWrapper>
         <SearchIcon fontSize="small" />
       </SearchIconWrapper>
       <StyledInputBase
-        placeholder="Search topics..."
+        placeholder={t(i18nKeys.library.search.placeholder)}
         inputProps={{ 'aria-label': 'search' }}
         value={value}
         onChange={onChange}
