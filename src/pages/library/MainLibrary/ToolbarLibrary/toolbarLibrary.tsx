@@ -6,7 +6,10 @@ import Select from '../components/select/select';
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';
 
+import { Topic } from '../Topics/topics';
+
 interface ToolbarLibraryProps {
+  topics: Topic[];
   search: string;
   onSearch: (value: string) => void;
   level: string;
@@ -16,6 +19,7 @@ interface ToolbarLibraryProps {
 }
 
 export default function ToolbarLibrary({
+  topics,
   search,
   onSearch,
   level,
@@ -33,7 +37,7 @@ export default function ToolbarLibrary({
       </div>
       <div className="toolBar__level-filter">
         <Levels value={level} onChange={onLevelChange} />
-        <Select value={topic} onChange={(e) => onTopicChange(e.target.value)} />
+        <Select topics={topics} value={topic} onChange={(e) => onTopicChange(e.target.value)} />
       </div>
     </div>
   );

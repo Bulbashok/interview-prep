@@ -1,28 +1,28 @@
 import { InputLabel, FormControl, NativeSelect } from '@mui/material';
 import { ChangeEvent } from 'react';
-import { TOPICS } from '../../Topics/topics';
 
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';
 
+import { Topic } from '../../Topics/topics';
+
 interface SelectProps {
+  topics: Topic[];
   value: string;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export default function Select({ value, onChange }: SelectProps) {
+export default function Select({ topics, value, onChange }: SelectProps) {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language.startsWith('ru') ? 'ru' : 'en';
 
-  const dynamicTopics = [
+  const uniqueTopics = [
     { id: 'all', label: t(i18nKeys.library.select.all) },
-    ...TOPICS.map((topic) => ({
+    ...topics.map((topic) => ({
       id: topic.title.en,
       label: topic.title[currentLang],
     })),
   ];
-
-  const uniqueTopics = Array.from(new Map(dynamicTopics.map((item) => [item.id, item])).values());
 
   return (
     <FormControl fullWidth sx={{ m: 1, maxWidth: 200, margin: 0 }}>
