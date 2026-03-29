@@ -1,16 +1,22 @@
-export type WidgetsType = 'quiz' | 'true/false' | 'async-sorter';
+import { ReactNode } from 'react';
+import { QuizPayload } from './quiz';
+import { TrueFalsePayload } from './trueFalse';
 
-export interface WidgetProps {
-  data: WidgetData;
-  sendAnswer: () => void;
+export type WidgetsType = 'quiz' | 'true-false' | 'async-sorter';
+
+export interface BaseWidget {
+  id: string;
+  type: WidgetsType;
+  version: number;
+  difficulty: number;
+  tags: string[];
 }
 
-export interface WidgetData {
-  id?: string;
-  question?: string;
-  options?: string[]; // Варианты ответов для Quiz
-  statement?: string; // Утверждение для True/False
-  isTrue?: boolean; // Правильный ответ для True/False
-  blocks?: string[]; // Массив блоков для Sorter
-  correctAnswer?: string | number;
+export type Widget =
+  | (BaseWidget & { type: 'quiz'; payload: QuizPayload })
+  | (BaseWidget & { type: 'true-false'; payload: TrueFalsePayload });
+
+export interface WidgetStrategy {
+  type: WidgetsType;
+  render: (widget: Widget, onAnswer: (answer: unknown) => void) => ReactNode;
 }
