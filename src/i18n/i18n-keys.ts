@@ -114,5 +114,10 @@ export const i18nKeys = {
       title: 'library.select.title',
       all: 'library.select.all',
     },
+    nothingFound: {
+      title: 'library.nothingFound.title',
+      paragraph: 'library.nothingFound.paragraph',
+      button: 'library.nothingFound.button',
+    },
   },
 } as const;

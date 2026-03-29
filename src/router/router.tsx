@@ -18,6 +18,7 @@ const router = createBrowserRouter([
       {
         path: appRoutes.home,
         element: <HomePageLanding />,
+        shouldRevalidate: () => true,
         loader: async () => {
           await new Promise((r) => setTimeout(r, 800));
           return { status: 'ok' };
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       {
         path: authRoutes.login,
         element: <LoginPage />,
+        shouldRevalidate: () => true,
         loader: async () => {
           await new Promise((r) => setTimeout(r, 500));
           return null;
@@ -34,6 +36,7 @@ const router = createBrowserRouter([
       {
         path: authRoutes.register,
         element: <RegisterPage />,
+        shouldRevalidate: () => true,
         loader: async () => {
           await new Promise((r) => setTimeout(r, 500));
           return null;
@@ -46,6 +49,7 @@ const router = createBrowserRouter([
           {
             path: protectedRoutes.dashboard,
             element: <Dashboard />,
+            shouldRevalidate: () => true,
             loader: async () => {
               await new Promise((r) => setTimeout(r, 1000));
               return null;
@@ -54,6 +58,7 @@ const router = createBrowserRouter([
           {
             path: protectedRoutes.profile,
             element: <ProfilePage />,
+            shouldRevalidate: () => true,
             loader: async () => {
               await new Promise((r) => setTimeout(r, 400));
               return null;
@@ -62,6 +67,7 @@ const router = createBrowserRouter([
           {
             path: protectedRoutes.library,
             element: <LibraryPage />,
+            shouldRevalidate: () => true,
             loader: async () => {
               await new Promise((r) => setTimeout(r, 600));
               return null;

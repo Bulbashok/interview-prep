@@ -113,6 +113,11 @@
     "select": {
       "title": "Topics",
       "all": "All"
+    },
+    "nothingFound": {
+      "title": "Nothing found",
+      "paragraph": "Try changing your query or resetting your filters.",
+      "button": "Reset all"
     }
   }
 }
