@@ -3,7 +3,7 @@ import './mainLibrary.scss';
 
 import ToolbarLibrary from './ToolbarLibrary/toolbarLibrary';
 import ActionAreaGrid from './TopicsLibrary/topicsLibrary';
-import { TopicLearning } from './components/TopicLearning';
+import { TopicLearningView } from '@/widgets/TopicLearningView/TopicLearningView';
 
 import { useTopicsLibrary } from '@/hooks/useTopicsLibrary';
 
@@ -55,7 +55,7 @@ export default function MainLibrary() {
   return (
     <div className="mainLibrary">
       {activeTopic ? (
-        <TopicLearning topic={activeTopic} onBack={() => setActiveTopic(null)} /> //Заглушка
+        <TopicLearningView topic={activeTopic} onBack={() => setActiveTopic(null)} />
       ) : (
         <>
           <ToolbarLibrary

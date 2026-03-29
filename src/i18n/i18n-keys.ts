@@ -98,6 +98,15 @@ export const i18nKeys = {
   },
   widgetRender: {
     button: 'widgetRender.button',
+    messages: {
+      correct: 'widgetRender.messages.correct',
+      wrong: 'widgetRender.messages.wrong',
+      finish: 'widgetRender.messages.finish',
+    },
+    errors: {
+      loadWidget: 'widgetRender.errors.loadWidget',
+      serverError: 'widgetRender.errors.serverError',
+    },
   },
   library: {
     title: {

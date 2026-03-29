@@ -97,7 +97,16 @@
     "homeButton": "Go to Home"
   },
   "widgetRender": {
-    "button": "Back to Topics"
+    "button": "Back to Topics",
+    "messages": {
+      "correct": "Correct!",
+      "wrong": "Incorrect, try again!",
+      "finish": "Congratulations! Topic fully completed."
+    },
+    "errors": {
+      "loadWidget": "Error loading the question",
+      "serverError": "Server connection error"
+    }
   },
   "library": {
     "title": {
