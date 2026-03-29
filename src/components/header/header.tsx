@@ -7,16 +7,20 @@ import logo from '../../assets/svg/logo.svg';
 import Button from '../button/button';
 
 import { useNavigate } from 'react-router';
-import { authRoutes } from '../../router/routes';
+import { useAuth } from '@/hooks/useAuth';
+import { appRoutes, authRoutes, protectedRoutes } from '../../router/routes';
+import { i18nKeys } from '@/i18n/i18n-keys';
+import { useTranslation } from 'react-i18next';
 
-interface HeaderProps {
-  log: string;
-  click: (typeof authRoutes)[keyof typeof authRoutes];
-}
-
-export default function HeaderHome(props: HeaderProps) {
-  const { log, click } = props;
+export default function HeaderHome() {
+  const { t } = useTranslation();
+  const { user, signOut } = useAuth();
   const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    navigate(appRoutes.home);
+    await signOut();
+  };
 
   return (
     <>
@@ -26,7 +30,17 @@ export default function HeaderHome(props: HeaderProps) {
           <h2 className="header__logo__title">asyncmind</h2>
         </div>
         <div className="header__button">
-          <Button content={log} onClick={() => navigate(click)} />
+          {user ? (
+            <>
+              <Button
+                content={t(i18nKeys.header.profile)}
+                onClick={() => navigate(protectedRoutes.profile)}
+              />
+              <Button content={t(i18nKeys.header.logout)} onClick={handleLogout} />
+            </>
+          ) : (
+            <Button content={t(i18nKeys.header.login)} onClick={() => navigate(authRoutes.login)} />
+          )}
           <ChangeLanguage />
         </div>
       </div>

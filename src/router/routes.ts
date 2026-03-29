@@ -1,11 +1,11 @@
 export const appRoutes = {
   home: '/',
-  notFound: '*',
+  notFound: '/404',
 } as const;
 
 export const authRoutes = {
-  login: '/login',
-  register: '/register',
+  login: '/auth/login',
+  register: '/auth/register',
 } as const;
 
 export const protectedRoutes = {

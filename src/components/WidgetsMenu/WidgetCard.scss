@@ -4,7 +4,7 @@
 
   border-radius: 0.5rem;
   background-color: var(--btn-primary-bg);
-  
+
   cursor: pointer;
 
   display: flex;
@@ -15,10 +15,10 @@
   gap: 0.7rem;
 
   transition: 0.3s;
-  
+
   color: var(--btn-primary-text);
   font-size: 1.1rem;
-  
+
   &:hover {
     transform: scale(1.05);
     background-color: var(--btn-primary-bg-hover);

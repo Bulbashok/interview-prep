@@ -1,56 +1,23 @@
 import './changeLanguage.scss';
 
-import { useState } from 'react';
-
 import { ClickAwayListener } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
 import Button from '../../button/button';
-import { useTranslation } from 'react-i18next';
-
-const languages = {
-  ru: 'ru',
-  en: 'en',
-} as const;
+import { useLanguageSwitcher } from './useLanguageSwitcher';
 
 export default function ChangeLanguage() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { i18n } = useTranslation();
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleLanguageChange = () => {
-    setIsOpen(false);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
+  const { isOpen, toggleDropdown, closeDropdown, changeLanguage, languages } =
+    useLanguageSwitcher();
 
   return (
-    <ClickAwayListener onClickAway={handleClose}>
+    <ClickAwayListener onClickAway={closeDropdown}>
       <div className="language-manager">
         <Button content={<LanguageIcon />} height="40px" onClick={toggleDropdown} />
 
         {isOpen && (
           <div className="language-manager__dropdown">
-            <Button
-              height="2em"
-              content="RU"
-              onClick={() => {
-                handleLanguageChange();
-                i18n.changeLanguage(languages.ru);
-              }}
-            />
-            <Button
-              height="2em"
-              content="EN"
-              onClick={() => {
-                handleLanguageChange();
-                i18n.changeLanguage(languages.en);
-              }}
-            />
+            <Button height="2em" content="RU" onClick={() => changeLanguage(languages.RU)} />
+            <Button height="2em" content="EN" onClick={() => changeLanguage(languages.EN)} />
           </div>
         )}
       </div>
