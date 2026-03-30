@@ -1,5 +1,5 @@
 import { Widget } from '@/types/widgets';
-import { WidgetStrategyRegistry } from './strategies/widgetStrategyRegistry';
+import { WidgetStrategyRegistry } from './strategies/WidgetStrategyRegistry';
 
 const widgetStrategyRegistry = new WidgetStrategyRegistry();
 
