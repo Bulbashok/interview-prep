@@ -4,7 +4,8 @@
   "header": {
     "login": "Log In",
     "logout": "Log Out",
-    "profile": "Profile"
+    "profile": "Profile",
+    "dashboard": "Dashboard"
   },
 
   "404": {

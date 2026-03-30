@@ -5,6 +5,7 @@ export const i18nKeys = {
     login: 'header.login',
     logout: 'header.logout',
     profile: 'header.profile',
+    dashboard: 'header.dashboard',
   },
 
   404: {

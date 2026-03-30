@@ -33,6 +33,10 @@ export default function HeaderHome() {
           {user ? (
             <>
               <Button
+                content={t(i18nKeys.header.dashboard)}
+                onClick={() => navigate(protectedRoutes.dashboard)}
+              />
+              <Button
                 content={t(i18nKeys.header.profile)}
                 onClick={() => navigate(protectedRoutes.profile)}
               />
