@@ -7,7 +7,7 @@ import RegisterPage from '@/pages/register/register';
 import ProfilePage from '@/pages/profile/profile';
 import Dashboard from '@/pages/dashboard/dashboard';
 import LibraryPage from '@/pages/library/library';
-import { ProtectedRoute } from '../components/ProtectedRoute';
+import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { RootLayout } from '../components/skeleton/RootLayout';
 
 const router = createBrowserRouter([
