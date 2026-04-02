@@ -114,5 +114,10 @@
       "title": "Topics",
       "all": "All"
     }
+  },
+  "themeSwitcher": {
+    "light": "Light theme is activated",
+    "dark": "Dark theme is activated",
+    "error": "Failed to switch theme"
   }
 }

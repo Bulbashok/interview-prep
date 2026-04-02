@@ -115,4 +115,9 @@ export const i18nKeys = {
       all: 'library.select.all',
     },
   },
+  themeSwitcher: {
+    light: 'themeSwitcher.light',
+    dark: 'themeSwitcher.dark',
+    error: 'themeSwitcher.error',
+  },
 } as const;
