@@ -11,6 +11,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { appRoutes, authRoutes, protectedRoutes } from '../../router/routes';
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 export default function HeaderHome() {
   const { t } = useTranslation();
@@ -42,6 +43,7 @@ export default function HeaderHome() {
             <Button content={t(i18nKeys.header.login)} onClick={() => navigate(authRoutes.login)} />
           )}
           <ChangeLanguage />
+          <ThemeSwitcher />
         </div>
       </div>
     </>
