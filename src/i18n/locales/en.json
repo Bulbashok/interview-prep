@@ -5,7 +5,8 @@
   "header": {
     "login": "Log In",
     "logout": "Log Out",
-    "profile": "Profile"
+    "profile": "Profile",
+    "dashboard": "Dashboard"
   },
 
   "404": {
@@ -116,7 +117,6 @@
       "all": "All"
     }
   },
-
   "asyncSorter": {
     "question": "In what order will console.log be output?",
     "instruction": "Drag the blocks in the correct order:",
@@ -124,5 +124,10 @@
     "btn": "Run Loop",
     "result": "Final order",
     "avaibleBlocks": "Avaible blocks"
+  },
+  "themeSwitcher": {
+    "light": "Light theme is activated",
+    "dark": "Dark theme is activated",
+    "error": "Failed to switch theme"
   }
 }

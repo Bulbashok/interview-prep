@@ -6,6 +6,7 @@ export const i18nKeys = {
     login: 'header.login',
     logout: 'header.logout',
     profile: 'header.profile',
+    dashboard: 'header.dashboard',
   },
 
   404: {
@@ -116,7 +117,6 @@ export const i18nKeys = {
       all: 'library.select.all',
     },
   },
-
   asyncSorter: {
     question: 'asyncSorter.question',
     instruction: 'asyncSorter.instruction',
@@ -124,5 +124,10 @@ export const i18nKeys = {
     btn: 'asyncSorter.btn',
     result: 'asyncSorter.result',
     avaibleBlocks: 'asyncSorter.avaibleBlocks',
+  },
+  themeSwitcher: {
+    light: 'themeSwitcher.light',
+    dark: 'themeSwitcher.dark',
+    error: 'themeSwitcher.error',
   },
 } as const;
