@@ -1,5 +1,6 @@
 {
-  "langBtn": "ru",
+  "logoutBtnText": "Выход",
+  "loginBtnText": "Вход",
 
   "header": {
     "login": "Войти",
@@ -115,6 +116,14 @@
       "title": "Темы",
       "all": "Все"
     }
+  },
+  "asyncSorter": {
+    "question": "В каком порядке выведутся console.log?",
+    "instruction": "Перетащите блоки в правильной последовательности:",
+    "code": "Код",
+    "btn": "Выполнить цикл",
+    "result": "Итоговый порядок",
+    "avaibleBlocks": "Доступные блоки"
   },
   "themeSwitcher": {
     "light": "Светлая тема активирована",

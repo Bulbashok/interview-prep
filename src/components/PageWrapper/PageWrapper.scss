@@ -1,0 +1,11 @@
+.page-wrapper {
+  max-width: var(--container-width);
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  padding: var(--container-padding);
+}

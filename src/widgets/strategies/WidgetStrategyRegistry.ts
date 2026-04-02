@@ -1,6 +1,7 @@
 import { WidgetStrategy, WidgetsType } from '@/types/widgets';
 import { quizStrategy } from './quizStrategy';
 import { trueFalseStrategy } from './trueFalseStrategy';
+import { asyncSorterStrategy } from './asyncSorterStrategy';
 
 export class WidgetStrategyRegistry {
   private strategies = new Map<WidgetsType, WidgetStrategy>();
@@ -8,6 +9,7 @@ export class WidgetStrategyRegistry {
   constructor() {
     this.register(quizStrategy);
     this.register(trueFalseStrategy);
+    this.register(asyncSorterStrategy);
   }
 
   register(strategy: WidgetStrategy) {
