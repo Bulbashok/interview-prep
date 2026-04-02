@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Streak from './Streak';
 import { i18nKeys } from '@/i18n/i18n-keys';
+import { mockI18n } from '@/test/mocks';
 
 const streaks = {
   current: 5,
@@ -11,11 +12,7 @@ const renderStreak = () => {
   return render(<Streak currentStreak={streaks.current} bestStreak={streaks.best} />);
 };
 
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string) => key,
-  }),
-}));
+mockI18n();
 
 describe('Dashboard Streak', () => {
   test('render', () => {
