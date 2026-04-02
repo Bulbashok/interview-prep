@@ -1,0 +1,24 @@
+.block {
+  width: max-content;
+
+  padding: 10px;
+
+  border: 2px solid var(--btn-primary-bg);
+  border-radius: 0.5rem;
+
+  cursor: grab;
+
+  transition: transform 0.3s ease;
+
+  user-select: none;
+  background-color: white;
+
+  &:hover {
+    border: 2px solid var(--border-color)
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    color: black;
+  }
+}
