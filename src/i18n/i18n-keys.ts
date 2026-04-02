@@ -5,6 +5,7 @@ export const i18nKeys = {
     login: 'header.login',
     logout: 'header.logout',
     profile: 'header.profile',
+    dashboard: 'header.dashboard',
   },
 
   404: {
@@ -128,5 +129,10 @@ export const i18nKeys = {
       paragraph: 'library.nothingFound.paragraph',
       button: 'library.nothingFound.button',
     },
+  },
+  themeSwitcher: {
+    light: 'themeSwitcher.light',
+    dark: 'themeSwitcher.dark',
+    error: 'themeSwitcher.error',
   },
 } as const;

@@ -4,7 +4,8 @@
   "header": {
     "login": "Log In",
     "logout": "Log Out",
-    "profile": "Profile"
+    "profile": "Profile",
+    "dashboard": "Dashboard"
   },
 
   "404": {
@@ -128,5 +129,10 @@
       "paragraph": "Try changing your query or resetting your filters.",
       "button": "Reset all"
     }
+  },
+  "themeSwitcher": {
+    "light": "Light theme is activated",
+    "dark": "Dark theme is activated",
+    "error": "Failed to switch theme"
   }
 }
