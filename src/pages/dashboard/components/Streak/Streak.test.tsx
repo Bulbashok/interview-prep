@@ -40,7 +40,7 @@ describe('Dashboard Streak', () => {
       screen.getByText((content) => content.includes(String(streaks.current))),
     ).toBeInTheDocument();
     expect(
-      screen.getByText((content) => content.includes(String(streaks.current))),
+      screen.getByText((content) => content.includes(String(streaks.best))),
     ).toBeInTheDocument();
   });
 });
