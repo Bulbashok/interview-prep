@@ -9,7 +9,7 @@ import Dashboard from '@/pages/dashboard/dashboard';
 import LibraryPage from '@/pages/library/library';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { RootLayout } from '../components/skeleton/RootLayout';
-import Practice from '@/pages/Practice/Practice';
+import Practice from '@/pages/practice/Practice';
 
 const router = createBrowserRouter([
   {
