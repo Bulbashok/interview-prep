@@ -1,6 +1,4 @@
-import { BaseWidget } from './widgets';
-
-export interface TrueFalsePayload extends BaseWidget {
+export interface TrueFalsePayload {
   statement: {
     ru: string;
     en: string;

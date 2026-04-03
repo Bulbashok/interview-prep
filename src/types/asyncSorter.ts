@@ -1,6 +1,4 @@
-import { BaseWidget } from './widgets';
-
-export interface AsyncSorterPayload extends BaseWidget {
+export interface AsyncSorterPayload {
   codeSnippet: string;
   blocks: AsyncSorterBlock[];
 }

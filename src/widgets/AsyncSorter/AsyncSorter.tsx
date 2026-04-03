@@ -13,8 +13,6 @@ import {
   DragOverlay,
   MouseSensor,
 } from '@dnd-kit/core';
-import { authRoutes } from '@/router/routes';
-import PageWrapper from '@/components/PageWrapper/PageWrapper';
 import { useTranslation } from 'react-i18next';
 import { i18nKeys } from '@/i18n/i18n-keys';
 import Container from './components/Container/Container';
@@ -25,11 +23,10 @@ import OverlayBlock from './components/Blocks/OverlayBlock';
 
 interface AsyncSorterProps {
   data: AsyncSorterPayload;
-  onAnswer: (answer: unknown) => void;
   id: string;
 }
 
-export default function AsyncSorter({ data, onAnswer, id }: AsyncSorterProps) {
+export default function AsyncSorter({ data, id }: AsyncSorterProps) {
   const {
     handleDragStart,
     handleDragEnd,
@@ -65,40 +62,38 @@ export default function AsyncSorter({ data, onAnswer, id }: AsyncSorterProps) {
   const activeBlock = data.blocks.find((block) => block.id === activeId);
 
   return (
-    <PageWrapper log="logout" click={authRoutes.login}>
-      <div className="async-sorter">
-        <div className="async-sorter__header">
-          <p className="async-sorter__question">{t(i18nKeys.asyncSorter.question)}</p>
-          <p className="async-sorter__instruction">{t(i18nKeys.asyncSorter.instruction)}</p>
-        </div>
-        <Container borderTitle={t(i18nKeys.asyncSorter.code)} styles={{ width: 'max-content' }}>
-          <pre className="async-sorter__code">{data.codeSnippet}</pre>
-        </Container>
-        <DndContext
-          sensors={sensors}
-          collisionDetection={pointerWithin}
-          onDragEnd={handleDragEnd}
-          onDragStart={handleDragStart}
-        >
-          <Container borderTitle={t(i18nKeys.asyncSorter.avaibleBlocks)} styles={{ width: '60%' }}>
-            <div className="async-sorter__avaible-blocks">
-              {currentBlocks.map((block) => (
-                <DraggableBlock key={block.id} id={block.id} label={block.code} />
-              ))}
-            </div>
-          </Container>
-          <Queues
-            callstackBlocks={callstack}
-            microtasksBlocks={microtasks}
-            macrotasksBlocks={macrotasks}
-          />
-          <DragOverlay>
-            {activeId && activeBlock ? <OverlayBlock label={activeBlock.code} /> : null}
-          </DragOverlay>
-        </DndContext>
-        <ResultContainer finalOrder={finalOrder} sortingFunc={handleResultSorting} />
-        <Button content={t(i18nKeys.asyncSorter.btn)} onClick={() => onAnswer(id)} />
+    <div className="async-sorter" id={id}>
+      <div className="async-sorter__header">
+        <p className="async-sorter__question">{t(i18nKeys.asyncSorter.question)}</p>
+        <p className="async-sorter__instruction">{t(i18nKeys.asyncSorter.instruction)}</p>
       </div>
-    </PageWrapper>
+      <Container borderTitle={t(i18nKeys.asyncSorter.code)} styles={{ width: 'max-content' }}>
+        <pre className="async-sorter__code">{data.codeSnippet}</pre>
+      </Container>
+      <DndContext
+        sensors={sensors}
+        collisionDetection={pointerWithin}
+        onDragEnd={handleDragEnd}
+        onDragStart={handleDragStart}
+      >
+        <Container borderTitle={t(i18nKeys.asyncSorter.avaibleBlocks)} styles={{ width: '60%' }}>
+          <div className="async-sorter__avaible-blocks">
+            {currentBlocks.map((block) => (
+              <DraggableBlock key={block.id} id={block.id} label={block.code} />
+            ))}
+          </div>
+        </Container>
+        <Queues
+          callstackBlocks={callstack}
+          microtasksBlocks={microtasks}
+          macrotasksBlocks={macrotasks}
+        />
+        <DragOverlay>
+          {activeId && activeBlock ? <OverlayBlock label={activeBlock.code} /> : null}
+        </DragOverlay>
+      </DndContext>
+      <ResultContainer finalOrder={finalOrder} sortingFunc={handleResultSorting} />
+      <Button content={t(i18nKeys.asyncSorter.btn)} onClick={() => {}} />
+    </div>
   );
 }

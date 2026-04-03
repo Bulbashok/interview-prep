@@ -98,9 +98,6 @@
     "loading": "Loading profile...",
     "homeButton": "Go to Home"
   },
-  "widgetRender": {
-    "button": "Back to Topics"
-  },
   "library": {
     "title": {
       "title": "Topics for practice"
@@ -129,5 +126,17 @@
     "light": "Light theme is activated",
     "dark": "Dark theme is activated",
     "error": "Failed to switch theme"
+  },
+  "widgetRender": {
+    "button": "Back to Topics",
+    "messages": {
+      "correct": "Correct!",
+      "wrong": "Incorrect, try again!",
+      "finish": "Congratulations! Topic fully completed."
+    },
+    "errors": {
+      "loadWidget": "Error loading the question",
+      "serverError": "Server connection error"
+    }
   }
 }

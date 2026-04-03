@@ -98,9 +98,6 @@ export const i18nKeys = {
     loading: 'profile.loading',
     homeButton: 'profile.homeButton',
   },
-  widgetRender: {
-    button: 'widgetRender.button',
-  },
   library: {
     title: {
       title: 'library.title.title',
@@ -129,5 +126,17 @@ export const i18nKeys = {
     light: 'themeSwitcher.light',
     dark: 'themeSwitcher.dark',
     error: 'themeSwitcher.error',
+  },
+  widgetRender: {
+    button: 'widgetRender.button',
+    messages: {
+      correct: 'widgetRender.messages.correct',
+      wrong: 'widgetRender.messages.wrong',
+      finish: 'widgetRender.messages.finish',
+    },
+    errors: {
+      loadWidget: 'widgetRender.errors.loadWidget',
+      serverError: 'widgetRender.errors.serverError',
+    },
   },
 } as const;
