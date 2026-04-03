@@ -4,6 +4,7 @@ import NotFoundPage, { videos } from './404';
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { HelmetProvider } from 'react-helmet-async';
 import { appRoutes } from '@/router/routes';
+import { mockI18n } from '@/test/mocks';
 
 const renderNotFoundPage = () => {
   return render(
@@ -15,6 +16,8 @@ const renderNotFoundPage = () => {
   );
 };
 
+mockI18n();
+
 const mockNavigate = vi.fn();
 vi.mock('react-router', async () => {
   const actual = await vi.importActual('react-router');
@@ -23,12 +26,6 @@ vi.mock('react-router', async () => {
     useNavigate: () => mockNavigate,
   };
 });
-
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string) => key,
-  }),
-}));
 
 describe('NotFoundPage', () => {
   test('render', () => {
