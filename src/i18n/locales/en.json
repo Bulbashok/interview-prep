@@ -1,5 +1,6 @@
 {
-  "langBtn": "en",
+  "logoutBtnText": "Logout",
+  "loginBtnText": "Log in",
 
   "header": {
     "login": "Log In",
@@ -115,5 +116,18 @@
       "title": "Topics",
       "all": "All"
     }
+  },
+  "asyncSorter": {
+    "question": "In what order will console.log be output?",
+    "instruction": "Drag the blocks in the correct order:",
+    "code": "Code",
+    "btn": "Run Loop",
+    "result": "Final order",
+    "avaibleBlocks": "Avaible blocks"
+  },
+  "themeSwitcher": {
+    "light": "Light theme is activated",
+    "dark": "Dark theme is activated",
+    "error": "Failed to switch theme"
   }
 }

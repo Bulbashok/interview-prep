@@ -1,5 +1,6 @@
 export const i18nKeys = {
-  langBtn: 'langBtn',
+  logintBtnText: 'loginBtnText',
+  logoutBtnText: 'logoutBtnText',
 
   header: {
     login: 'header.login',
@@ -115,5 +116,18 @@ export const i18nKeys = {
       title: 'library.select.title',
       all: 'library.select.all',
     },
+  },
+  asyncSorter: {
+    question: 'asyncSorter.question',
+    instruction: 'asyncSorter.instruction',
+    code: 'asyncSorter.code',
+    btn: 'asyncSorter.btn',
+    result: 'asyncSorter.result',
+    avaibleBlocks: 'asyncSorter.avaibleBlocks',
+  },
+  themeSwitcher: {
+    light: 'themeSwitcher.light',
+    dark: 'themeSwitcher.dark',
+    error: 'themeSwitcher.error',
   },
 } as const;

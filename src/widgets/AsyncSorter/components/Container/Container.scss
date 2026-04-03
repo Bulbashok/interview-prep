@@ -1,0 +1,34 @@
+.async-sorter-container {
+  min-width: 200px;
+
+  border: 2px solid var(--border-color);
+
+  position: relative;
+
+  border-radius: 0.5rem;
+
+  padding: 1.25rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 400px) {
+    padding: 0.63rem;
+  }
+
+  &__label {
+    font-size: 1.25rem;
+
+    position: absolute;
+    top: -13px;
+    left: 20px;
+
+    background-color: var(--bg-primary);
+    color: var(--primary-text-color);
+
+    padding: 0 10px;
+
+    user-select: none;
+  }
+}
