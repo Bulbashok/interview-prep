@@ -1,11 +1,11 @@
 import { Button, Box, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import WidgetRender from '../../../../widgets/WidgetRender';
 
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';
 
 import { Topic } from '../Topics/topics';
+import { WidgetController } from '@/widgets/WidgetController/WidgetController';
 
 export const TopicLearning = ({ topic, onBack }: { topic: Topic; onBack: () => void }) => {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ export const TopicLearning = ({ topic, onBack }: { topic: Topic; onBack: () => v
         {topic.title.en}
       </Typography>
       <Box sx={{ maxWidth: '800px', mx: 'auto' }}>
-        <WidgetRender topicData={topic} onFinish={onBack} />
+        <WidgetController topic={topic} />
       </Box>
     </Box>
   );
