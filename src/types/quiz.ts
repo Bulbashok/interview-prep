@@ -1,6 +1,4 @@
-import { BaseWidget } from './widgets';
-
-export interface QuizPayload extends BaseWidget {
+export interface QuizPayload {
   question: {
     ru: string;
     en: string;
