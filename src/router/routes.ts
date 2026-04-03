@@ -12,4 +12,5 @@ export const protectedRoutes = {
   profile: '/profile',
   dashboard: '/dashboard',
   library: '/library',
+  practice: '/practice/:topicId',
 } as const;
