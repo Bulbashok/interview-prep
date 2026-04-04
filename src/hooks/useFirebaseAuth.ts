@@ -15,9 +15,14 @@ const createUserData = (user: User, displayName: string | null): UserData => ({
   uid: user.uid,
   email: user.email,
   displayName,
-  photoURL: user.photoURL,
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  currentExp: 0,
+  progress: 0,
+  registrationDate: new Date(),
+  history: [],
+  streak: {
+    current: 0,
+    best: 0,
+  },
 });
 
 const saveUserToFirestore = async (user: User, userData: UserData) => {
@@ -180,9 +185,14 @@ export const useFirebaseAuth = (): UseFirebaseAuthReturn => {
         uid: data.uid,
         email: data.email,
         displayName: data.displayName,
-        photoURL: data.photoURL,
-        createdAt: data.createdAt?.toDate() || new Date(),
-        updatedAt: data.updatedAt?.toDate() || new Date(),
+        registrationDate: data.createdAt?.toDate() || new Date(),
+        currentExp: 0,
+        progress: 0,
+        history: [],
+        streak: {
+          current: 0,
+          best: 0,
+        },
       });
     }
   }, []);
