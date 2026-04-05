@@ -22,7 +22,7 @@ const notFoundPageClasses = {
   button: 'not-found__button',
 } as const;
 
-const videos = [video1, video2, video3];
+export const videos = [video1, video2, video3];
 
 export default function NotFoundPage() {
   const [video] = useState(() => videos[Math.floor(Math.random() * videos.length)]);
@@ -36,7 +36,14 @@ export default function NotFoundPage() {
         description={t(i18nKeys[404].pageDescription)}
       />
       <div className={notFoundPageClasses.page}>
-        <video src={video} className={notFoundPageClasses.video} autoPlay loop muted />
+        <video
+          src={video}
+          className={notFoundPageClasses.video}
+          autoPlay
+          loop
+          muted
+          data-testid="404-video"
+        />
         <div className={notFoundPageClasses.contentContainer}>
           <div className={notFoundPageClasses.textContainer}>
             <h1 className={notFoundPageClasses.title}>{t(i18nKeys[404].title)}</h1>

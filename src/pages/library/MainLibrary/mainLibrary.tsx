@@ -3,11 +3,17 @@ import './mainLibrary.scss';
 
 import ToolbarLibrary from './ToolbarLibrary/toolbarLibrary';
 import ActionAreaGrid from './TopicsLibrary/topicsLibrary';
-import { TopicLearningView } from '@/widgets/TopicLearningView/TopicLearningView';
 
 import { useTopicsLibrary } from '@/hooks/useTopicsLibrary';
 
+import { TopicLearning } from './components/TopicLearning';
+
+// import { useNavigate } from 'react-router-dom';
+// import { protectedRoutes } from '@/router/routes';
+
 export default function MainLibrary() {
+  // const navigate = useNavigate();
+
   const {
     isLoading,
     filteredItems,
@@ -55,7 +61,7 @@ export default function MainLibrary() {
   return (
     <div className="mainLibrary">
       {activeTopic ? (
-        <TopicLearningView topic={activeTopic} onBack={() => setActiveTopic(null)} />
+        <TopicLearning topic={activeTopic} onBack={() => setActiveTopic(null)} /> //Заглушка
       ) : (
         <>
           <ToolbarLibrary

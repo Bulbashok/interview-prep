@@ -26,7 +26,14 @@ export default function Slider() {
           pagination={{ clickable: true }}
           effect="fade"
           fadeEffect={{ crossFade: true }}
-          style={{ width: '100%', height: 'auto' }}
+          style={
+            {
+              width: '100%',
+              height: 'auto',
+              '--swiper-pagination-color': 'var(--swiper-pagination)',
+              '--swiper-pagination-bullet-inactive-color': '#8b8b8b',
+            } as React.CSSProperties
+          }
         >
           {images.map((img, index) => (
             <SwiperSlide key={index}>

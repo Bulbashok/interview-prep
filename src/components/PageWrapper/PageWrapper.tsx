@@ -2,18 +2,11 @@ import './PageWrapper.scss';
 
 import HeaderHome from '../header/header';
 import FooterHome from '../footer/footer';
-import { authRoutes } from '@/router/routes';
 
-interface PageWrapperProps {
-  log: string;
-  click: (typeof authRoutes)[keyof typeof authRoutes];
-  children: React.ReactNode;
-}
-
-export default function PageWrapper({ log, click, children }: PageWrapperProps) {
+export default function PageWrapper({ children }: { children: React.ReactNode }) {
   return (
     <div className="page-wrapper">
-      <HeaderHome log={log} click={click} />
+      <HeaderHome />
       {children}
       <FooterHome />
     </div>

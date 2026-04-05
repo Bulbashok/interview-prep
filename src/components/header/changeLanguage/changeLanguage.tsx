@@ -12,7 +12,7 @@ export default function ChangeLanguage() {
   return (
     <ClickAwayListener onClickAway={closeDropdown}>
       <div className="language-manager">
-        <Button content={<LanguageIcon />} height="40px" onClick={toggleDropdown} />
+        <Button content={<LanguageIcon />} onClick={toggleDropdown} />
 
         {isOpen && (
           <div className="language-manager__dropdown">

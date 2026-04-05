@@ -20,5 +20,5 @@ export type Widget =
 
 export interface WidgetStrategy {
   type: WidgetsType;
-  render: (widget: Widget, onAnswer: (answer: unknown) => void) => ReactNode;
+  render: (widget: Widget) => ReactNode;
 }

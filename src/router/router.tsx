@@ -9,6 +9,7 @@ import Dashboard from '@/pages/dashboard/dashboard';
 import LibraryPage from '@/pages/library/library';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { RootLayout } from '../components/skeleton/RootLayout';
+import Practice from '@/pages/practice/Practice';
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
               await new Promise((r) => setTimeout(r, 600));
               return null;
             },
+          },
+          {
+            path: protectedRoutes.practice,
+            element: <Practice />,
           },
         ],
       },

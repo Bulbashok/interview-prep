@@ -26,7 +26,17 @@ export default function Select({ topics, value, onChange }: SelectProps) {
 
   return (
     <FormControl fullWidth sx={{ m: 1, maxWidth: 200, margin: 0 }}>
-      <InputLabel shrink variant="standard" htmlFor="category-native" sx={{ color: '#2d3748' }}>
+      <InputLabel
+        shrink
+        variant="standard"
+        htmlFor="category-native"
+        sx={{
+          color: 'var(--primary-text-color)',
+          '&.Mui-focused': {
+            color: 'var(--btn-cta)',
+          },
+        }}
+      >
         {t(i18nKeys.library.select.title)}
       </InputLabel>
       <NativeSelect
@@ -34,13 +44,21 @@ export default function Select({ topics, value, onChange }: SelectProps) {
         onChange={onChange}
         inputProps={{ name: 'category', id: 'category-native' }}
         sx={{
-          color: '#2d3748',
-          '&:before': { borderColor: 'rgba(36, 160, 237, 0.3)' },
-          '&:after': { borderColor: '#ff8c00' },
+          color: 'var(--primary-text-color)',
+          '&:before': { borderColor: 'rgba(49, 130, 206, 0.4)' },
+          '&:after': { borderColor: 'var(--btn-cta)' },
+          '& .MuiNativeSelect-icon': { color: 'var(--btn-primary-bg)' },
         }}
       >
         {uniqueTopics.map((topic) => (
-          <option key={topic.id} value={topic.id}>
+          <option
+            key={topic.id}
+            value={topic.id}
+            style={{
+              backgroundColor: 'var(--bg-primary)',
+              color: 'var(--primary-text-color)',
+            }}
+          >
             {topic.label}
           </option>
         ))}
