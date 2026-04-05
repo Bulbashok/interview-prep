@@ -4,9 +4,14 @@ export interface UserData {
   uid: string;
   email: string | null;
   displayName: string | null;
-  photoURL: string | null;
-  createdAt: Date;
-  updatedAt: Date;
+  currentExp: number;
+  progress: number;
+  registrationDate: Date;
+  streak: {
+    current: number;
+    best: number;
+  };
+  history: [];
 }
 
 export interface AuthState {

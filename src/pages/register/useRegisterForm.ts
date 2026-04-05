@@ -70,7 +70,7 @@ const useRegisterActions = (
         password: formData.password,
         displayName: formData.displayName || undefined,
       });
-      navigate(protectedRoutes.profile);
+      navigate(protectedRoutes.dashboard);
     } catch (err: unknown) {
       let errorMessage = t(i18nKeys.registerErrors.registrationError);
 

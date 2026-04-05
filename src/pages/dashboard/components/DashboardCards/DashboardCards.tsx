@@ -6,9 +6,9 @@ import History from '../History/History';
 import Navigation from '../Navigation/Navigation';
 import { useTranslation } from 'react-i18next';
 import { i18nKeys } from '@/i18n/i18n-keys';
-import { DashboardUserData } from '@/types/dashboard';
+import { UserData } from '@/types/firebase';
 
-export default function DashboardCards(props: { data: DashboardUserData }) {
+export default function DashboardCards(props: { data: UserData }) {
   const { data } = props;
   const { t } = useTranslation();
 
@@ -20,7 +20,7 @@ export default function DashboardCards(props: { data: DashboardUserData }) {
       />
       <DashboardCard
         title={t(i18nKeys.dashboard.titles.xp)}
-        content={<Experience currentExperience={data.xp} maxExperience={data.maxExp} />}
+        content={<Experience currentExperience={data.currentExp} maxExperience={5000} />}
       />
       <DashboardCard
         title={t(i18nKeys.dashboard.titles.streak)}
