@@ -43,7 +43,7 @@ const useLoginActions = (
         email: formData.email,
         password: formData.password,
       });
-      navigate(protectedRoutes.profile);
+      navigate(protectedRoutes.dashboard);
     } catch (err: unknown) {
       let errorMessage = t(i18nKeys.loginErrors.loginError);
 

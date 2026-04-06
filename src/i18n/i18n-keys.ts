@@ -1,6 +1,7 @@
 export const i18nKeys = {
   logintBtnText: 'loginBtnText',
   logoutBtnText: 'logoutBtnText',
+  langBtn: 'langBtn',
 
   header: {
     login: 'header.login',
@@ -98,18 +99,6 @@ export const i18nKeys = {
     loading: 'profile.loading',
     homeButton: 'profile.homeButton',
   },
-  widgetRender: {
-    button: 'widgetRender.button',
-    messages: {
-      correct: 'widgetRender.messages.correct',
-      wrong: 'widgetRender.messages.wrong',
-      finish: 'widgetRender.messages.finish',
-    },
-    errors: {
-      loadWidget: 'widgetRender.errors.loadWidget',
-      serverError: 'widgetRender.errors.serverError',
-    },
-  },
   library: {
     title: {
       title: 'library.title.title',
@@ -138,10 +127,29 @@ export const i18nKeys = {
     btn: 'asyncSorter.btn',
     result: 'asyncSorter.result',
     avaibleBlocks: 'asyncSorter.avaibleBlocks',
+    success: 'asyncSorter.success',
+    successTitle: 'asyncSorter.successTitle',
+    successButton: 'asyncSorter.successButton',
+    failure: 'asyncSorter.failure',
+    failureTitle: 'asyncSorter.failureTitle',
+    failureButton: 'asyncSorter.failureButton',
   },
   themeSwitcher: {
     light: 'themeSwitcher.light',
     dark: 'themeSwitcher.dark',
     error: 'themeSwitcher.error',
+  },
+  widgetRender: {
+    button: 'widgetRender.button',
+    messages: {
+      correct: 'widgetRender.messages.correct',
+      wrong: 'widgetRender.messages.wrong',
+      finish: 'widgetRender.messages.finish',
+    },
+    errors: {
+      loadWidget: 'widgetRender.errors.loadWidget',
+      serverError: 'widgetRender.errors.serverError',
+      allCompleted: 'widgetRender.errors.allCompleted',
+    },
   },
 } as const;

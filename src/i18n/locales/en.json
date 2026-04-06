@@ -137,7 +137,13 @@
     "code": "Code",
     "btn": "Run Loop",
     "result": "Final order",
-    "avaibleBlocks": "Avaible blocks"
+    "avaibleBlocks": "Avaible blocks",
+    "success": "Done! Keep it up! Press the button to move on to the next task",
+    "successTitle": "Success",
+    "successButton": "Next",
+    "failure": "Try again. Click the button and arrange the blocks in the correct order",
+    "failureTitle": "Incorrectly",
+    "failureButton": "Try again"
   },
   "themeSwitcher": {
     "light": "Light theme is activated",

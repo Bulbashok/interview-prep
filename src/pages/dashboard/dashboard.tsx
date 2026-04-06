@@ -9,30 +9,30 @@ import { useTranslation } from 'react-i18next';
 import Navigation from './components/Navigation/Navigation';
 import DashboardEmptyState from './components/EmptyState/EmptyState';
 import DashboardCards from './components/DashboardCards/DashboardCards';
-
-const dataStumb = {
-  name: 'Aleksei',
-  progress: 10,
-  xp: 0,
-  maxExp: 0,
-  streak: {
-    current: 0,
-    best: 0,
-  },
-  history: [],
-};
+import { useEffect, useState } from 'react';
+import { UserData } from '@/types/firebase';
+import { getUserData } from '@/api/getUserData';
+import { RootLayout } from '@/components/skeleton/RootLayout';
 
 export default function Dashboard() {
   const { t } = useTranslation();
+  const [userData, setUserData] = useState<UserData | null>(null);
 
-  const hasProgress = dataStumb.progress > 0 || dataStumb.xp > 0 || dataStumb.history.length > 0;
+  useEffect(() => {
+    getUserData().then(setUserData);
+  }, []);
+
+  if (!userData) return <RootLayout />;
+
+  const hasProgress =
+    userData.progress > 0 || userData.currentExp > 0 || userData.history.length > 0;
 
   if (!hasProgress) {
     return (
       <div className="dashboard-page">
         <HeaderHome />
         <div className="dashboard-page__empty">
-          <DashboardEmptyState name={dataStumb.name} />
+          <DashboardEmptyState name={userData.displayName || 'User'} />
           <DashboardCard title={t(i18nKeys.dashboard.titles.navigation)} content={<Navigation />} />
         </div>
         <FooterHome />
@@ -51,7 +51,7 @@ export default function Dashboard() {
         <HeaderHome />
 
         <div className="dashboard">
-          <DashboardCards data={dataStumb} />
+          <DashboardCards data={userData} />
         </div>
 
         <FooterHome />
