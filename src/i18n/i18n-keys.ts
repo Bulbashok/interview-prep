@@ -1,6 +1,7 @@
 export const i18nKeys = {
   logintBtnText: 'loginBtnText',
   logoutBtnText: 'logoutBtnText',
+  langBtn: 'langBtn',
 
   header: {
     login: 'header.login',

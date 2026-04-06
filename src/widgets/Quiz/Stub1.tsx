@@ -2,11 +2,10 @@ import { QuizPayload } from '@/types/quiz';
 
 interface QuizWidgetProps {
   id: string;
-  onAnswer: (answer: unknown) => void;
   data: QuizPayload;
 }
 
-// eslint-disable-next-line
-export default function WidgetStub1(props: QuizWidgetProps) {
+export default function WidgetStub1({ data, id }: QuizWidgetProps) {
+  console.log('Quiz widget:', { data, id });
   return <div> Заглушка 1 </div>;
 }
