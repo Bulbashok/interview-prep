@@ -1,0 +1,12 @@
+.home {
+  max-width: var(--container-width);
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: var(--container-padding);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3.75em;
+}
