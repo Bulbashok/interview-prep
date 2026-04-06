@@ -62,7 +62,7 @@ https://youtu.be/EIHs8nL0cLQ
 - Рекомендация добавить id в History для предотвращения проблем с обновлением истории
 - 7 конструктивных комментариев по улучшению кода
 
-### PR: Global Error Handling (Toast system)
+### [PR #45: Global Error Handling (Toast system)](https://github.com/Bulbashok/interview-prep/pull/45)
 
 **Автор:** NickKool  
 **Ревьюер:** Команда  
