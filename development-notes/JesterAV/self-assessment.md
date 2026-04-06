@@ -1,5 +1,7 @@
 # Self-Assessement: JesterAV
 
+PR: https://github.com/Bulbashok/interview-prep/pull/87
+
 ## Реализованные фичи (Итого: 155 баллов):
 
 - My Components:
