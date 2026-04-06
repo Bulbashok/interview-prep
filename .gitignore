@@ -6,3 +6,5 @@ dist
 .idea
 .vite
 .env
+.env.local
+.env.*.local

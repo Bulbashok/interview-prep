@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__descript {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+
+    padding-left: 2em;
+    border-left: 3px solid var(--btn-cta);
+    &__title {
+      font-size: 3em;
+      font-weight: 600;
+      color: var(--heading-color);
+
+      @media (max-width: 600px) {
+        font-size: 2em;
+      }
+    }
+    &__text {
+      max-width: 32em;
+      line-height: 1.6;
+      font-size: 1.2em;
+      color: var(--primary-text-color);
+    }
+  }
+  @media (max-width: 757px) {
+    flex-direction: column;
+    gap: 1.25em;
+    align-items: flex-start;
+    text-align: left;
+  }
+}

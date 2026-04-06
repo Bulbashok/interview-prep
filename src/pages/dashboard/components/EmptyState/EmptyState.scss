@@ -1,0 +1,18 @@
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  color: var(--primary-text-color);
+
+  gap: 1.5rem;
+
+  &__title {
+    font-size: 1.4rem;
+  }
+
+  &__message {
+    font-size: 1.3rem;
+  }
+}
