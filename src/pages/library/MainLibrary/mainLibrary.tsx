@@ -55,7 +55,7 @@ export default function MainLibrary() {
   return (
     <div className="mainLibrary">
       {activeTopic ? (
-        <TopicLearning topic={activeTopic} onBack={() => setActiveTopic(null)} /> //Заглушка
+        <TopicLearning topic={activeTopic} />
       ) : (
         <>
           <ToolbarLibrary
