@@ -1,0 +1,148 @@
+{
+  "logoutBtnText": "Logout",
+  "loginBtnText": "Log in",
+
+  "header": {
+    "login": "Log In",
+    "logout": "Log Out",
+    "profile": "Profile",
+    "dashboard": "Dashboard"
+  },
+
+  "404": {
+    "title": "404",
+    "subtitle": "Ooops! Page not found :(",
+    "backButton": "Go Back",
+    "homePageButton": "Go Homepage",
+    "pageTitle": "Page not found | asyncmind",
+    "pageDescription": "Page not found"
+  },
+
+  "homePage": {
+    "loginBtn": "Log in",
+    "description": "An interactive platform to sharpen your skills and ace frontend technical interviews. We've curated a comprehensive database of current questions, coding challenges, and architecture cases to help you structure your knowledge and land your dream offer.",
+    "registrationBtn": "Register",
+    "aboutUs": "About us"
+  },
+
+  "register": {
+    "title": "Register",
+    "loginLink": "Already have an account? ",
+    "loginButton": "Log in",
+    "displayNameLabel": "Display Name (optional)",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "submitButton": "Register",
+    "submitButtonLoading": "Registering...",
+    "redirecting": "Redirecting...",
+    "backButton": "Go Back"
+  },
+
+  "registerErrors": {
+    "passwordsMismatch": "Passwords do not match",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "registrationError": "Registration error",
+    "emailAlreadyInUse": "This email is already registered",
+    "weakPassword": "Password is too weak",
+    "invalidEmail": "Invalid email"
+  },
+
+  "login": {
+    "title": "Log In",
+    "registerLink": "Don't have an account? ",
+    "registerButton": "Register",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submitButton": "Log In",
+    "submitButtonLoading": "Logging in...",
+    "redirecting": "Redirecting...",
+    "backButton": "Go Back"
+  },
+
+  "loginErrors": {
+    "invalidCredentials": "Invalid email or password",
+    "userNotFound": "User not found",
+    "invalidEmail": "Invalid email",
+    "loginError": "Login error"
+  },
+
+  "dashboard": {
+    "logoutBtn": "Log Out",
+    "empty": {
+      "title": ", welcome!",
+      "message": "Start your frontend development journey to see your progress here."
+    },
+    "titles": {
+      "progress": "Progress",
+      "xp": "Experience",
+      "streak": "Streak",
+      "history": "History",
+      "navigation": "Navigation"
+    },
+    "experience": "Experience:",
+    "buttons": {
+      "library": "Library",
+      "profile": "Profile"
+    },
+    "streak": {
+      "current": "Current streak:",
+      "best": "Best streak:"
+    }
+  },
+
+  "profile": {
+    "title": "Profile Page Coming Soon",
+    "subtitle": "This page will be available soon",
+    "description": "We're working on this section. Check back later!",
+    "loading": "Loading profile...",
+    "homeButton": "Go to Home"
+  },
+  "library": {
+    "title": {
+      "title": "Topics for practice"
+    },
+    "search": {
+      "placeholder": "Search topics..."
+    },
+    "levels": {
+      "title": "Levels",
+      "all": "All"
+    },
+    "select": {
+      "title": "Topics",
+      "all": "All"
+    }
+  },
+  "asyncSorter": {
+    "question": "In what order will console.log be output?",
+    "instruction": "Drag the blocks in the correct order:",
+    "code": "Code",
+    "btn": "Run Loop",
+    "result": "Final order",
+    "avaibleBlocks": "Avaible blocks",
+    "success": "Done! Keep it up! Press the button to move on to the next task",
+    "successTitle": "Success",
+    "successButton": "Next",
+    "failure": "Try again. Click the button and arrange the blocks in the correct order",
+    "failureTitle": "Incorrectly",
+    "failureButton": "Try again"
+  },
+  "themeSwitcher": {
+    "light": "Light theme is activated",
+    "dark": "Dark theme is activated",
+    "error": "Failed to switch theme"
+  },
+  "widgetRender": {
+    "button": "Back to Topics",
+    "messages": {
+      "correct": "Correct!",
+      "wrong": "Incorrect, try again!",
+      "finish": "Congratulations! Topic fully completed."
+    },
+    "errors": {
+      "loadWidget": "Error loading the question",
+      "serverError": "Server connection error"
+    }
+  }
+}

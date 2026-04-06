@@ -1,0 +1,148 @@
+{
+  "logoutBtnText": "Выход",
+  "loginBtnText": "Вход",
+
+  "header": {
+    "login": "Войти",
+    "logout": "Выйти",
+    "profile": "Профиль",
+    "dashboard": "Дэшборд"
+  },
+
+  "404": {
+    "title": "404",
+    "subtitle": "Ууупс! Страница не найдена :(",
+    "backButton": "Назад",
+    "homePageButton": "На главную",
+    "pageTitle": "Страница не найдена | asyncmind",
+    "pageDescription": "Страница не найдена"
+  },
+
+  "homePage": {
+    "loginBtn": "Войти",
+    "description": "Интерактивная платформа для оттачивания навыков и уверенного прохождения технических интервью на позицию Frontend-разработчика. Мы собрали актуальную базу вопросов, практических задач и архитектурных кейсов, которые помогут вам структурировать знания и получить заветный оффер.",
+    "registrationBtn": "Регистрация",
+    "aboutUs": "О нас"
+  },
+
+  "register": {
+    "title": "Регистрация",
+    "loginLink": "Уже есть аккаунт? ",
+    "loginButton": "Войти",
+    "displayNameLabel": "Имя (необязательно)",
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "confirmPasswordLabel": "Подтвердите пароль",
+    "submitButton": "Зарегистрироваться",
+    "submitButtonLoading": "Регистрация...",
+    "redirecting": "Перенаправление...",
+    "backButton": "Назад"
+  },
+
+  "registerErrors": {
+    "passwordsMismatch": "Пароли не совпадают",
+    "passwordMinLength": "Пароль должен содержать минимум 6 символов",
+    "registrationError": "Ошибка регистрации",
+    "emailAlreadyInUse": "Этот email уже зарегистрирован",
+    "weakPassword": "Пароль слишком слабый",
+    "invalidEmail": "Некорректный email"
+  },
+
+  "login": {
+    "title": "Вход",
+    "registerLink": "Нет аккаунта? ",
+    "registerButton": "Зарегистрироваться",
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "submitButton": "Войти",
+    "submitButtonLoading": "Вход...",
+    "redirecting": "Перенаправление...",
+    "backButton": "Назад"
+  },
+
+  "loginErrors": {
+    "invalidCredentials": "Неверный email или пароль",
+    "userNotFound": "Пользователь не найден",
+    "invalidEmail": "Некорректный email",
+    "loginError": "Ошибка входа"
+  },
+
+  "dashboard": {
+    "logoutBtn": "Выйти",
+    "empty": {
+      "title": ", добро пожаловать!",
+      "message": "Начните своё путешествие по frontend-разработке, чтобы увидеть прогресс здесь."
+    },
+    "titles": {
+      "progress": "Прогресс",
+      "xp": "Опыт",
+      "streak": "Серия",
+      "history": "История",
+      "navigation": "Навигация"
+    },
+    "experience": "Опыт:",
+    "buttons": {
+      "library": "Библиотека",
+      "profile": "Профиль"
+    },
+    "streak": {
+      "current": "Текущая серия:",
+      "best": "Лучшая серия:"
+    }
+  },
+
+  "profile": {
+    "title": "Профиль в разработке",
+    "subtitle": "Страница скоро будет доступна",
+    "description": "Мы работаем над этим разделом. Загляните позже!",
+    "loading": "Загрузка профиля...",
+    "homeButton": "На главную"
+  },
+  "library": {
+    "title": {
+      "title": "Темы для практики"
+    },
+    "search": {
+      "placeholder": "Найти тему..."
+    },
+    "levels": {
+      "title": "Сложность",
+      "all": "Все"
+    },
+    "select": {
+      "title": "Темы",
+      "all": "Все"
+    }
+  },
+  "asyncSorter": {
+    "question": "В каком порядке выведутся console.log?",
+    "instruction": "Перетащите блоки в правильной последовательности:",
+    "code": "Код",
+    "btn": "Выполнить цикл",
+    "result": "Итоговый порядок",
+    "avaibleBlocks": "Доступные блоки",
+    "success": "Выполнено! Так держать! Нажмите кнопку 'Продолжить', для перехода к следующему заданию",
+    "successTitle": "Успех",
+    "successButton": "Продолжить",
+    "failure": "Попробуйте заново. Нажмите кнопку 'Попробовать ещё раз' и расположите блоки в правильном порядке",
+    "failureTitle": "Неверно",
+    "failureButton": "Попробовать ещё раз"
+  },
+  "themeSwitcher": {
+    "light": "Светлая тема активирована",
+    "dark": "Тёмная тема активирована",
+    "error": "Не удалось переключить тему"
+  },
+  "widgetRender": {
+    "button": "Назад к темам",
+    "messages": {
+      "correct": "Правильно!",
+      "wrong": "Неверно, попробуй еще раз!",
+      "finish": "Поздравляем! Тема полностью завершена."
+    },
+    "errors": {
+      "loadWidget": "Ошибка загрузки вопроса",
+      "serverError": "Ошибка связи с сервером"
+    }
+  }
+}
