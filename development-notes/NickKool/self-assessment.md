@@ -2,7 +2,7 @@
 
 ## Таблица фич
 
-| Категория        | Фича                                        | Баллы   | Ссылки на код                                                       |
+| Категория        | Фича                                        | Баллы   | Ссылки на код и PR                                                  |
 | ---------------- | ------------------------------------------- | ------- | ------------------------------------------------------------------- |
 | My Components    | Landing Page (Header, Footer, Main Section) | +20     | [Landing Page](https://github.com/Bulbashok/interview-prep/pull/29) |
 | My Components    | Global Error Handling (Toast System)        | +25     | [Toast System](https://github.com/Bulbashok/interview-prep/pull/45) |
@@ -179,6 +179,8 @@
 Сосредоточился на качестве компонентов и на получение знаний от проекта.
 
 ## Вопросы и обратная связь
+
+https://github.com/Bulbashok/interview-prep/pull/86
 
 ## Запланированные фичи до первой презентации
 
