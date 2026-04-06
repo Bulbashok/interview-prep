@@ -121,6 +121,12 @@ export const i18nKeys = {
     btn: 'asyncSorter.btn',
     result: 'asyncSorter.result',
     avaibleBlocks: 'asyncSorter.avaibleBlocks',
+    success: 'asyncSorter.success',
+    successTitle: 'asyncSorter.successTitle',
+    successButton: 'asyncSorter.successButton',
+    failure: 'asyncSorter.failure',
+    failureTitle: 'asyncSorter.failureTitle',
+    failureButton: 'asyncSorter.failureButton',
   },
   themeSwitcher: {
     light: 'themeSwitcher.light',
@@ -137,6 +143,7 @@ export const i18nKeys = {
     errors: {
       loadWidget: 'widgetRender.errors.loadWidget',
       serverError: 'widgetRender.errors.serverError',
+      allCompleted: 'выполнено',
     },
   },
 } as const;

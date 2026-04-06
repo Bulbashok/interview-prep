@@ -16,6 +16,14 @@ export interface AsyncSorterAnswerData {
   outputOrder: string[];
 }
 
-export interface AsyncSorterAnswer extends AsyncSorterAnswerData {
+export interface AsyncSorterSubmitData {
+  callstack: string;
+  microtasks: string;
+  macrotasks: string;
+  outputOrder: string;
+}
+
+export interface AsyncSorterAnswer extends AsyncSorterSubmitData {
   id: string;
+  type: 'async';
 }

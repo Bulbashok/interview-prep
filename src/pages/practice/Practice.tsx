@@ -5,12 +5,12 @@ import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';
 
 import PageWrapper from '@/components/PageWrapper/PageWrapper';
-import WidgetRender from '@/widgets/WidgetRender/WidgetRender';
 
 import { Topic } from '../library/MainLibrary/Topics/topics';
 import { Widget } from '@/types/widgets';
 import { useLocation, useNavigate } from 'react-router';
 import { protectedRoutes } from '@/router/routes';
+import { WidgetController } from '@/widgets/WidgetController/WidgetController';
 
 interface LocationState {
   widget: Widget;
@@ -25,7 +25,6 @@ export default function Practice() {
 
   const state: LocationState = location.state;
   const topic = state.topic;
-  const widget = state.widget;
 
   return (
     <PageWrapper>
@@ -43,7 +42,7 @@ export default function Practice() {
         </Typography>
 
         <Box sx={{ maxWidth: '800px', mx: 'auto', textAlign: 'center' }}>
-          <WidgetRender widget={widget} />
+          <WidgetController topic={topic} />
         </Box>
       </Box>
     </PageWrapper>

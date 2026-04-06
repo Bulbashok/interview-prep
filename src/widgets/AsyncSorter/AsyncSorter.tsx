@@ -20,6 +20,8 @@ import DraggableBlock from './components/Blocks/DraggableBlock';
 import Button from '@/components/button/button';
 import { useAsyncSorter } from './hooks/useAsyncSorter';
 import OverlayBlock from './components/Blocks/OverlayBlock';
+import { asyncSorterSubmit } from './asyncSorterSubmit';
+import { useWidgetContext } from '../contexts/WidgetContext';
 
 interface AsyncSorterProps {
   data: AsyncSorterPayload;
@@ -27,6 +29,8 @@ interface AsyncSorterProps {
 }
 
 export default function AsyncSorter({ data, id }: AsyncSorterProps) {
+  const context = useWidgetContext();
+
   const {
     handleDragStart,
     handleDragEnd,
@@ -37,6 +41,7 @@ export default function AsyncSorter({ data, id }: AsyncSorterProps) {
     finalOrder,
     currentBlocks,
     handleResultSorting,
+    blocksIds,
   } = useAsyncSorter(data.blocks);
   const { t } = useTranslation();
 
@@ -93,7 +98,10 @@ export default function AsyncSorter({ data, id }: AsyncSorterProps) {
         </DragOverlay>
       </DndContext>
       <ResultContainer finalOrder={finalOrder} sortingFunc={handleResultSorting} />
-      <Button content={t(i18nKeys.asyncSorter.btn)} onClick={() => {}} />
+      <Button
+        content={t(i18nKeys.asyncSorter.btn)}
+        onClick={() => asyncSorterSubmit(blocksIds, id, () => context?.completeWidget())}
+      />
     </div>
   );
 }
