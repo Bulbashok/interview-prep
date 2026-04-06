@@ -1,4 +1,4 @@
-import './dashboardCard.scss';
+import './DashboardCard.scss';
 
 interface DashboardCardProps {
   title: string;
