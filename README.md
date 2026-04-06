@@ -4,11 +4,11 @@
 
 ## Deploy
 
-https://interview-prep01.vercel.app/
+https://interview-prep-bulbashoks-projects.vercel.app/
 
 ## Демо-видео
 
-https://youtu.be/EIHs8nL0cLQ
+https://youtu.be/__A6ntOkU0w
 
 ## Чем гордимся
 
