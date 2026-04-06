@@ -6,7 +6,7 @@ import ActionAreaGrid from './TopicsLibrary/topicsLibrary';
 
 import { useTopicsLibrary } from '@/hooks/useTopicsLibrary';
 
-import { TopicLearning } from './components/TopicLearning';
+import { WidgetController } from '@/widgets/WidgetController/WidgetController';
 
 // import { useNavigate } from 'react-router-dom';
 // import { protectedRoutes } from '@/router/routes';
@@ -61,7 +61,7 @@ export default function MainLibrary() {
   return (
     <div className="mainLibrary">
       {activeTopic ? (
-        <TopicLearning topic={activeTopic} onBack={() => setActiveTopic(null)} /> //Заглушка
+        <WidgetController topic={activeTopic} />
       ) : (
         <>
           <ToolbarLibrary
