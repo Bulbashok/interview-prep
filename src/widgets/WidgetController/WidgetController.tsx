@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Topic } from '@/pages/library/MainLibrary/Topics/topics';
 import { firestoreService } from '@/services/firestore';
 import { notify } from '@/utils/notify';
@@ -7,32 +7,46 @@ import { useTranslation } from 'react-i18next';
 import { Widget } from '@/types/widgets';
 import { useNavigate } from 'react-router';
 import { protectedRoutes } from '@/router/routes';
+import { WidgetContext } from '../contexts/WidgetContext';
+import WidgetRender from '../WidgetRender/WidgetRender';
+import { RootLayout } from '@/components/skeleton/RootLayout';
 
 export const WidgetController = ({ topic }: { topic: Topic }) => {
   const { t } = useTranslation();
-
   const navigate = useNavigate();
-  const [currentStep] = useState(0);
+
+  const [currentStep, setCurrentStep] = useState(0);
   const [currentWidget, setCurrentWidget] = useState<Widget | null>(null);
 
   useEffect(() => {
     const fetchWidget = async () => {
       try {
         const widgetId = topic.widgetIds[currentStep];
-        const data = await firestoreService.getDocument<Widget>('widgets', widgetId);
-        setCurrentWidget(data);
-        navigate(protectedRoutes.practice.replace(':topicId', topic.id), {
-          state: {
-            topic: topic,
-            widget: currentWidget,
-          },
-        });
+        const widget = await firestoreService.getDocument<Widget>('widgets', widgetId);
+        setCurrentWidget(widget);
       } catch {
-        notify.error(t(i18nKeys.widgetRender.errors.loadWidget));
+        notify.error('error');
       }
     };
-    fetchWidget();
-  }, [currentStep, t]);
 
-  return null;
+    fetchWidget();
+  }, [currentStep, topic]);
+
+  const completeWidget = () => {
+    const nextStep = currentStep + 1;
+    const totalWidgets = topic.widgetIds.length;
+
+    if (nextStep < totalWidgets) {
+      setCurrentStep(nextStep);
+    } else {
+      navigate(protectedRoutes.library);
+      notify.success(t(i18nKeys.widgetRender.errors.allCompleted));
+    }
+  };
+
+  return (
+    <WidgetContext.Provider value={{ completeWidget }}>
+      {currentWidget ? <WidgetRender widget={currentWidget} /> : <RootLayout />}
+    </WidgetContext.Provider>
+  );
 };
