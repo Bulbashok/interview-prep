@@ -12,13 +12,15 @@ https://github.com/Bulbashok/interview-prep/pull/86
 | My Components    | Global Error Handling (Toast System)        | +25     | [Toast System](https://github.com/Bulbashok/interview-prep/pull/45) |
 | My Components    | Library Page с фильтрами и поиском          | +20     | [Library](https://github.com/Bulbashok/interview-prep/pull/61)      |
 | My Components    | RootLayout (Global Loader)                  | +15     | [RootLayout](https://github.com/Bulbashok/interview-prep/pull/55)   |
+| My Components    | Widget Engine - True/False                  | +25     | [Widget Engine]                                                     |
 | Backend & Data   | BaaS CRUD (Firebase Firestore)              | +15     | [Firestore Service](../../src/services/firestore.ts)                |
+| Backend & Data   | Коллекция виджетов на Firebase              | +15     | [Widgets Collection]                                                |
 | UI & Interaction | i18n (локализация)                          | +10     | [i18n Keys](../../src/i18n/i18n-keys.ts)                            |
 | UI & Interaction | Responsive Design                           | +5      | [Media Queries](../../src/styles/media.scss)                        |
 | Frameworks       | React                                       | +5      | [React Components](../../src)                                       |
 | Architecture     | API Layer                                   | +10     | [Firestore Service](../../src/services/firestore.ts)                |
 | Architecture     | Design Patterns                             | +10     | [Custom Hooks](../../src/hooks)                                     |
-| **ИТОГО**        |                                             | **130** |                                                                     |
+| **ИТОГО**        |                                             | **170** |                                                                     |
 
 ## Описание моей работы в проекте
 
@@ -176,27 +178,56 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - Композиция компонентов в Library
 - Управление состоянием
 
+### 9. Widget Engine - True/False - 25 баллов
+
+Разработал полный цикл виджета для вопросов типа "верно/неверно" с проверкой ответов и последовательным переходом между вопросами.
+
+**Что было сделано**:
+
+- Логику последовательного отображения виджета
+- Проверку правильности ответов пользователя
+- Отправку ответов на сервер и сохранение результатов
+- Интеграцию с TopicLearningView контроллером
+- Обработку завершения всех вопросов в теме
+
+**Код для демонстрации**:
+
+- `TopicLearningView.tsx` - контроллер виджетов
+- `WidgetController.tsx` - управление состоянием виджета
+- `firestore.ts` - сохранение ответов в коллекцию `correct_answers`
+
+### 10. Коллекция виджетов на Firebase - 15 баллов
+
+Создал и наполнил коллекцию виджетов для темы true/false в Firebase.
+
+**Что было сделано**:
+
+- Структуру данных для виджетов типа true/false
+- Скрипт миграции для загрузки виджетов в Firebase
+- Интеграцию с Library Page для получения widgetIds
+
+**Код для демонстрации**:
+
+- Скрипт миграции виджетов
+- Структура коллекции widgets в Firebase
+
 ## Итоговая оценка
 
-**Всего баллов**: 130 (максимум 250 за Personal Features)
+**Всего баллов**: 170 (максимум 250 за Personal Features)
 
 Сосредоточился на качестве компонентов и на получение знаний от проекта.
 
 ## Запланированные фичи до первой презентации
 
-| Категория      | Фича                               | Баллы | Статус       |
-| -------------- | ---------------------------------- | ----- | ------------ |
-| My Components  | Profile Page                       | +20   | В разработке |
-| My Components  | Widget Engine - True/False         | +25   | В разработке |
-| Quality        | Unit Tests (Basic) - 20%+ покрытия | +10   | В разработке |
-| Backend & Data | Коллекция виджетов на Firebase     | +15   | В разработке |
+| Категория     | Фича                               | Баллы | Статус       |
+| ------------- | ---------------------------------- | ----- | ------------ |
+| My Components | Profile Page                       | +20   | В разработке |
+| Quality       | Unit Tests (Basic) - 20%+ покрытия | +10   | В разработке |
 
-**Потенциальный итог**: +70 баллов
+**Потенциальный итог**: +30 баллов
 **Итого с запланированными**: 200 баллов
 
 ### Что планирую сделать:
 
 1. **Profile Page** - личный кабинет пользователя
-2. **Widget Engine - True/False** - полный цикл виджета с проверкой ответов
-3. **Unit Tests** - покрытие основных компонентов тестами
-4. **Коллекция виджетов** - наполнение Firebase виджетами для темы true/false
+2. **Unit Tests** - покрытие основных компонентов тестами
