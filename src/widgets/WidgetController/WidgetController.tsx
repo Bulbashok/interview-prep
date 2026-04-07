@@ -10,6 +10,7 @@ import { protectedRoutes } from '@/router/routes';
 import { WidgetContext } from '../contexts/WidgetContext';
 import WidgetRender from '../WidgetRender/WidgetRender';
 import { RootLayout } from '@/components/skeleton/RootLayout';
+import { createHistoryRecord } from '@/api/createHistoryRecord';
 
 export const WidgetController = ({ topic }: { topic: Topic }) => {
   const { t } = useTranslation();
@@ -32,9 +33,13 @@ export const WidgetController = ({ topic }: { topic: Topic }) => {
     fetchWidget();
   }, [currentStep, topic]);
 
-  const completeWidget = () => {
+  const completeWidget = async () => {
     const nextStep = currentStep + 1;
     const totalWidgets = topic.widgetIds.length;
+
+    await createHistoryRecord(topic.title.en, currentStep + 1, totalWidgets).catch((error) => {
+      console.error('Failded to create history record:', error);
+    });
 
     if (nextStep < totalWidgets) {
       setCurrentStep(nextStep);
