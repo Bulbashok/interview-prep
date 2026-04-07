@@ -9,42 +9,38 @@ export const createHistoryRecord = async (
   currentProgress: number,
   allQuestions: number,
 ): Promise<void> => {
-  try {
-    const userId = auth.currentUser?.uid;
+  const userId = auth.currentUser?.uid;
 
-    if (!userId) return;
+  if (!userId) return;
 
-    const date = new Date();
-    const formattedDate = `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}.${date.getFullYear()}`;
+  const date = new Date();
+  const formattedDate = `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}.${date.getFullYear()}`;
 
-    const userDoc: UserData | null = await firestoreService.getDocument('users', userId);
+  const userDoc: UserData | null = await firestoreService.getDocument('users', userId);
 
-    if (!userDoc) return;
+  if (!userDoc) return;
 
-    const record: HistoryRecordProps = {
-      subject: topicName,
-      doneQuestions: currentProgress,
-      allQuestions: allQuestions,
-      date: formattedDate,
-    };
+  const record: HistoryRecordProps = {
+    subject: topicName,
+    doneQuestions: currentProgress,
+    allQuestions: allQuestions,
+    date: formattedDate,
+  };
 
-    const existingRecord = userDoc.history.find(
-      (record) =>
-        record.subject === topicName &&
-        record.date === formattedDate &&
-        record.doneQuestions === currentProgress,
-    );
+  const existingRecord = userDoc.history.find(
+    (record) =>
+      record.subject === topicName &&
+      record.date === formattedDate &&
+      record.doneQuestions === currentProgress,
+  );
 
-    if (existingRecord) {
-      await firestoreService.updateDocument('users', userId, {
-        history: arrayRemove(existingRecord),
-      });
-    }
-
+  if (existingRecord) {
     await firestoreService.updateDocument('users', userId, {
-      history: arrayUnion(record),
+      history: arrayRemove(existingRecord),
     });
-  } catch (error) {
-    console.error('Failed to create history record:', error);
   }
+
+  await firestoreService.updateDocument('users', userId, {
+    history: arrayUnion(record),
+  });
 };
