@@ -1,5 +1,6 @@
 import './header.scss';
 
+import { useState } from 'react';
 import ChangeLanguage from './changeLanguage/changeLanguage';
 
 import logo from '../../assets/svg/logo.svg';
@@ -17,11 +18,20 @@ export default function HeaderHome() {
   const { t } = useTranslation();
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = async () => {
     navigate(appRoutes.home);
     await signOut();
+    setMenuOpen(false);
   };
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
     <>
@@ -30,21 +40,34 @@ export default function HeaderHome() {
           <img className="header__logo__img" src={logo} alt="logo" />
           <h2 className="header__logo__title">asyncmind</h2>
         </div>
-        <div className="header__button">
+        <button
+          className="header__burger"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+        >
+          <span className={`header__burger-line ${menuOpen ? 'header__burger-line--open' : ''}`} />
+          <span className={`header__burger-line ${menuOpen ? 'header__burger-line--open' : ''}`} />
+          <span className={`header__burger-line ${menuOpen ? 'header__burger-line--open' : ''}`} />
+        </button>
+        <div className={`header__button ${menuOpen ? 'header__button--open' : ''}`}>
           {user ? (
             <>
               <Button
                 content={t(i18nKeys.header.dashboard)}
-                onClick={() => navigate(protectedRoutes.dashboard)}
+                onClick={() => handleNavigate(protectedRoutes.dashboard)}
               />
               <Button
                 content={t(i18nKeys.header.profile)}
-                onClick={() => navigate(protectedRoutes.profile)}
+                onClick={() => handleNavigate(protectedRoutes.profile)}
               />
               <Button content={t(i18nKeys.header.logout)} onClick={handleLogout} />
             </>
           ) : (
-            <Button content={t(i18nKeys.header.login)} onClick={() => navigate(authRoutes.login)} />
+            <Button
+              content={t(i18nKeys.header.login)}
+              onClick={() => handleNavigate(authRoutes.login)}
+            />
           )}
           <ChangeLanguage />
           <ThemeSwitcher />

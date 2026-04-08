@@ -1,6 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
 
   &__logo {
     display: flex;
@@ -25,8 +27,87 @@
       }
     }
   }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.25rem;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__burger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--heading-color);
+    border-radius: 2px;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+
+    &--open:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    &--open:nth-child(2) {
+      opacity: 0;
+    }
+
+    &--open:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+
   &__button {
     display: flex;
     gap: 0.5em;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background-color: var(--bg-primary);
+      border: 2px solid var(--border-color);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+      z-index: 9;
+      min-width: 12rem;
+
+      &--open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      // Force MUI buttons to full width in mobile menu
+      .MuiButton-root {
+        width: 100% !important;
+      }
+
+      .language-manager {
+        width: 100%;
+        display: block;
+      }
+    }
   }
 }
