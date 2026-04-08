@@ -13,6 +13,7 @@ export interface UserData {
     best: number;
   };
   history: HistoryRecordProps[];
+  updatedAt: Date;
 }
 
 export interface AuthState {
