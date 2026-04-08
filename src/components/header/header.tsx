@@ -54,8 +54,8 @@ export default function HeaderHome() {
           {user ? (
             <>
               <Button
-                content={t(i18nKeys.header.dashboard)}
-                onClick={() => handleNavigate(protectedRoutes.dashboard)}
+                content={t(i18nKeys.homePage.aboutUs)}
+                onClick={() => handleNavigate(appRoutes.home)}
               />
               <Button
                 content={t(i18nKeys.header.profile)}
