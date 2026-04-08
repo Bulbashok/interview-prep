@@ -92,6 +92,7 @@
         visibility 0.3s ease;
       z-index: 9;
       min-width: 12rem;
+      border-radius: 0.5rem;
 
       &--open {
         transform: translateY(0);
