@@ -13,13 +13,20 @@ import { useEffect, useState } from 'react';
 import { UserData } from '@/types/firebase';
 import { getUserData } from '@/api/getUserData';
 import { RootLayout } from '@/components/skeleton/RootLayout';
+import { resetStreak } from '@/api/streakCounter';
 
 export default function Dashboard() {
   const { t } = useTranslation();
   const [userData, setUserData] = useState<UserData | null>(null);
 
   useEffect(() => {
-    getUserData().then(setUserData);
+    const loadData = async () => {
+      await resetStreak();
+      const data = await getUserData();
+      setUserData(data);
+    };
+
+    loadData();
   }, []);
 
   if (!userData) return <RootLayout />;
