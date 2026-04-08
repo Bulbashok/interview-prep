@@ -1,8 +1,8 @@
 import './main-about.scss';
 
-import a1 from '../../../assets/avatars/a1.jpg';
-import a2 from '../../../assets/avatars/a2.jpg';
-import a3 from '../../../assets/avatars/a3.jpg';
+import a1 from '../../../assets/avatars/a1.webp';
+import a2 from '../../../assets/avatars/a2.webp';
+import a3 from '../../../assets/avatars/a3.webp';
 import { useTranslation } from 'react-i18next';
 
 import AboutCard from './about-card/about-card';
