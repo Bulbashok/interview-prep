@@ -14,6 +14,7 @@ export interface UserData {
   };
   history: HistoryRecordProps[];
   updatedAt: Date;
+  completeTopics: string[];
 }
 
 export interface AuthState {
