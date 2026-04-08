@@ -128,6 +128,17 @@
     "failureTitle": "Incorrectly",
     "failureButton": "Try again"
   },
+  "quiz": {
+    "question": "Quiz Question",
+    "instruction": "Select the correct answer:",
+    "optionsLabel": "Answer options",
+    "submitButton": "Answer",
+    "submitting": "Checking answer...",
+    "successTitle": "Correct!",
+    "failureTitle": "Incorrect",
+    "nextButton": "Next",
+    "retryButton": "Try again"
+  },
   "themeSwitcher": {
     "light": "Light theme is activated",
     "dark": "Dark theme is activated",
