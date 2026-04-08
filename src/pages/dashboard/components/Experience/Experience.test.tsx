@@ -7,13 +7,10 @@ mockI18n();
 
 const experienceProps = {
   current: 7,
-  max: 10,
 };
 
 const renderExperience = () => {
-  return render(
-    <Experience currentExperience={experienceProps.current} maxExperience={experienceProps.max} />,
-  );
+  return render(<Experience currentExperience={experienceProps.current} />);
 };
 
 describe('Dashboard Experience component', () => {
@@ -30,9 +27,5 @@ describe('Dashboard Experience component', () => {
     expect(
       screen.getByText((content) => content.includes(String(experienceProps.current))),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText((content) => content.includes(String(experienceProps.max))),
-    ).toBeInTheDocument();
-    expect(screen.getByText((content) => content.includes('/'))).toBeInTheDocument();
   });
 });
