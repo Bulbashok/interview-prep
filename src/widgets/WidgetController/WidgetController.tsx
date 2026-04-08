@@ -12,6 +12,7 @@ import WidgetRender from '../WidgetRender/WidgetRender';
 import { RootLayout } from '@/components/skeleton/RootLayout';
 import { createHistoryRecord } from '@/api/createHistoryRecord';
 import { updateExp } from '@/api/updateExp';
+import { updateStreak } from '@/api/streakCounter';
 
 export const WidgetController = ({ topic }: { topic: Topic }) => {
   const { t } = useTranslation();
@@ -38,13 +39,11 @@ export const WidgetController = ({ topic }: { topic: Topic }) => {
     const nextStep = currentStep + 1;
     const totalWidgets = topic.widgetIds.length;
 
-    await createHistoryRecord(topic.title.en, currentStep + 1, totalWidgets).catch((error) => {
-      console.error('Failded to create history record:', error);
-    });
+    await createHistoryRecord(topic.title.en, currentStep + 1, totalWidgets);
 
-    await updateExp().catch((error) => {
-      console.error('Failed to update user experience', error);
-    });
+    await updateExp();
+
+    await updateStreak();
 
     if (nextStep < totalWidgets) {
       setCurrentStep(nextStep);
