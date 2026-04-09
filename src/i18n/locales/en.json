@@ -164,5 +164,11 @@
   "widgetTrueFalse": {
     "correct": "Right!",
     "error": "Error!"
+  },
+  "profilePage": {
+    "success": "Data successfully saved!",
+    "error": "Failed to save changes",
+    "about": "About me",
+    "save": "Save changes"
   }
 }

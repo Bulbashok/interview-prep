@@ -167,4 +167,10 @@ export const i18nKeys = {
     correct: 'widgetTrueFalse.correct',
     error: 'widgetTrueFalse.error',
   },
+  profilePage: {
+    success: 'profilePage.success',
+    error: 'profilePage.error',
+    about: 'profilePage.about',
+    save: 'profilePage.save',
+  },
 } as const;
