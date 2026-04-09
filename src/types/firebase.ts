@@ -4,6 +4,11 @@ import { HistoryRecordProps } from './dashboard';
 export interface UserData {
   uid: string;
   email: string | null;
+  about?: string;
+  socials?: {
+    github: string;
+    telegram: string;
+  };
   displayName: string | null;
   currentExp: number;
   progress: number;
