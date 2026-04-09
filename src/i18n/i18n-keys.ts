@@ -152,4 +152,8 @@ export const i18nKeys = {
       allCompleted: 'widgetRender.errors.allCompleted',
     },
   },
+  widgetTrueFalse: {
+    correct: 'widgetTrueFalse.correct',
+    error: 'widgetTrueFalse.error',
+  },
 } as const;

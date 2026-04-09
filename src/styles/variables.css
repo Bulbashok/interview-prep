@@ -24,6 +24,7 @@
 
   --card-title: #2c5269;
   --card-text: #5f7d8f;
+  --widget-title-trueFalse: #1a365d;
 }
 
 [data-theme='dark'] {
