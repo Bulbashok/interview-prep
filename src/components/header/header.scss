@@ -3,111 +3,96 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 1000;
 
   &__logo {
     display: flex;
     align-items: center;
     gap: 0.5em;
+    z-index: 1;
 
     &__img {
       width: 2.5em;
       height: 2.5em;
-      filter: brightness(0) saturate(100%) invert(16%) sepia(10%) saturate(6142%) hue-rotate(184deg)
-        brightness(98%) contrast(90%);
+      filter: brightness(0) saturate(100%) invert(46%) sepia(96%) saturate(972%) hue-rotate(2deg)
+        brightness(107%) contrast(104%);
     }
+
     &__title {
       font-size: 1.5em;
       color: var(--heading-color);
-      @media (max-width: 768px) {
-        font-size: 1.2em;
-      }
-
-      @media (max-width: 480px) {
-        display: none;
-      }
     }
   }
 
   &__burger {
     display: none;
     flex-direction: column;
-    justify-content: center;
     gap: 5px;
-    width: 2rem;
-    height: 2rem;
-    padding: 0.25rem;
-    background: transparent;
     cursor: pointer;
-    z-index: 10;
+    z-index: 1001;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--heading-color);
+      transition: 0.3s;
+    }
+
+    &--active {
+      span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
 
     @media (max-width: 768px) {
       display: flex;
     }
   }
 
-  &__burger-line {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: var(--heading-color);
-    border-radius: 2px;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 
-    &--open:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
+    @media (max-width: 768px) {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--bg-primary);
+      flex-direction: column;
+      justify-content: center;
+      transition: 0.4s;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
 
-    &--open:nth-child(2) {
-      opacity: 0;
-    }
-
-    &--open:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
+      &--active {
+        right: 0;
+      }
     }
   }
 
-  &__button {
+  &__actions,
+  &__controls {
     display: flex;
     gap: 0.5em;
+    align-items: center;
 
     @media (max-width: 768px) {
-      position: absolute;
-      top: 100%;
-      right: 0;
       flex-direction: column;
-      align-items: stretch;
-      gap: 0.5rem;
-      padding: 0.5rem;
-      background-color: var(--bg-primary);
-      border: 2px solid var(--border-color);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      transform: translateY(-10px);
-      opacity: 0;
-      visibility: hidden;
-      transition:
-        transform 0.3s ease,
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-      z-index: 9;
-      min-width: 12rem;
-      border-radius: 0.5rem;
+      width: 100%;
+      padding: 1em;
 
-      &--open {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-
-      // Force MUI buttons to full width in mobile menu
-      .MuiButton-root {
-        width: 100% !important;
-      }
-
-      .language-manager {
-        width: 100%;
-        display: block;
+      button {
+        width: 80%;
       }
     }
   }

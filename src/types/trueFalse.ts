@@ -8,3 +8,7 @@ export interface TrueFalsePayload {
     en: string;
   };
 }
+
+export interface TrueFalseSubmitData {
+  value: string;
+}

@@ -7,6 +7,9 @@ import { TopicLearning } from './components/TopicLearning';
 
 import { useTopicsLibrary } from '@/hooks/useTopicsLibrary';
 
+// import { useEffect } from 'react';
+// import { uploadCorrectAnswers } from '@/widgets/TrueFalse/WidgetCollection/FirebaseMigrator';
+
 export default function MainLibrary() {
   const {
     isLoading,
@@ -26,20 +29,19 @@ export default function MainLibrary() {
   } = useTopicsLibrary();
 
   // import {uploadTopics} from ....
-  //   useEffect(() => {
+  // useEffect(() => {
   //   const runMigration = async () => {
   //     try {
   //       console.log('Начинаю миграцию...');
-  //       await uploadTopics();
+  //       await uploadCorrectAnswers();
   //       console.log('Миграция завершена успешно!');
   //     } catch (error) {
   //       console.error('Ошибка при выполнении миграции:', error);
   //     }
   //   };
 
-  //   // ВАЖНО: Раскомментировать строку ниже, чтобы данные улетели в базу
-  //   // runMigration();
-
+  //   //   // ВАЖНО: Раскомментировать строку ниже, чтобы данные улетели в базу
+  //   runMigration();
   // }, []);
 
   if (isLoading) {

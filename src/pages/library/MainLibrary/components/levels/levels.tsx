@@ -28,10 +28,11 @@ export default function Levels({ value, onChange }: LevelsProps) {
           label={level.label}
           clickable
           sx={{
-            color: value === level.id ? 'white' : '#2d3748',
-            backgroundColor: value === level.id ? '#ff8c00' : 'rgba(36, 160, 237, 0.3)',
+            color: value === level.id ? 'var(--btn-primary-text)' : 'var(--primary-text-color)',
+            backgroundColor: value === level.id ? 'var(--btn-cta)' : 'rgba(49, 130, 206, 0.2)',
             '&:hover': {
-              backgroundColor: value === level.id ? '#e67e22' : 'rgba(36, 160, 237, 0.5)',
+              backgroundColor:
+                value === level.id ? 'var(--btn-cta-hover)' : 'rgba(49, 130, 206, 0.4)',
             },
           }}
           onClick={() => onChange(level.id)}

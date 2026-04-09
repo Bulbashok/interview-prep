@@ -32,12 +32,12 @@ export default function Practice() {
         <Button
           startIcon={<ArrowBackIcon />}
           onClick={() => navigate(protectedRoutes.library)}
-          sx={{ mb: 4, color: '#24a0ed', textTransform: 'none' }}
+          sx={{ mb: 4, color: 'var(--btn-primary-bg)', textTransform: 'none' }}
         >
           {t(i18nKeys.widgetRender.button)}
         </Button>
 
-        <Typography variant="h4" sx={{ mb: 4, color: '#2c5269', fontWeight: 800 }}>
+        <Typography variant="h4" sx={{ mb: 4, color: 'var(--heading-color)', fontWeight: 800 }}>
           {topic.title[lang]}
         </Typography>
 

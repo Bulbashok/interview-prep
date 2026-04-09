@@ -114,6 +114,11 @@ export const i18nKeys = {
       title: 'library.select.title',
       all: 'library.select.all',
     },
+    nothingFound: {
+      title: 'library.nothingFound.title',
+      paragraph: 'library.nothingFound.paragraph',
+      button: 'library.nothingFound.button',
+    },
   },
   asyncSorter: {
     question: 'asyncSorter.question',
@@ -155,7 +160,11 @@ export const i18nKeys = {
     errors: {
       loadWidget: 'widgetRender.errors.loadWidget',
       serverError: 'widgetRender.errors.serverError',
-      allCompleted: 'выполнено',
+      allCompleted: 'widgetRender.errors.allCompleted',
     },
+  },
+  widgetTrueFalse: {
+    correct: 'widgetTrueFalse.correct',
+    error: 'widgetTrueFalse.error',
   },
 } as const;

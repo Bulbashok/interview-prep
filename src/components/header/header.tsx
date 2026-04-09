@@ -1,12 +1,8 @@
+import { useState, useEffect } from 'react';
 import './header.scss';
-
-import { useState } from 'react';
 import ChangeLanguage from './changeLanguage/changeLanguage';
-
 import logo from '../../assets/svg/logo.svg';
-
 import Button from '../button/button';
-
 import { useNavigate } from 'react-router';
 import { useAuth } from '@/hooks/useAuth';
 import { appRoutes, authRoutes, protectedRoutes } from '../../router/routes';
@@ -18,44 +14,57 @@ export default function HeaderHome() {
   const { t } = useTranslation();
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
 
   const handleLogout = async () => {
+    setIsMenuOpen(false);
     navigate(appRoutes.home);
     await signOut();
-    setMenuOpen(false);
   };
 
   const handleNavigate = (path: string) => {
+    setIsMenuOpen(false);
     navigate(path);
-    setMenuOpen(false);
   };
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
-
   return (
-    <>
-      <div className="header">
-        <div className="header__logo">
-          <img className="header__logo__img" src={logo} alt="logo" />
-          <h2 className="header__logo__title">asyncmind</h2>
-        </div>
-        <button
-          className="header__burger"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-        >
-          <span className={`header__burger-line ${menuOpen ? 'header__burger-line--open' : ''}`} />
-          <span className={`header__burger-line ${menuOpen ? 'header__burger-line--open' : ''}`} />
-          <span className={`header__burger-line ${menuOpen ? 'header__burger-line--open' : ''}`} />
-        </button>
-        <div className={`header__button ${menuOpen ? 'header__button--open' : ''}`}>
+    <header className="header">
+      <div
+        className="header__logo"
+        onClick={() => navigate(appRoutes.home)}
+        style={{ cursor: 'pointer' }}
+      >
+        <img className="header__logo__img" src={logo} alt="logo" />
+        <h2 className="header__logo__title">asyncmind</h2>
+      </div>
+
+      <div
+        className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div className={`header__content ${isMenuOpen ? 'header__content--active' : ''}`}>
+        <div className="header__actions">
           {user ? (
             <>
               <Button
-                content={t(i18nKeys.homePage.aboutUs)}
-                onClick={() => handleNavigate(appRoutes.home)}
+                content={t(i18nKeys.header.dashboard)}
+                onClick={() => handleNavigate(protectedRoutes.dashboard)}
               />
               <Button
                 content={t(i18nKeys.header.profile)}
@@ -69,10 +78,13 @@ export default function HeaderHome() {
               onClick={() => handleNavigate(authRoutes.login)}
             />
           )}
-          <ChangeLanguage />
+        </div>
+
+        <div className="header__controls">
           <ThemeSwitcher />
+          <ChangeLanguage />
         </div>
       </div>
-    </>
+    </header>
   );
 }

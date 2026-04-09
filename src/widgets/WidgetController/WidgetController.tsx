@@ -24,6 +24,7 @@ export const WidgetController = ({ topic }: { topic: Topic }) => {
     const fetchWidget = async () => {
       try {
         const widgetId = topic.widgetIds[currentStep];
+
         const widget = await firestoreService.getDocument<Widget>('widgets', widgetId);
         setCurrentWidget(widget);
       } catch {
