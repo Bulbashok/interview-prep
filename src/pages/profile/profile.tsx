@@ -110,11 +110,11 @@ export default function ProfilePage() {
             sx={{ mb: 2, '& .MuiTabs-indicator': { backgroundColor: 'var(--btn-primary-bg)' } }}
           >
             <Tab
-              label="About"
+              label={t(i18nKeys.profilePage.about)}
               sx={{ color: 'var(--secondary-text-color)', textTransform: 'none' }}
             />
             <Tab
-              label="Socials"
+              label={t(i18nKeys.profilePage.socials)}
               sx={{ color: 'var(--secondary-text-color)', textTransform: 'none' }}
             />
           </Tabs>

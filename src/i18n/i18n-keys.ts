@@ -172,5 +172,6 @@ export const i18nKeys = {
     error: 'profilePage.error',
     about: 'profilePage.about',
     save: 'profilePage.save',
+    socials: 'profilePage.socials',
   },
 } as const;
