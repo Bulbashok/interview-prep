@@ -11,6 +11,7 @@ import { WidgetContext } from '../contexts/WidgetContext';
 import WidgetRender from '../WidgetRender/WidgetRender';
 import { RootLayout } from '@/components/skeleton/RootLayout';
 import { createHistoryRecord } from '@/api/createHistoryRecord';
+import { updateExp } from '@/api/updateExp';
 
 export const WidgetController = ({ topic }: { topic: Topic }) => {
   const { t } = useTranslation();
@@ -40,6 +41,10 @@ export const WidgetController = ({ topic }: { topic: Topic }) => {
 
     await createHistoryRecord(topic.title.en, currentStep + 1, totalWidgets).catch((error) => {
       console.error('Failded to create history record:', error);
+    });
+
+    await updateExp().catch((error) => {
+      console.error('Failed to update user experience', error);
     });
 
     if (nextStep < totalWidgets) {

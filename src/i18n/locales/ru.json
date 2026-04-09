@@ -6,7 +6,7 @@
     "login": "Войти",
     "logout": "Выйти",
     "profile": "Профиль",
-    "dashboard": "Дэшборд"
+    "dashboard": "Доска"
   },
 
   "404": {
@@ -144,6 +144,17 @@
     "failure": "Попробуйте заново. Нажмите кнопку 'Попробовать ещё раз' и расположите блоки в правильном порядке",
     "failureTitle": "Неверно",
     "failureButton": "Попробовать ещё раз"
+  },
+  "quiz": {
+    "question": "Вопрос",
+    "instruction": "Выберите правильный ответ:",
+    "optionsLabel": "Варианты ответа",
+    "submitButton": "Ответить",
+    "submitting": "Проверка ответа...",
+    "successTitle": "Правильно!",
+    "failureTitle": "Неверно",
+    "nextButton": "Далее",
+    "retryButton": "Попробовать ещё"
   },
   "themeSwitcher": {
     "light": "Светлая тема активирована",

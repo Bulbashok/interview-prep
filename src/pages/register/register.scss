@@ -14,8 +14,8 @@
     max-width: 450px;
     padding: 40px;
     border-radius: 20px;
-    background-color: var(--bg-primary-08-opacity);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-form);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
 
   &__title {
@@ -39,12 +39,14 @@
 
   &__field {
     & .MuiOutlinedInput-root {
+      background-color: var(--input-bg);
+
       & input {
         color: var(--primary-text-color);
       }
 
       & fieldset {
-        border-color: rgba(0, 0, 0, 0.23);
+        border-color: var(--input-border);
       }
 
       &:hover fieldset {
@@ -54,6 +56,19 @@
       &.Mui-focused fieldset {
         border-color: var(--btn-primary-bg);
       }
+
+      &.Mui-disabled {
+        background-color: var(--input-bg);
+        opacity: 0.6;
+      }
+
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
+        -webkit-text-fill-color: var(--primary-text-color) !important;
+        caret-color: var(--primary-text-color);
+      }
     }
 
     & .MuiInputLabel-root {
@@ -61,6 +76,11 @@
 
       &.Mui-focused {
         color: var(--btn-primary-bg);
+      }
+
+      &.Mui-disabled {
+        color: var(--primary-text-color);
+        opacity: 0.6;
       }
     }
   }
@@ -84,7 +104,7 @@
     }
 
     &:disabled {
-      background-color: rgba(0, 0, 0, 0.3) !important;
+      opacity: 0.6;
     }
   }
 
@@ -120,8 +140,8 @@
     gap: 20px;
     padding: 40px;
     border-radius: 20px;
-    background-color: var(--bg-primary-08-opacity);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-form);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
 
   &-text {

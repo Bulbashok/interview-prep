@@ -3,10 +3,15 @@ export interface QuizPayload {
     ru: string;
     en: string;
   };
-  options: QuizOptions[];
+  options: QuizOption[];
+  explanation: {
+    ru: string;
+    en: string;
+  };
+  correctOptionIndex: number;
 }
 
-interface QuizOptions {
+export interface QuizOption {
   ru: string;
   en: string;
 }

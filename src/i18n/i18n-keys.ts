@@ -134,6 +134,17 @@ export const i18nKeys = {
     failureTitle: 'asyncSorter.failureTitle',
     failureButton: 'asyncSorter.failureButton',
   },
+  quiz: {
+    question: 'quiz.question',
+    instruction: 'quiz.instruction',
+    optionsLabel: 'quiz.optionsLabel',
+    submitButton: 'quiz.submitButton',
+    submitting: 'quiz.submitting',
+    successTitle: 'quiz.successTitle',
+    failureTitle: 'quiz.failureTitle',
+    nextButton: 'quiz.nextButton',
+    retryButton: 'quiz.retryButton',
+  },
   themeSwitcher: {
     light: 'themeSwitcher.light',
     dark: 'themeSwitcher.dark',

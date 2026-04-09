@@ -11,17 +11,22 @@
 
   &__cards {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 6px;
     justify-items: center;
 
+    @media (min-width: 375px) {
+      gap: 10px;
+      padding: 10px;
+    }
+
     @media (min-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
     }
 
     @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
       max-width: 1200px;
       margin: 0 auto;
     }
