@@ -144,6 +144,7 @@ export const i18nKeys = {
     failureTitle: 'quiz.failureTitle',
     nextButton: 'quiz.nextButton',
     retryButton: 'quiz.retryButton',
+    retryMessage: 'quiz.retryMessage',
   },
   themeSwitcher: {
     light: 'themeSwitcher.light',

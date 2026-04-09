@@ -154,7 +154,8 @@
     "successTitle": "Правильно!",
     "failureTitle": "Неверно",
     "nextButton": "Далее",
-    "retryButton": "Попробовать ещё"
+    "retryButton": "Попробовать ещё",
+    "retryMessage": "Попробуй снова!"
   },
   "themeSwitcher": {
     "light": "Светлая тема активирована",

@@ -6,6 +6,6 @@ export const quizStrategy: WidgetStrategy = {
   render(widget: Widget) {
     if (widget.type !== 'quiz') return null;
 
-    return <Quiz data={widget.payload} id={widget.id} />;
+    return <Quiz key={widget.id} data={widget.payload} id={widget.id} />;
   },
 };

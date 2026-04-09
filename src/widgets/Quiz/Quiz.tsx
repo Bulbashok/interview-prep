@@ -1,170 +1,112 @@
 import './Quiz.scss';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
+import { Box, Button, Typography, Paper, Alert, Collapse, CircularProgress } from '@mui/material';
 import { QuizPayload } from '@/types/quiz';
-import Button from '@/components/button/button';
-import { useTranslation } from 'react-i18next';
 import { i18nKeys } from '@/i18n/i18n-keys';
+import { useTranslation } from 'react-i18next';
+import { submitSolution } from '@/api/submitSolution';
 import { useWidgetContext } from '../contexts/WidgetContext';
-import { submitQuizAnswer } from './quizSubmit';
-import ResultDialog from './ResultDialog';
-import { quizClasses } from './quizClasses';
 
 interface QuizProps {
   id: string;
   data: QuizPayload;
 }
 
-interface OptionButtonProps {
-  text: string;
-  isSelected: boolean;
-  isDisabled: boolean;
-  index: number;
-  totalOptions: number;
-  onSelect: (index: number) => void;
-}
-
-function OptionButton({
-  text,
-  isSelected,
-  isDisabled,
-  index,
-  totalOptions,
-  onSelect,
-}: OptionButtonProps) {
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-      e.preventDefault();
-      const nextIndex = (index + 1) % totalOptions;
-      onSelect(nextIndex);
-    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-      e.preventDefault();
-      const prevIndex = (index - 1 + totalOptions) % totalOptions;
-      onSelect(prevIndex);
-    } else if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      onSelect(index);
-    }
-  };
-
-  return (
-    <button
-      className={`${quizClasses.option} ${isSelected ? quizClasses.optionSelected : ''}`}
-      onClick={() => onSelect(index)}
-      onKeyDown={handleKeyDown}
-      disabled={isDisabled}
-      role="radio"
-      aria-checked={isSelected}
-      aria-label={text}
-      tabIndex={isSelected ? 0 : -1}
-    >
-      {text}
-    </button>
-  );
-}
-
-export default function Quiz({ id, data }: QuizProps) {
-  const { t } = useTranslation();
+export default function Quiz({ data, id }: QuizProps) {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language.startsWith('ru') ? 'ru' : 'en';
   const widgetContext = useWidgetContext();
-  const lang: 'ru' | 'en' = (t('lng') as 'ru' | 'en') || 'en';
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showResult, setShowResult] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(false);
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSelectOption = useCallback((index: number) => {
-    setSelectedIndex(index);
-  }, []);
+  const handleAnswer = useCallback(
+    async (index: number) => {
+      setLoading(true);
+      setSelectedIndex(index);
 
-  const handleSubmit = useCallback(async () => {
-    if (selectedIndex === null || isSubmitting) return;
+      const payload = {
+        id,
+        type: 'quiz' as const,
+        selectedOption: data.options[index][lang],
+      };
 
-    setIsSubmitting(true);
+      const isAnswerRight = await submitSolution(payload, id);
 
-    const selectedOption = data.options[selectedIndex];
+      setIsCorrect(isAnswerRight);
+      setLoading(false);
+    },
+    [id, data.options, lang],
+  );
 
-    const result = await submitQuizAnswer(
-      id,
-      selectedOption[lang],
-      data.correctOptionIndex,
-      data.options,
-    );
-    setIsCorrect(result);
-    setIsSubmitting(false);
-    setShowResult(true);
-  }, [selectedIndex, isSubmitting, data, id, lang]);
   const handleNext = useCallback(() => {
-    setShowResult(false);
-    setSelectedIndex(null);
     widgetContext?.completeWidget();
   }, [widgetContext]);
-  const handleRetry = useCallback(() => {
-    setShowResult(false);
-    setSelectedIndex(null);
-    setIsCorrect(false);
-  }, []);
-  useEffect(() => {
-    if (showResult) {
-      const handleEscape = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-          if (isCorrect) {
-            handleNext();
-          } else {
-            handleRetry();
-          }
-        }
-      };
-      document.addEventListener('keydown', handleEscape);
-      return () => document.removeEventListener('keydown', handleEscape);
-    }
-  }, [showResult, isCorrect, handleNext, handleRetry]);
+
   return (
-    <div className={quizClasses.widget} id={id} role="group" aria-label={t(i18nKeys.quiz.question)}>
-      <div className={quizClasses.header}>
-        <p className={quizClasses.question}>{data.question[lang]}</p>
-        <p className={quizClasses.instruction}>{t(i18nKeys.quiz.instruction)}</p>
-      </div>
-      <div
-        className={quizClasses.options}
-        role="radiogroup"
-        aria-label={t(i18nKeys.quiz.optionsLabel)}
+    <Box
+      sx={{
+        mt: 4,
+        pb: 4,
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+      }}
+    >
+      <Paper
+        elevation={3}
+        sx={{
+          p: 4,
+          borderRadius: 6,
+          bgcolor: 'var(--bg-primary)',
+          color: 'var(--primary-text-color)',
+        }}
       >
-        {data.options.map((option, index) => (
-          <OptionButton
-            key={index}
-            text={option[lang]}
-            isSelected={selectedIndex === index}
-            isDisabled={isSubmitting || showResult}
-            index={index}
-            totalOptions={data.options.length}
-            onSelect={handleSelectOption}
-          />
-        ))}
-      </div>
-      {!showResult && (
-        <div className={quizClasses.submit}>
-          {isSubmitting ? (
-            <div className={quizClasses.loading} role="status" aria-live="polite">
-              <div className={quizClasses.loadingSpinner} />
-              <span>{t(i18nKeys.quiz.submitting)}</span>
-            </div>
-          ) : (
+        <Typography variant="h5" sx={{ mb: 4, fontWeight: 600, color: 'var(--heading-color)' }}>
+          {data.question[lang]}
+        </Typography>
+
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mb: 3 }}>
+          {data.options.map((option, index) => (
             <Button
-              content={t(i18nKeys.quiz.submitButton)}
-              onClick={handleSubmit}
-              // @ts-expect-error MUI Button accepts disabled prop
-              disabled={selectedIndex === null}
-            />
+              key={index}
+              variant={selectedIndex === index ? 'contained' : 'outlined'}
+              color={selectedIndex === index ? (isCorrect ? 'success' : 'error') : 'primary'}
+              onClick={() => handleAnswer(index)}
+              disabled={loading}
+              startIcon={loading && selectedIndex === index ? <CircularProgress size={20} /> : null}
+              sx={{
+                py: 1.5,
+                fontSize: '1rem',
+              }}
+            >
+              {option[lang]}
+            </Button>
+          ))}
+        </Box>
+
+        <Collapse in={isCorrect !== null}>
+          <Alert
+            severity={isCorrect ? 'success' : 'error'}
+            sx={{ mb: 2, textAlign: 'left', bgcolor: 'var(--bg-primary)' }}
+          >
+            <Typography variant="subtitle2" fontWeight={800}>
+              {isCorrect ? t(i18nKeys.quiz.successTitle) : t(i18nKeys.quiz.retryMessage)}
+            </Typography>
+
+            {isCorrect && data.explanation?.[lang]}
+          </Alert>
+
+          {isCorrect && (
+            <Button variant="contained" fullWidth onClick={handleNext} sx={{ mt: 1 }}>
+              {t(i18nKeys.quiz.nextButton)}
+            </Button>
           )}
-        </div>
-      )}
-      <ResultDialog
-        isOpen={showResult}
-        isSuccess={isCorrect}
-        explanation={data.explanation[lang]}
-        onNext={handleNext}
-        onRetry={handleRetry}
-      />
-    </div>
+        </Collapse>
+      </Paper>
+    </Box>
   );
 }

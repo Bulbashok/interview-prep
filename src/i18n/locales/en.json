@@ -154,7 +154,8 @@
     "successTitle": "Correct!",
     "failureTitle": "Incorrect",
     "nextButton": "Next",
-    "retryButton": "Try again"
+    "retryButton": "Try again",
+    "retryMessage": "Try again!"
   },
   "themeSwitcher": {
     "light": "Light theme is activated",
