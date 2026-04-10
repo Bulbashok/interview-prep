@@ -73,8 +73,9 @@ export default function AsyncSorter({ data, id }: AsyncSorterProps) {
         collisionDetection={pointerWithin}
         onDragEnd={handleDragEnd}
         onDragStart={handleDragStart}
+        autoScroll={false}
       >
-        <Container borderTitle={t(i18nKeys.asyncSorter.avaibleBlocks)} styles={{ width: '60%' }}>
+        <Container borderTitle={t(i18nKeys.asyncSorter.avaibleBlocks)} styles={{ width: 'auto' }}>
           <div className="async-sorter__avaible-blocks">
             {currentBlocks.map((block) => (
               <DraggableBlock key={block.id} id={block.id} label={block.code} />
