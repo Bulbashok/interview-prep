@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 
 export const TopicLearning = ({ topic }: { topic: Topic }) => {
   const navigate = useNavigate();
-  console.log(topic);
 
   useEffect(() => {
     navigate(protectedRoutes.practice.replace(':topicId', topic.id), {
