@@ -18,6 +18,8 @@ export interface UserData {
     best: number;
   };
   history: HistoryRecordProps[];
+  updatedAt: Date;
+  completeTopics: string[];
 }
 
 export interface AuthState {

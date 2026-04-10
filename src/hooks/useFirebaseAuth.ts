@@ -23,6 +23,8 @@ const createUserData = (user: User, displayName: string | null): UserData => ({
     current: 0,
     best: 0,
   },
+  updatedAt: new Date(),
+  completeTopics: [],
 });
 
 const saveUserToFirestore = async (user: User, userData: UserData) => {
@@ -193,6 +195,8 @@ export const useFirebaseAuth = (): UseFirebaseAuthReturn => {
           current: 0,
           best: 0,
         },
+        completeTopics: [],
+        updatedAt: new Date(),
       });
     }
   }, []);
