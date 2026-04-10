@@ -8,7 +8,7 @@ https://interview-prep-bulbashoks-projects.vercel.app/
 
 ## Демо-видео
 
-https://youtu.be/__A6ntOkU0w
+https://youtu.be/tDoMy4KRH0U
 
 ## Чем гордимся
 
