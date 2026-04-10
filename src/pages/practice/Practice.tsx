@@ -11,6 +11,7 @@ import { Widget } from '@/types/widgets';
 import { useLocation, useNavigate } from 'react-router';
 import { protectedRoutes } from '@/router/routes';
 import { WidgetController } from '@/widgets/WidgetController/WidgetController';
+import PageTitle from '@/components/page-title/PageTitle';
 
 interface LocationState {
   widget: Widget;
@@ -27,24 +28,28 @@ export default function Practice() {
   const topic = state.topic;
 
   return (
-    <PageWrapper>
-      <Box sx={{ p: { xs: 2, md: 8 } }}>
-        <Button
-          startIcon={<ArrowBackIcon />}
-          onClick={() => navigate(protectedRoutes.library)}
-          sx={{ mb: 4, color: 'var(--btn-primary-bg)', textTransform: 'none' }}
-        >
-          {t(i18nKeys.widgetRender.button)}
-        </Button>
+    <>
+      <PageTitle pageName="Practice | asyncmind" />
+      <PageWrapper>
+        <Box sx={{ p: { xs: 2, md: 8 } }}>
+          <Button
+            startIcon={<ArrowBackIcon />}
+            onClick={() => navigate(protectedRoutes.library)}
+            sx={{ mb: 4, color: 'var(--btn-primary-bg)', textTransform: 'none' }}
+          >
+            {t(i18nKeys.widgetRender.button)}
+          </Button>
 
-        <Typography variant="h4" sx={{ mb: 4, color: 'var(--heading-color)', fontWeight: 800 }}>
-          {topic.title[lang]}
-        </Typography>
+          <Typography variant="h4" sx={{ mb: 4, color: 'var(--heading-color)', fontWeight: 800 }}>
+            {topic.title[lang]}
+          </Typography>
 
-        <Box sx={{ maxWidth: '800px', mx: 'auto', textAlign: 'center' }}>
-          <WidgetController topic={topic} />
+          <Box sx={{ maxWidth: '800px', mx: 'auto', textAlign: 'center' }}>
+            <WidgetController topic={topic} />
+          </Box>
         </Box>
-      </Box>
-    </PageWrapper>
+      </PageWrapper>
+      /
+    </>
   );
 }
