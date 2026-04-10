@@ -16,9 +16,13 @@
   &:hover {
     border: 2px solid var(--border-color)
   }
-
+  
   &__text {
     font-size: 1.1rem;
     color: black;
+
+    @media (max-width: 700px) {
+      font-size: 0.9rem;
+    }
   }
 }
