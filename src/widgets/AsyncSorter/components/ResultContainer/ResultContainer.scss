@@ -7,4 +7,10 @@
   align-items: center;
   
   gap: 10px;
+
+  @media (max-width: 588px) {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
 }
