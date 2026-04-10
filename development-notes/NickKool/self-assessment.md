@@ -2,25 +2,26 @@
 
 ## Вопросы и обратная связь
 
-https://github.com/Bulbashok/interview-prep/pull/86
+https://github.com/Bulbashok/interview-prep/pull/101
 
 ## Таблица фич
 
-| Категория        | Фича                                        | Баллы   | Ссылки на код и PR                                                  |
-| ---------------- | ------------------------------------------- | ------- | ------------------------------------------------------------------- |
-| My Components    | Landing Page (Header, Footer, Main Section) | +20     | [Landing Page](https://github.com/Bulbashok/interview-prep/pull/29) |
-| My Components    | Global Error Handling (Toast System)        | +25     | [Toast System](https://github.com/Bulbashok/interview-prep/pull/45) |
-| My Components    | Library Page с фильтрами и поиском          | +20     | [Library](https://github.com/Bulbashok/interview-prep/pull/61)      |
-| My Components    | RootLayout (Global Loader)                  | +15     | [RootLayout](https://github.com/Bulbashok/interview-prep/pull/55)   |
-| My Components    | Widget Engine - True/False                  | +25     | [Widget Engine]                                                     |
-| Backend & Data   | BaaS CRUD (Firebase Firestore)              | +15     | [Firestore Service](../../src/services/firestore.ts)                |
-| Backend & Data   | Коллекция виджетов на Firebase              | +15     | [Widgets Collection]                                                |
-| UI & Interaction | i18n (локализация)                          | +10     | [i18n Keys](../../src/i18n/i18n-keys.ts)                            |
-| UI & Interaction | Responsive Design                           | +5      | [Media Queries](../../src/styles/media.scss)                        |
-| Frameworks       | React                                       | +5      | [React Components](../../src)                                       |
-| Architecture     | API Layer                                   | +10     | [Firestore Service](../../src/services/firestore.ts)                |
-| Architecture     | Design Patterns                             | +10     | [Custom Hooks](../../src/hooks)                                     |
-| **ИТОГО**        |                                             | **170** |                                                                     |
+| Категория        | Фича                                        | Баллы   | Ссылки на код и PR                                                        |
+| ---------------- | ------------------------------------------- | ------- | ------------------------------------------------------------------------- |
+| My Components    | Landing Page (Header, Footer, Main Section) | +20     | [Landing Page](https://github.com/Bulbashok/interview-prep/pull/29)       |
+| My Components    | Global Error Handling (Toast System)        | +25     | [Toast System](https://github.com/Bulbashok/interview-prep/pull/45)       |
+| My Components    | Library Page с фильтрами и поиском          | +20     | [Library](https://github.com/Bulbashok/interview-prep/pull/61)            |
+| My Components    | RootLayout (Global Loader)                  | +15     | [RootLayout](https://github.com/Bulbashok/interview-prep/pull/55)         |
+| My Components    | Profile Page                                | +20     | [Profile Page](https://github.com/Bulbashok/interview-prep/pull/93)       |
+| My Components    | Widget Engine - True/False                  | +25     | [Widget Engine](https://github.com/Bulbashok/interview-prep/pull/92)      |
+| Backend & Data   | BaaS CRUD (Firebase Firestore)              | +15     | [Firestore Service](../../src/services/firestore.ts)                      |
+| Backend & Data   | Коллекция виджетов на Firebase              | +15     | [Widgets Collection](https://github.com/Bulbashok/interview-prep/pull/92) |
+| UI & Interaction | i18n (локализация)                          | +10     | [i18n Keys](../../src/i18n/i18n-keys.ts)                                  |
+| UI & Interaction | Responsive Design                           | +5      | [Media Queries](../../src/styles/media.scss)                              |
+| Frameworks       | React                                       | +5      | [React Components](../../src)                                             |
+| Architecture     | API Layer                                   | +10     | [Firestore Service](../../src/services/firestore.ts)                      |
+| Architecture     | Design Patterns                             | +10     | [Custom Hooks](../../src/hooks)                                           |
+| **ИТОГО**        |                                             | **190** |                                                                           |
 
 ## Описание моей работы в проекте
 
@@ -48,6 +49,7 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - Структуру данных на Firebase
 - Widget Engine - True/False с проверкой ответов
 - Коллекцию виджетов true-false на Firebase
+- Profile Page
 
 ## Мои личные Feature Component
 
@@ -72,24 +74,7 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - `Footer.tsx` - футер
 - Стили и адаптив
 
-### 2. Global Error Handling - Toast System (25 баллов)
-
-Я спроектировал архитектуру системы уведомлений, реализовал глобальный обработчик ошибок и интегрировал с UI.
-
-**Что было сделано**:
-
-- Глобальный отлов ошибок
-- Разные типы уведомлений
-- Интеграцию с i18n
-- Переиспользуемые компоненты
-
-**Код для демонстрации**:
-
-- `Toast.tsx` - основной компонент
-- `notify.tsx` - утилиты
-- Интеграцию в `main.tsx`
-
-### 3. Library Page (Rich UI Screen) - 20 баллов
+### 2. Library Page (Rich UI Screen) - 20 баллов
 
 Я разработал его полностью с нуля, включая архитектуру фильтров, работу с данными, i18n и UI. Это самый сложный компонент в проекте.
 
@@ -108,7 +93,39 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - `ToolbarLibrary.tsx` - фильтры
 - `TopicsLibrary.tsx` - карточки
 
-### 4. RootLayout (Global Loader) - 15 баллов
+### 3. Profile Page - 20 баллов
+
+Разработал страницу личного кабинета пользователя с отображением имени, возможность его изменить.Внесение инфорации о себе, также добавление ссылок на свой гитхаб и телеграмм.
+
+**Что было сделано**:
+
+- Страницу профиля с информацией о пользователе
+- Интеграцию с Firebase для получения данных пользователя и их изминение.
+- Адаптивный дизайн для мобильных устройств
+
+**Код для демонстрации**:
+
+- `profile.tsx` - основной компонент
+- Интеграцию с Firebase для получения пользовательских данных
+
+### 4. Global Error Handling - Toast System (25 баллов)
+
+Я спроектировал архитектуру системы уведомлений, реализовал глобальный обработчик ошибок и интегрировал с UI.
+
+**Что было сделано**:
+
+- Глобальный отлов ошибок
+- Разные типы уведомлений
+- Интеграцию с i18n
+- Переиспользуемые компоненты
+
+**Код для демонстрации**:
+
+- `Toast.tsx` - основной компонент
+- `notify.tsx` - утилиты
+- Интеграцию в `main.tsx`
+
+### 5. RootLayout (Global Loader) - 15 баллов
 
 Создал глобальный компонент для загрузки, который используется на всех страницах проекта.
 
@@ -123,7 +140,7 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - `RootLayout.tsx` - основной компонент
 - Использование в других компонентах
 
-### 5. Firebase Integration - 15 баллов
+### 6. Firebase Integration - 15 баллов
 
 Работал с настройкой BaaS, создал структуру данных и написал скрипт миграции для получения тем с сервера. Также создал коллекцию виджетов для темы true/false.
 
@@ -140,7 +157,7 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - Скрипты миграции тем и виджетов
 - Структура коллекций topics и widgets в Firebase
 
-### 6. i18n Implementation - 10 баллов
+### 7. i18n Implementation - 10 баллов
 
 Реализовал полную локализацию интерфейса в своих компонентах.
 
@@ -155,7 +172,7 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - `i18n-keys.ts` - ключи переводов
 - Использование в компонентах
 
-### 7. API Layer - 10 баллов
+### 8. API Layer - 10 баллов
 
 Выделил слой работы с API для изоляции от UI компонентов.
 
@@ -168,7 +185,7 @@ https://github.com/Bulbashok/interview-prep/pull/86
 
 - Хуки для работы с данными
 
-### 8. Design Patterns - 10 баллов
+### 9. Design Patterns - 10 баллов
 
 Применял паттерны в коде для улучшения архитектуры.
 
@@ -184,7 +201,7 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - Композиция компонентов в Library
 - Управление состоянием
 
-### 9. Widget Engine - True/False - 25 баллов
+### 10. Widget Engine - True/False - 25 баллов
 
 Разработал полный цикл виджета для вопросов типа "верно/неверно" с проверкой ответов и последовательным переходом между вопросами.
 
@@ -202,7 +219,7 @@ https://github.com/Bulbashok/interview-prep/pull/86
 - `WidgetController.tsx` - управление состоянием виджета
 - `firestore.ts` - сохранение ответов в коллекцию `correct_answers`
 
-### 10. Коллекция виджетов на Firebase - 15 баллов
+### 11. Коллекция виджетов на Firebase - 15 баллов
 
 Создал и наполнил коллекцию виджетов для темы true/false в Firebase.
 
@@ -219,21 +236,6 @@ https://github.com/Bulbashok/interview-prep/pull/86
 
 ## Итоговая оценка
 
-**Всего баллов**: 170 (максимум 250 за Personal Features)
+**Всего баллов**: 190
 
-Сосредоточился на качестве компонентов и на получение знаний от проекта. Реализовал сложные компоненты: Widget Engine для последовательного отображения вопросов с проверкой ответов и коллекцию виджетов на Firebase для хранения вопросов типа true/false.
-
-## Запланированные фичи до первой презентации
-
-| Категория     | Фича                               | Баллы | Статус       |
-| ------------- | ---------------------------------- | ----- | ------------ |
-| My Components | Profile Page                       | +20   | В разработке |
-| Quality       | Unit Tests (Basic) - 20%+ покрытия | +10   | В разработке |
-
-**Потенциальный итог**: +30 баллов
-**Итого с запланированными**: 200 баллов
-
-### Что планирую сделать:
-
-1. **Profile Page** - личный кабинет пользователя
-2. **Unit Tests** - покрытие основных компонентов тестами
+Сосредоточился на качестве компонентов и на получение знаний от проекта.
