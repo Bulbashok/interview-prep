@@ -176,7 +176,7 @@
   "completeTopicMessage": {
     "title": "Congratulations! You've completed the topic!",
     "message": "Go to the library to select a new theme",
-    "button": "Go to Library"
+    "button": "Go to Library",
     "socials": "Socials",
     "yourName": "Your name",
     "uploadPhotoError": "Failed to upload photo"
