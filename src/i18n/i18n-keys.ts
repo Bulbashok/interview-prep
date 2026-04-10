@@ -174,5 +174,7 @@ export const i18nKeys = {
     about: 'profilePage.about',
     save: 'profilePage.save',
     socials: 'profilePage.socials',
+    yourName: 'profilePage.yourName',
+    uploadPhotoError: 'profilePage.uploadPhotoError',
   },
 } as const;

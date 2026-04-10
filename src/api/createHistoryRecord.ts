@@ -29,7 +29,7 @@ export const createHistoryRecord = async (
       date: formattedDate,
     };
 
-    const existingRecord = userDoc.history.find(
+    const existingRecord = (userDoc.history ?? []).find(
       (record) =>
         record.subject === topicName &&
         record.date === formattedDate &&

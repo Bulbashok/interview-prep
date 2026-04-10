@@ -171,6 +171,8 @@
     "error": "Failed to save changes",
     "about": "About me",
     "save": "Save changes",
-    "socials": "Socials"
+    "socials": "Socials",
+    "yourName": "Your name",
+    "uploadPhotoError": "Failed to upload photo"
   }
 }

@@ -28,48 +28,14 @@
     max-width: 500px;
     padding: 40px;
     border-radius: 20px;
-    background-color: var(--bg-primary-08-opacity);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-form);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     gap: 15px;
 
     min-height: 540px;
   }
-
-  &__title {
-    margin-bottom: 10px !important;
-    input {
-      color: var(--heading-color) !important;
-      text-align: center;
-    }
-  }
-
-  &__button {
-    margin-top: auto;
-    padding: 12px !important;
-    background-color: var(--btn-primary-bg) !important;
-    color: var(--btn-primary-text) !important;
-    text-transform: none !important;
-    border-radius: 8px !important;
-    font-weight: 600 !important;
-
-    &:hover {
-      background-color: var(--btn-primary-bg-hover) !important;
-    }
-  }
-
-  &__progress {
-    width: 100%;
-    border-radius: 10px;
-    height: 6px;
-    background-color: var(--bg-form) !important;
-
-    .MuiLinearProgress-bar {
-      background-color: var(--progress-primary-bg) !important;
-    }
-  }
 }
 
-// Адаптив для мобилок
 @media (max-width: 768px) {
   .profile-page {
     &__container {

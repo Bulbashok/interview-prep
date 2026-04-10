@@ -32,7 +32,7 @@ export default function Dashboard() {
   if (!userData) return <RootLayout />;
 
   const hasProgress =
-    userData.progress > 0 || userData.currentExp > 0 || userData.history.length > 0;
+    userData.progress > 0 || userData.currentExp > 0 || (userData.history?.length ?? 0) > 0;
 
   if (!hasProgress) {
     return (
