@@ -28,8 +28,15 @@ interface AsyncSorterProps {
   id: string;
 }
 
+const sensorsConfig = {
+  pointer: { activationConstraint: { distance: 5 } },
+  touch: { activationConstraint: { tolerance: 5, delay: 200 } },
+  mouse: { activationConstraint: { distance: 5 } },
+} as const;
+
 export default function AsyncSorter({ data, id }: AsyncSorterProps) {
   const context = useWidgetContext();
+  const { t } = useTranslation();
 
   const {
     handleDragStart,
@@ -43,25 +50,11 @@ export default function AsyncSorter({ data, id }: AsyncSorterProps) {
     handleResultSorting,
     blocksIds,
   } = useAsyncSorter(data.blocks);
-  const { t } = useTranslation();
 
   const sensors = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: {
-        distance: 5,
-      },
-    }),
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        tolerance: 5,
-        delay: 200,
-      },
-    }),
-    useSensor(MouseSensor, {
-      activationConstraint: {
-        distance: 5,
-      },
-    }),
+    useSensor(PointerSensor, sensorsConfig.pointer),
+    useSensor(TouchSensor, sensorsConfig.touch),
+    useSensor(MouseSensor, sensorsConfig.mouse),
   );
 
   const activeBlock = data.blocks.find((block) => block.id === activeId);
@@ -80,8 +73,9 @@ export default function AsyncSorter({ data, id }: AsyncSorterProps) {
         collisionDetection={pointerWithin}
         onDragEnd={handleDragEnd}
         onDragStart={handleDragStart}
+        autoScroll={false}
       >
-        <Container borderTitle={t(i18nKeys.asyncSorter.avaibleBlocks)} styles={{ width: '60%' }}>
+        <Container borderTitle={t(i18nKeys.asyncSorter.avaibleBlocks)} styles={{ width: 'auto' }}>
           <div className="async-sorter__avaible-blocks">
             {currentBlocks.map((block) => (
               <DraggableBlock key={block.id} id={block.id} label={block.code} />

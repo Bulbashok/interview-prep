@@ -4,7 +4,10 @@ import Grid from '@mui/material/Grid';
 import SearchOffIcon from '@mui/icons-material/SearchOff';
 
 import { CardTool } from './components/cardTool/cardTool';
-import { Topic } from '../Topics/topics';
+import { Topic } from '@/types/topic';
+
+import { i18nKeys } from '@/i18n/i18n-keys';
+import { useTranslation } from 'react-i18next';
 
 interface ActionAreaGridProps {
   items: Topic[];
@@ -21,6 +24,8 @@ export default function ActionAreaGrid({
   onPageChange,
   onCardClick,
 }: ActionAreaGridProps) {
+  const { t } = useTranslation();
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const itemsPerPage = 6;
@@ -87,11 +92,11 @@ export default function ActionAreaGrid({
           />
 
           <Typography variant="h5" sx={{ color: '#2c5269', mb: 1, fontWeight: 700 }}>
-            Nothing found
+            {t(i18nKeys.library.nothingFound.title)}
           </Typography>
 
           <Typography variant="body1" sx={{ color: '#5f7d8f', mb: 3 }}>
-            Try changing your query or resetting your filters.
+            {t(i18nKeys.library.nothingFound.paragraph)}
           </Typography>
 
           <Button
@@ -105,7 +110,7 @@ export default function ActionAreaGrid({
               textTransform: 'none',
             }}
           >
-            Reset all
+            {t(i18nKeys.library.nothingFound.button)}
           </Button>
         </Box>
       )}

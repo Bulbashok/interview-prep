@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import PageWrapper from '@/components/PageWrapper/PageWrapper';
 
-import { Topic } from '../library/MainLibrary/Topics/topics';
+import { Topic } from '@/types/topic';
 import { Widget } from '@/types/widgets';
 import { useLocation, useNavigate } from 'react-router';
 import { protectedRoutes } from '@/router/routes';
@@ -32,12 +32,12 @@ export default function Practice() {
         <Button
           startIcon={<ArrowBackIcon />}
           onClick={() => navigate(protectedRoutes.library)}
-          sx={{ mb: 4, color: '#24a0ed', textTransform: 'none' }}
+          sx={{ mb: 4, color: 'var(--btn-primary-bg)', textTransform: 'none' }}
         >
           {t(i18nKeys.widgetRender.button)}
         </Button>
 
-        <Typography variant="h4" sx={{ mb: 4, color: '#2c5269', fontWeight: 800 }}>
+        <Typography variant="h4" sx={{ mb: 4, color: 'var(--heading-color)', fontWeight: 800 }}>
           {topic.title[lang]}
         </Typography>
 

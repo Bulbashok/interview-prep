@@ -1,11 +1,8 @@
+import { useState, useEffect } from 'react';
 import './header.scss';
-
 import ChangeLanguage from './changeLanguage/changeLanguage';
-
 import logo from '../../assets/svg/logo.svg';
-
 import Button from '../button/button';
-
 import { useNavigate } from 'react-router';
 import { useAuth } from '@/hooks/useAuth';
 import { appRoutes, authRoutes, protectedRoutes } from '../../router/routes';
@@ -17,39 +14,77 @@ export default function HeaderHome() {
   const { t } = useTranslation();
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
 
   const handleLogout = async () => {
+    setIsMenuOpen(false);
     navigate(appRoutes.home);
     await signOut();
   };
 
+  const handleNavigate = (path: string) => {
+    setIsMenuOpen(false);
+    navigate(path);
+  };
+
   return (
-    <>
-      <div className="header">
-        <div className="header__logo">
-          <img className="header__logo__img" src={logo} alt="logo" />
-          <h2 className="header__logo__title">asyncmind</h2>
-        </div>
-        <div className="header__button">
+    <header className="header">
+      <div
+        className="header__logo"
+        onClick={() => navigate(appRoutes.home)}
+        style={{ cursor: 'pointer' }}
+      >
+        <img className="header__logo__img" src={logo} alt="logo" />
+        <h2 className="header__logo__title">asyncmind</h2>
+      </div>
+
+      <div
+        className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div className={`header__content ${isMenuOpen ? 'header__content--active' : ''}`}>
+        <div className="header__actions">
           {user ? (
             <>
               <Button
                 content={t(i18nKeys.header.dashboard)}
-                onClick={() => navigate(protectedRoutes.dashboard)}
+                onClick={() => handleNavigate(protectedRoutes.dashboard)}
               />
               <Button
                 content={t(i18nKeys.header.profile)}
-                onClick={() => navigate(protectedRoutes.profile)}
+                onClick={() => handleNavigate(protectedRoutes.profile)}
               />
               <Button content={t(i18nKeys.header.logout)} onClick={handleLogout} />
             </>
           ) : (
-            <Button content={t(i18nKeys.header.login)} onClick={() => navigate(authRoutes.login)} />
+            <Button
+              content={t(i18nKeys.header.login)}
+              onClick={() => handleNavigate(authRoutes.login)}
+            />
           )}
-          <ChangeLanguage />
+        </div>
+
+        <div className="header__controls">
           <ThemeSwitcher />
+          <ChangeLanguage />
         </div>
       </div>
-    </>
+    </header>
   );
 }

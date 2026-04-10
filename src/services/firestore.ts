@@ -56,10 +56,15 @@ export const firestoreService = {
     }
   },
 
-  async setDocument(collectionName: string, documentId: string, data: DocumentData): Promise<void> {
+  async setDocument(
+    collectionName: string,
+    documentId: string,
+    data: DocumentData,
+    options?: { merge?: boolean },
+  ): Promise<void> {
     try {
       const docRef = doc(db, collectionName, documentId);
-      await setDoc(docRef, data);
+      await setDoc(docRef, data, { merge: options?.merge });
     } catch (error) {
       handleFirestoreError(error, `созданием документа в ${collectionName}`);
     }

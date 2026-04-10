@@ -1,8 +1,14 @@
 import { User } from 'firebase/auth';
+import { HistoryRecordProps } from './dashboard';
 
 export interface UserData {
   uid: string;
   email: string | null;
+  about?: string;
+  socials?: {
+    github: string;
+    telegram: string;
+  };
   displayName: string | null;
   currentExp: number;
   progress: number;
@@ -11,7 +17,9 @@ export interface UserData {
     current: number;
     best: number;
   };
-  history: [];
+  history: HistoryRecordProps[];
+  updatedAt: Date;
+  completeTopics: string[];
 }
 
 export interface AuthState {

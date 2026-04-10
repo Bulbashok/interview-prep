@@ -114,6 +114,11 @@ export const i18nKeys = {
       title: 'library.select.title',
       all: 'library.select.all',
     },
+    nothingFound: {
+      title: 'library.nothingFound.title',
+      paragraph: 'library.nothingFound.paragraph',
+      button: 'library.nothingFound.button',
+    },
   },
   asyncSorter: {
     question: 'asyncSorter.question',
@@ -128,6 +133,18 @@ export const i18nKeys = {
     failure: 'asyncSorter.failure',
     failureTitle: 'asyncSorter.failureTitle',
     failureButton: 'asyncSorter.failureButton',
+  },
+  quiz: {
+    question: 'quiz.question',
+    instruction: 'quiz.instruction',
+    optionsLabel: 'quiz.optionsLabel',
+    submitButton: 'quiz.submitButton',
+    submitting: 'quiz.submitting',
+    successTitle: 'quiz.successTitle',
+    failureTitle: 'quiz.failureTitle',
+    nextButton: 'quiz.nextButton',
+    retryButton: 'quiz.retryButton',
+    retryMessage: 'quiz.retryMessage',
   },
   themeSwitcher: {
     light: 'themeSwitcher.light',
@@ -144,7 +161,24 @@ export const i18nKeys = {
     errors: {
       loadWidget: 'widgetRender.errors.loadWidget',
       serverError: 'widgetRender.errors.serverError',
-      allCompleted: 'выполнено',
+      allCompleted: 'widgetRender.errors.allCompleted',
     },
+  },
+  widgetTrueFalse: {
+    correct: 'widgetTrueFalse.correct',
+    error: 'widgetTrueFalse.error',
+  },
+  profilePage: {
+    success: 'profilePage.success',
+    error: 'profilePage.error',
+    about: 'profilePage.about',
+    save: 'profilePage.save',
+    socials: 'profilePage.socials',
+    yourName: 'profilePage.yourName',
+  },
+  completeTopicMessage: {
+    title: 'completeTopicMessage.title',
+    message: 'completeTopicMessage.message',
+    button: 'completeTopicMessage.button',
   },
 } as const;

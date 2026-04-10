@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Typography, CardActionArea, Chip } from '@mui/material';
-import { Topic } from '../../../Topics/topics';
+import { Topic } from '@/types/topic';
 import { useTranslation } from 'react-i18next';
 
 interface CardToolProps {
@@ -47,11 +47,11 @@ export const CardTool: React.FC<CardToolProps> = ({ topic, onClick }) => {
             ))}
           </Box>
 
-          <Typography variant="h6" fontWeight="800" sx={{ color: '#2c5269', mb: 1 }}>
+          <Typography variant="h6" fontWeight="800" sx={{ color: 'var(--card-title)', mb: 1 }}>
             {topic.title[lang]}
           </Typography>
 
-          <Typography variant="body2" sx={{ color: '#5f7d8f', mb: 2, minHeight: '40px' }}>
+          <Typography variant="body2" sx={{ color: 'var(--card-text)', mb: 2, minHeight: '40px' }}>
             {topic.description[lang]}
           </Typography>
 

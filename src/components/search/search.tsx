@@ -14,12 +14,17 @@ interface SearchElementProps {
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: '12px',
-  backgroundColor: 'rgba(36, 160, 237, 0.1)',
-  border: '1px solid rgba(36, 160, 237, 0.2)',
+  // Используем основную кнопку как базовый цвет для фона поиска с прозрачностью
+  backgroundColor: 'rgba(49, 130, 206, 0.1)',
+  // Или через переменную, если браузеры поддерживают относительные цвета:
+  // backgroundColor: 'color-mix(in srgb, var(--btn-primary-bg), transparent 90%)',
+  border: '1px solid var(--btn-primary-bg)',
+  opacity: 0.8,
   transition: '0.3s',
   '&:hover': {
-    backgroundColor: 'rgba(36, 160, 237, 0.15)',
-    borderColor: 'rgba(36, 160, 237, 0.4)',
+    opacity: 1,
+    backgroundColor: 'rgba(49, 130, 206, 0.15)',
+    borderColor: 'var(--btn-primary-bg-hover)',
   },
   marginLeft: 0,
   width: '100%',
@@ -37,11 +42,11 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#24a0ed',
+  color: 'var(--btn-primary-bg)',
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: '#2c5269',
+  color: 'var(--primary-text-color)',
   width: '100%',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
@@ -53,6 +58,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       '&:focus': {
         width: '25ch',
       },
+    },
+    '&::placeholder': {
+      color: 'var(--primary-text-color)',
+      opacity: 0.6,
     },
   },
 }));

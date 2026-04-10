@@ -25,23 +25,6 @@ export default function MainLibrary() {
     resetFilters,
   } = useTopicsLibrary();
 
-  // import {uploadTopics} from ....
-  //   useEffect(() => {
-  //   const runMigration = async () => {
-  //     try {
-  //       console.log('Начинаю миграцию...');
-  //       await uploadTopics();
-  //       console.log('Миграция завершена успешно!');
-  //     } catch (error) {
-  //       console.error('Ошибка при выполнении миграции:', error);
-  //     }
-  //   };
-
-  //   // ВАЖНО: Раскомментировать строку ниже, чтобы данные улетели в базу
-  //   // runMigration();
-
-  // }, []);
-
   if (isLoading) {
     return (
       <Box

@@ -1,16 +1,16 @@
 import './History.scss';
 
 import HistoryRecord from './HistoryRecord';
-import { HistoryRecordData } from '@/types/dashboard';
+import { HistoryRecordProps } from '@/types/dashboard';
 
-export default function History(props: { historyData: HistoryRecordData[] }) {
+export default function History(props: { historyData: HistoryRecordProps[] }) {
   const { historyData } = props;
 
   return (
     <div className="history">
-      {historyData.map((entry) => (
+      {historyData.map((entry, index) => (
         <HistoryRecord
-          key={entry.id}
+          key={index}
           subject={entry.subject}
           doneQuestions={entry.doneQuestions}
           allQuestions={entry.allQuestions}

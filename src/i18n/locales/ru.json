@@ -6,7 +6,7 @@
     "login": "Войти",
     "logout": "Выйти",
     "profile": "Профиль",
-    "dashboard": "Дэшборд"
+    "dashboard": "Доска"
   },
 
   "404": {
@@ -98,6 +98,18 @@
     "loading": "Загрузка профиля...",
     "homeButton": "На главную"
   },
+  "widgetRender": {
+    "button": "Назад к темам",
+    "messages": {
+      "correct": "Правильно!",
+      "wrong": "Неверно, попробуй еще раз!",
+      "finish": "Поздравляем! Тема полностью завершена."
+    },
+    "errors": {
+      "loadWidget": "Ошибка загрузки вопроса",
+      "serverError": "Ошибка связи с сервером"
+    }
+  },
   "library": {
     "title": {
       "title": "Темы для практики"
@@ -112,6 +124,11 @@
     "select": {
       "title": "Темы",
       "all": "Все"
+    },
+    "nothingFound": {
+      "title": "Ничего не найдено",
+      "paragraph": "Попробуйте изменить запрос или сбросить фильтры.",
+      "button": "Сбросить все"
     }
   },
   "asyncSorter": {
@@ -128,21 +145,41 @@
     "failureTitle": "Неверно",
     "failureButton": "Попробовать ещё раз"
   },
+  "quiz": {
+    "question": "Вопрос",
+    "instruction": "Выберите правильный ответ:",
+    "optionsLabel": "Варианты ответа",
+    "submitButton": "Ответить",
+    "submitting": "Проверка ответа...",
+    "successTitle": "Правильно!",
+    "failureTitle": "Неверно",
+    "nextButton": "Далее",
+    "retryButton": "Попробовать ещё",
+    "retryMessage": "Попробуй снова!"
+  },
   "themeSwitcher": {
     "light": "Светлая тема активирована",
     "dark": "Тёмная тема активирована",
     "error": "Не удалось переключить тему"
   },
-  "widgetRender": {
-    "button": "Назад к темам",
-    "messages": {
-      "correct": "Правильно!",
-      "wrong": "Неверно, попробуй еще раз!",
-      "finish": "Поздравляем! Тема полностью завершена."
-    },
-    "errors": {
-      "loadWidget": "Ошибка загрузки вопроса",
-      "serverError": "Ошибка связи с сервером"
-    }
+  "widgetTrueFalse": {
+    "correct": "Правильно!",
+    "error": "Ошибка!"
+  },
+  "profilePage": {
+    "success": "Данные успешно сохранены!",
+    "error": "Не удалось сохранить изменения",
+    "about": "О себе",
+    "save": "Сохранить изменения",
+    "socials": "Контакты",
+    "yourName": "Имя"
+  },
+  "completeTopicMessage": {
+    "title": "Поздравляем! Вы завершили тему!",
+    "message": "Перейдите в библиотеку для выбора новой темы",
+    "button": "В библиотеку",
+    "socials": "Контакты",
+    "yourName": "Ваше имя",
+    "uploadPhotoError": "Не удалось загрузить фото"
   }
 }

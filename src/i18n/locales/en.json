@@ -98,6 +98,18 @@
     "loading": "Loading profile...",
     "homeButton": "Go to Home"
   },
+  "widgetRender": {
+    "button": "Back to Topics",
+    "messages": {
+      "correct": "Correct!",
+      "wrong": "Incorrect, try again!",
+      "finish": "Congratulations! Topic fully completed."
+    },
+    "errors": {
+      "loadWidget": "Error loading the question",
+      "serverError": "Server connection error"
+    }
+  },
   "library": {
     "title": {
       "title": "Topics for practice"
@@ -112,6 +124,11 @@
     "select": {
       "title": "Topics",
       "all": "All"
+    },
+    "nothingFound": {
+      "title": "Nothing found",
+      "paragraph": "Try changing your query or resetting your filters.",
+      "button": "Reset all"
     }
   },
   "asyncSorter": {
@@ -128,21 +145,41 @@
     "failureTitle": "Incorrectly",
     "failureButton": "Try again"
   },
+  "quiz": {
+    "question": "Quiz Question",
+    "instruction": "Select the correct answer:",
+    "optionsLabel": "Answer options",
+    "submitButton": "Answer",
+    "submitting": "Checking answer...",
+    "successTitle": "Correct!",
+    "failureTitle": "Incorrect",
+    "nextButton": "Next",
+    "retryButton": "Try again",
+    "retryMessage": "Try again!"
+  },
   "themeSwitcher": {
     "light": "Light theme is activated",
     "dark": "Dark theme is activated",
     "error": "Failed to switch theme"
   },
-  "widgetRender": {
-    "button": "Back to Topics",
-    "messages": {
-      "correct": "Correct!",
-      "wrong": "Incorrect, try again!",
-      "finish": "Congratulations! Topic fully completed."
-    },
-    "errors": {
-      "loadWidget": "Error loading the question",
-      "serverError": "Server connection error"
-    }
+  "widgetTrueFalse": {
+    "correct": "Right!",
+    "error": "Error!"
+  },
+  "profilePage": {
+    "success": "Data successfully saved!",
+    "error": "Failed to save changes",
+    "about": "About me",
+    "save": "Save changes",
+    "socials": "Socials",
+    "yourName": "Name"
+  },
+  "completeTopicMessage": {
+    "title": "Congratulations! You've completed the topic!",
+    "message": "Go to the library to select a new theme",
+    "button": "Go to Library",
+    "socials": "Socials",
+    "yourName": "Your name",
+    "uploadPhotoError": "Failed to upload photo"
   }
 }

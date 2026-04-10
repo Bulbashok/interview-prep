@@ -1,9 +1,16 @@
 import { auth } from '@/config/firebase';
 import { firestoreService } from '@/services/firestore';
 import { AsyncSorterSubmitData } from '@/types/asyncSorter';
+import { TrueFalseSubmitData } from '@/types/trueFalse';
+
+export interface QuizSubmitData {
+  id: string;
+  type: 'quiz';
+  selectedOption: string;
+}
 
 export const submitSolution = async (
-  solution: AsyncSorterSubmitData,
+  solution: AsyncSorterSubmitData | TrueFalseSubmitData | QuizSubmitData,
   id: string,
 ): Promise<boolean> => {
   if (!auth.currentUser) {

@@ -4,9 +4,11 @@
 
   --bg-primary: #ffffff;
   --bg-primary-08-opacity: rgba(255, 255, 255, 0.8);
+  --bg-form: #f0f4f8;
 
   --heading-color: #1a365d;
   --primary-text-color: #2d3748;
+  --secondary-text-color: #718096;
 
   --btn-primary-bg: #24a0ed;
   --btn-primary-text: #ffffff;
@@ -17,16 +19,26 @@
   --btn-cta-hover: #e67e22;
 
   --border-color: #ff8c00;
+  --input-border: rgba(0, 0, 0, 0.23);
+  --input-bg: #ffffff;
 
   --progress-primary-bg: #24a0ed;
+
+  --swiper-pagination: #24a0ed;
+
+  --card-title: #2c5269;
+  --card-text: #5f7d8f;
+  --widget-title-trueFalse: #1a365d;
 }
 
 [data-theme='dark'] {
   --bg-primary: #1a202c;
   --bg-primary-08-opacity: rgba(26, 32, 44, 0.8);
+  --bg-form: #2d3748;
 
   --heading-color: #f7fafc;
   --primary-text-color: #e2e8f0;
+  --secondary-text-color: #a0aec0;
 
   --btn-primary-bg: #3182ce;
   --btn-primary-text: #ffffff;
@@ -37,6 +49,13 @@
   --btn-cta-hover: #ed8936;
 
   --border-color: #f6ad55;
+  --input-border: rgba(255, 255, 255, 0.23);
+  --input-bg: #2d3748;
 
   --progress-primary-bg: #3182ce;
+
+  --swiper-pagination: #ff8c00;
+
+  --card-title: #e2e8f0;
+  --card-text: #94a3b8;
 }

@@ -2,13 +2,18 @@ import { render, screen } from '@testing-library/react';
 import DashboardEmptyState from './EmptyState';
 import { mockI18n } from '@/test/mocks';
 import { i18nKeys } from '@/i18n/i18n-keys';
+import { HelmetProvider } from 'react-helmet-async';
 
 const emptyStateProp = 'Developer';
 
 mockI18n();
 
 const renderEmptyState = () => {
-  return render(<DashboardEmptyState name={emptyStateProp} />);
+  return render(
+    <HelmetProvider>
+      <DashboardEmptyState name={emptyStateProp} />
+    </HelmetProvider>,
+  );
 };
 
 describe('Dashboard Empty State', () => {
