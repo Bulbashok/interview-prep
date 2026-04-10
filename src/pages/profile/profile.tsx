@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Container, Box, Button, Avatar, TextField, Tabs, Tab, IconButton } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit';
+import { useState, useEffect, useCallback } from 'react';
+import { Container, Box, Button, Avatar, TextField, Tabs, Tab } from '@mui/material';
+import type { SxProps, Theme } from '@mui/material';
 import { auth } from '@/config/firebase';
 import { updateProfile } from 'firebase/auth';
 import { firestoreService } from '@/services/firestore';
@@ -12,93 +12,99 @@ import './profile.scss';
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';
 
+const textFieldSx: SxProps<Theme> = {
+  '& .MuiInputBase-input': { color: 'var(--primary-text-color)' },
+  '& .MuiInputLabel-root': { color: 'var(--secondary-text-color)' },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': { borderColor: 'var(--input-border)' },
+    '&:hover fieldset': { borderColor: 'var(--secondary-text-color)' },
+    '&.Mui-focused fieldset': { borderColor: 'var(--btn-primary-bg)' },
+  },
+};
+
 export default function ProfilePage() {
   const { t } = useTranslation();
   const [tabValue, setTabValue] = useState(0);
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
   const [socials, setSocials] = useState({ github: '', telegram: '' });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
-      const data = await getUserData();
-      if (!data && auth.currentUser) {
-        setName(auth.currentUser.displayName || '');
-        return;
-      }
-      if (data) {
-        setName(data.displayName || auth.currentUser?.displayName || '');
-        setAbout(data.about || '');
-        setSocials(data.socials || { github: '', telegram: '' });
+      try {
+        const data = await getUserData();
+        if (data) {
+          setName(data.displayName || auth.currentUser?.displayName || '');
+          setAbout(data.about || '');
+          setSocials(data.socials || { github: '', telegram: '' });
+        } else if (auth.currentUser) {
+          setName(auth.currentUser.displayName || '');
+        }
+      } finally {
+        setLoading(false);
       }
     };
     loadData();
   }, []);
 
-  const handleSave = async () => {
+  const handleSave = useCallback(async () => {
     const user = auth.currentUser;
     if (!user) return;
 
     try {
       await updateProfile(user, { displayName: name });
-
-      try {
-        await firestoreService.updateDocument('users', user.uid, {
-          displayName: name,
-          about: about,
-          socials: socials,
-        });
-      } catch {
-        await firestoreService.setDocument('users', user.uid, {
+      await firestoreService.setDocument(
+        'users',
+        user.uid,
+        {
           displayName: name,
           about,
           socials,
           uid: user.uid,
-        });
-      }
-
+        },
+        { merge: true },
+      );
       notify.success(t(i18nKeys.profilePage.success));
-    } catch (e) {
-      console.error(e);
+    } catch {
       notify.error(t(i18nKeys.profilePage.error));
     }
-  };
+  }, [name, about, socials, t]);
+
+  if (loading) return null;
 
   return (
     <div className="profile-page">
       <HeaderHome />
       <Container maxWidth="sm" className="profile-page__container">
         <Box className="profile-page__content">
-          <Box sx={{ position: 'relative', mb: 1 }}>
+          <Box sx={{ mb: 1 }}>
             <Avatar
               sx={{ width: 100, height: 100, bgcolor: 'var(--btn-primary-bg)', fontSize: '2.5rem' }}
             >
-              {name && name.length > 0 ? name[0].toUpperCase() : '?'}
+              {name?.charAt(0).toUpperCase() || '?'}
             </Avatar>
-            <IconButton
-              sx={{
-                position: 'absolute',
-                bottom: 0,
-                right: -5,
-                bgcolor: 'var(--bg-primary)',
-                border: '1px solid var(--secondary-text-color)',
-              }}
-              size="small"
-            >
-              <EditIcon fontSize="small" sx={{ color: 'var(--heading-color)' }} />
-            </IconButton>
           </Box>
           <TextField
-            variant="standard"
+            variant="outlined"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            label={t(i18nKeys.profilePage.yourName)}
             className="profile-page__title"
             sx={{
-              style: {
-                textAlign: 'center',
+              '& .MuiInputBase-input': {
                 color: 'var(--heading-color)',
                 fontSize: '1.5rem',
                 fontWeight: 700,
+              },
+              '& .MuiInputLabel-root': {
+                color: 'var(--secondary-text-color)',
+                '&.Mui-focused': { color: 'var(--btn-primary-bg)' },
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': { borderColor: 'var(--input-border)' },
+                '&:hover fieldset': { borderColor: 'var(--secondary-text-color)' },
+                '&.Mui-focused fieldset': { borderColor: 'var(--btn-primary-bg)' },
               },
             }}
             fullWidth
@@ -107,16 +113,15 @@ export default function ProfilePage() {
           <Tabs
             value={tabValue}
             onChange={(_, v) => setTabValue(v)}
-            sx={{ mb: 2, '& .MuiTabs-indicator': { backgroundColor: 'var(--btn-primary-bg)' } }}
+            sx={{
+              mb: 2,
+              '& .MuiTabs-indicator': { backgroundColor: 'var(--btn-primary-bg)' },
+              '& .MuiTab-root': { color: 'var(--secondary-text-color)' },
+              '& .MuiTab-root.Mui-selected': { color: 'var(--heading-color)' },
+            }}
           >
-            <Tab
-              label={t(i18nKeys.profilePage.about)}
-              sx={{ color: 'var(--secondary-text-color)', textTransform: 'none' }}
-            />
-            <Tab
-              label={t(i18nKeys.profilePage.socials)}
-              sx={{ color: 'var(--secondary-text-color)', textTransform: 'none' }}
-            />
+            <Tab label={t(i18nKeys.profilePage.about)} sx={{ textTransform: 'none' }} />
+            <Tab label={t(i18nKeys.profilePage.socials)} sx={{ textTransform: 'none' }} />
           </Tabs>
 
           <Box sx={{ width: '100%', minHeight: '150px' }}>
@@ -128,10 +133,7 @@ export default function ProfilePage() {
                 fullWidth
                 value={about}
                 onChange={(e) => setAbout(e.target.value)}
-                sx={{
-                  '& .MuiInputBase-input': { color: 'var(--primary-text-color)' },
-                  '& .MuiInputLabel-root': { color: 'var(--secondary-text-color)' },
-                }}
+                sx={textFieldSx}
               />
             ) : (
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -140,23 +142,34 @@ export default function ProfilePage() {
                   fullWidth
                   value={socials.github}
                   onChange={(e) => setSocials({ ...socials, github: e.target.value })}
-                  sx={{ '& .MuiInputBase-input': { color: 'var(--primary-text-color)' } }}
+                  sx={textFieldSx}
                 />
                 <TextField
                   label="Telegram"
                   fullWidth
                   value={socials.telegram}
                   onChange={(e) => setSocials({ ...socials, telegram: e.target.value })}
-                  sx={{ '& .MuiInputBase-input': { color: 'var(--primary-text-color)' } }}
+                  sx={textFieldSx}
                 />
               </Box>
             )}
           </Box>
           <Button
             variant="contained"
-            className="profile-page__button"
             fullWidth
             onClick={handleSave}
+            sx={{
+              mt: 'auto',
+              padding: '12px',
+              backgroundColor: 'var(--btn-primary-bg)',
+              color: 'var(--btn-primary-text)',
+              textTransform: 'none',
+              borderRadius: '8px',
+              fontWeight: 600,
+              '&:hover': {
+                backgroundColor: 'var(--btn-primary-bg-hover)',
+              },
+            }}
           >
             {t(i18nKeys.profilePage.save)}
           </Button>
