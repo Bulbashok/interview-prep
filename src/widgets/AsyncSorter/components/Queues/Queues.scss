@@ -2,22 +2,30 @@
   width: 100%;
 
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 
   @media (max-width: 1090px) {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
   }
+  
+  @media (max-width: 800px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
 
   &__blocks {
-    min-width: 200px;
+    min-width: auto;
     width: 100%;
-    min-height: 100px;
-    max-height: 300px;
+    min-height: 50px;
+    max-height: 150px;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 
@@ -35,11 +43,6 @@
 
     &::-webkit-scrollbar-thumb {
       background-color: rgba($color: #999999, $alpha: 0.5);
-    }
-
-    @media (max-width: 731px) {
-      min-height: 50px;
-      max-height: 100px;
     }
   }
 }
