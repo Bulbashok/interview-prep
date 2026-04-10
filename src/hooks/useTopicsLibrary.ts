@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { firestoreService } from '@/services/firestore';
-import { Topic } from '@/pages/library/MainLibrary/Topics/topics';
+import type { Topic } from '@/types/topic';
 import { notify } from '@/utils/notify';
 
 export const useTopicsLibrary = () => {
@@ -44,7 +44,7 @@ export const useTopicsLibrary = () => {
       const matchesSearch =
         item.title.ru.toLowerCase().includes(query) ||
         item.title.en.toLowerCase().includes(query) ||
-        item.tags.some((t) => t.toLowerCase().includes(query));
+        item.tags.some((t: string) => t.toLowerCase().includes(query));
       const matchesLevel = selectedLevel === 'all' || item.difficulty.toString() === selectedLevel;
       const matchesTopic = selectedTopicName === 'all' || item.title.en === selectedTopicName;
       return matchesSearch && matchesLevel && matchesTopic;
