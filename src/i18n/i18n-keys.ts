@@ -175,4 +175,9 @@ export const i18nKeys = {
     save: 'profilePage.save',
     socials: 'profilePage.socials',
   },
+  completeTopicMessage: {
+    title: 'completeTopicMessage.title',
+    message: 'completeTopicMessage.message',
+    button: 'completeTopicMessage.button',
+  },
 } as const;
