@@ -2,7 +2,7 @@
 
 ## Вопросы и обратная связь
 
-https://github.com/Bulbashok/interview-prep/pull/86
+https://github.com/Bulbashok/interview-prep/pull/101
 
 ## Таблица фич
 
