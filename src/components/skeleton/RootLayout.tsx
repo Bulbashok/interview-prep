@@ -7,7 +7,6 @@ export const RootLayout = () => {
   const { loading: isAuthLoading } = useAuth();
 
   const isAppBusy = navigation.state === 'loading' || isAuthLoading;
-  console.log('Status:', { nav: navigation.state, auth: isAuthLoading });
   return (
     <>
       <Outlet />
