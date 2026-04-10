@@ -38,7 +38,7 @@ export default function Queues({
     const { setNodeRef } = useDroppable({ id: id });
 
     return (
-      <Container borderTitle={title} styles={{ width: '30%' }} setNodeRef={setNodeRef}>
+      <Container borderTitle={title} styles={{ minWidth: '30%' }} setNodeRef={setNodeRef}>
         <div className="queues__blocks">
           {blocks.map((block) => (
             <DraggableBlock key={block.id} id={block.id} label={block.code} />
