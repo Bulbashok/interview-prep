@@ -175,7 +175,6 @@ export const i18nKeys = {
     save: 'profilePage.save',
     socials: 'profilePage.socials',
     yourName: 'profilePage.yourName',
-    uploadPhotoError: 'profilePage.uploadPhotoError',
   },
   completeTopicMessage: {
     title: 'completeTopicMessage.title',

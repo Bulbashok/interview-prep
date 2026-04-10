@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import PageWrapper from '@/components/PageWrapper/PageWrapper';
 
-import { Topic } from '../library/MainLibrary/Topics/topics';
+import { Topic } from '@/types/topic';
 import { Widget } from '@/types/widgets';
 import { useLocation, useNavigate } from 'react-router';
 import { protectedRoutes } from '@/router/routes';

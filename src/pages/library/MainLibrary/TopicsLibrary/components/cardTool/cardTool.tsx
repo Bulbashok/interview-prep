@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Typography, CardActionArea, Chip } from '@mui/material';
-import { Topic } from '../../../Topics/topics';
+import { Topic } from '@/types/topic';
 import { useTranslation } from 'react-i18next';
 
 interface CardToolProps {

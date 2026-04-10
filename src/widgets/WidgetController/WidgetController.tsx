@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Topic } from '@/pages/library/MainLibrary/Topics/topics';
+import { Topic } from '@/types/topic';
 import { firestoreService } from '@/services/firestore';
-import { notify } from '@/utils/notify';
 import { Widget } from '@/types/widgets';
 import { WidgetContext } from '../contexts/WidgetContext';
 import WidgetRender from '../WidgetRender/WidgetRender';
@@ -25,7 +24,7 @@ export const WidgetController = ({ topic }: { topic: Topic }) => {
         const widget = await firestoreService.getDocument<Widget>('widgets', widgetId);
         setCurrentWidget(widget);
       } catch {
-        notify.error('error');
+        console.error('Fetch widget failed');
       }
     };
 

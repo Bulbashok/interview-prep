@@ -1,4 +1,4 @@
-import { Topic } from '../Topics/topics';
+import { Topic } from '@/types/topic';
 import { useNavigate } from 'react-router';
 import { protectedRoutes } from '@/router/routes';
 import { useEffect } from 'react';

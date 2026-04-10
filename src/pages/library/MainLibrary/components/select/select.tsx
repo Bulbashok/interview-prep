@@ -4,7 +4,7 @@ import { ChangeEvent } from 'react';
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';
 
-import { Topic } from '../../Topics/topics';
+import { Topic } from '@/types/topic';
 
 interface SelectProps {
   topics: Topic[];

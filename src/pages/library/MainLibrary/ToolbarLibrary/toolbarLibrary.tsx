@@ -6,7 +6,7 @@ import Select from '../components/select/select';
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';
 
-import { Topic } from '../Topics/topics';
+import { Topic } from '@/types/topic';
 
 interface ToolbarLibraryProps {
   topics: Topic[];

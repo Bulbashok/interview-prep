@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import SearchOffIcon from '@mui/icons-material/SearchOff';
 
 import { CardTool } from './components/cardTool/cardTool';
-import { Topic } from '../Topics/topics';
+import { Topic } from '@/types/topic';
 
 import { i18nKeys } from '@/i18n/i18n-keys';
 import { useTranslation } from 'react-i18next';

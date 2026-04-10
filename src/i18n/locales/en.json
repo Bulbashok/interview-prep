@@ -171,7 +171,8 @@
     "error": "Failed to save changes",
     "about": "About me",
     "save": "Save changes",
-    "socials": "Socials"
+    "socials": "Socials",
+    "yourName": "Name"
   },
   "completeTopicMessage": {
     "title": "Congratulations! You've completed the topic!",
