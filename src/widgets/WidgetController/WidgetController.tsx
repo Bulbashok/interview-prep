@@ -2,11 +2,7 @@ import { useEffect, useState } from 'react';
 import { Topic } from '@/pages/library/MainLibrary/Topics/topics';
 import { firestoreService } from '@/services/firestore';
 import { notify } from '@/utils/notify';
-import { i18nKeys } from '@/i18n/i18n-keys';
-import { useTranslation } from 'react-i18next';
 import { Widget } from '@/types/widgets';
-import { useNavigate } from 'react-router';
-import { protectedRoutes } from '@/router/routes';
 import { WidgetContext } from '../contexts/WidgetContext';
 import WidgetRender from '../WidgetRender/WidgetRender';
 import { RootLayout } from '@/components/skeleton/RootLayout';
@@ -14,13 +10,12 @@ import { createHistoryRecord } from '@/api/createHistoryRecord';
 import { updateExp } from '@/api/updateExp';
 import { updateStreak } from '@/api/streakCounter';
 import { updateProgress } from '@/api/updateProgress';
+import CompleteTopicMessage from '@/components/CompleteTopicMessage/CompleteTopicMessage';
 
 export const WidgetController = ({ topic }: { topic: Topic }) => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-
   const [currentStep, setCurrentStep] = useState(0);
   const [currentWidget, setCurrentWidget] = useState<Widget | null>(null);
+  const [isCompelte, setIsComplete] = useState(false);
 
   useEffect(() => {
     const fetchWidget = async () => {
@@ -51,14 +46,14 @@ export const WidgetController = ({ topic }: { topic: Topic }) => {
       setCurrentStep(nextStep);
     } else {
       await updateProgress(topic.id);
-      navigate(protectedRoutes.library);
-      notify.success(t(i18nKeys.widgetRender.errors.allCompleted));
+      setIsComplete(true);
     }
   };
 
   return (
     <WidgetContext.Provider value={{ completeWidget }}>
       {currentWidget ? <WidgetRender widget={currentWidget} /> : <RootLayout />}
+      {isCompelte && <CompleteTopicMessage />}
     </WidgetContext.Provider>
   );
 };

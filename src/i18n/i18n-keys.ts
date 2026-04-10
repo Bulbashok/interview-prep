@@ -177,4 +177,9 @@ export const i18nKeys = {
     yourName: 'profilePage.yourName',
     uploadPhotoError: 'profilePage.uploadPhotoError',
   },
+  completeTopicMessage: {
+    title: 'completeTopicMessage.title',
+    message: 'completeTopicMessage.message',
+    button: 'completeTopicMessage.button',
+  },
 } as const;

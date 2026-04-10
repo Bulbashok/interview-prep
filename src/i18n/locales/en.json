@@ -171,6 +171,12 @@
     "error": "Failed to save changes",
     "about": "About me",
     "save": "Save changes",
+    "socials": "Socials"
+  },
+  "completeTopicMessage": {
+    "title": "Congratulations! You've completed the topic!",
+    "message": "Go to the library to select a new theme",
+    "button": "Go to Library"
     "socials": "Socials",
     "yourName": "Your name",
     "uploadPhotoError": "Failed to upload photo"
