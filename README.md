@@ -2,60 +2,6 @@
 
 Интерактивная платформа для подготовки к техническим собеседованиям на frontend-разработчика. Приложение предоставляет структурированную систему обучения с различными типами виджетов для проверки знаний JavaScript и других веб-технологий.
 
-## Быстрый старт
-
-### Требования
-
-- Node.js 18+
-- npm 9+
-
-### Установка и запуск
-
-```bash
-# 1. Клонируйте репозиторий
-git clone https://github.com/Bulbashok/interview-prep.git
-cd interview-prep
-
-# 2. Установите зависимости
-npm install
-
-# 3. Создайте файл окружения
-cp .env.example .env
-
-# 4. Заполните .env своими ключами Firebase (см. ниже)
-
-# 5. Запустите dev-сервер
-npm run dev
-```
-
-Приложение откроется по адресу `http://localhost:5173`.
-
-### Доступные скрипты
-
-| Команда           | Описание                      |
-| ----------------- | ----------------------------- |
-| `npm run dev`     | Запуск dev-сервера (Vite)     |
-| `npm run build`   | Сборка для продакшена         |
-| `npm run preview` | Предпросмотр продакшен-сборки |
-| `npm run lint`    | Проверка ESLint               |
-| `npm run test`    | Запуск тестов (Vitest)        |
-
-## Переменные окружения
-
-Проект использует Firebase для авторизации и хранения данных. Для работы необходимо создать проект в [Firebase Console](https://console.firebase.google.com/) и заполнить файл `.env`:
-
-```env
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
-```
-
-Шаблон с описанием всех переменных находится в `.env.example`. Файл `.env` добавлен в `.gitignore` — ключи не попадут в репозиторий.
-
 ## Deploy
 
 https://interview-prep-bulbashoks-projects.vercel.app/
@@ -143,3 +89,57 @@ https://youtu.be/tDoMy4KRH0U
 ## video step by step: 404,spinner,try catch
 
 https://youtu.be/EIHs8nL0cLQ
+
+## Быстрый старт
+
+### Требования
+
+- Node.js 18+
+- npm 9+
+
+### Установка и запуск
+
+```bash
+# 1. Клонируйте репозиторий
+git clone https://github.com/Bulbashok/interview-prep.git
+cd interview-prep
+
+# 2. Установите зависимости
+npm install
+
+# 3. Создайте файл окружения
+cp .env.example .env
+
+# 4. Заполните .env своими ключами Firebase (см. ниже)
+
+# 5. Запустите dev-сервер
+npm run dev
+```
+
+Приложение откроется по адресу `http://localhost:5173`.
+
+### Доступные скрипты
+
+| Команда           | Описание                      |
+| ----------------- | ----------------------------- |
+| `npm run dev`     | Запуск dev-сервера (Vite)     |
+| `npm run build`   | Сборка для продакшена         |
+| `npm run preview` | Предпросмотр продакшен-сборки |
+| `npm run lint`    | Проверка ESLint               |
+| `npm run test`    | Запуск тестов (Vitest)        |
+
+## Переменные окружения
+
+Проект использует Firebase для авторизации и хранения данных. Для работы необходимо создать проект в [Firebase Console](https://console.firebase.google.com/) и заполнить файл `.env`:
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
+
+Шаблон с описанием всех переменных находится в `.env.example`. Файл `.env` добавлен в `.gitignore` — ключи не попадут в репозиторий.
